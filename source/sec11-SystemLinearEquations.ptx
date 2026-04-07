@@ -769,12 +769,12 @@
       <title>Notation Warning!</title>
 
       <p>
-        Your textbook likes to introduce a new letter to use for the parameter and the homework system will do this as well. 
+        Some textbooks like to introduce a new letter to use for the parameter. 
         For example, in this case they would probably use <m>t</m> and write the solutions as 
         <md>
           \lp t, \frac{-3}{2}t + \frac{5}{2} \rp
         </md>
-        This is unnecessary but Richard will do it from time to time just to match what you will see from the textbook and the homework system. 
+        This is unnecessary but Richard will do it from time to time just to make sure you understand where these mysterious parameters come from. 
       </p>
     </note>
 
@@ -943,50 +943,13 @@
         <hint>
           <p>
             Recall a consistent system means a solution exists. 
-            So let's pretent <m>h</m> is just a number and try to solve the system of linear equations using the elementary row operations. 
+            So let's pretend <m>h</m> is just a number and try to solve the system of linear equations using the elementary row operations. 
+          </p>
+
+          <p>
+            What does <m>h</m> have to be so that you don't run into a row that doesn't make sense when converting back to a system of linear equations? 
           </p>
         </hint>
-
-        <solution>
-          <p>
-            There are many ways to solve this system.
-            Here is one way of doing so: 
-          </p>
-
-          <p>
-            Step 1: Add <m>-3</m> times Row 1 to Row 2 (replacing Row 2) to get
-            <md>
-              \begin{bmatrix}
-                1 \amp h \amp \mid \amp -4 \\
-                0 \amp 6 - 3h \amp \mid \amp 20
-              \end{bmatrix}
-            </md>
-          </p>
-
-          <p>
-            Step 2: Multiply Row 2 by <m>\dfrac{1}{6 - 3h}</m> to get
-            <md>
-              \begin{bmatrix}
-                1 \amp h \amp \mid \amp -4 \\
-                0 \amp 1 \amp \mid \amp \dfrac{20}{6 - 3h}
-              \end{bmatrix}
-            </md>
-          </p>
-
-          <p>
-            Step 3: Add <m>-h</m> times Row 2 to Row 1 (replacing Row 1) to get
-            <md>
-              \begin{bmatrix}
-                1 \amp 0 \amp \mid \amp -4 - \dfrac{20h}{6 - 3h} \\
-                0 \amp 1 \amp \mid \amp \dfrac{20}{6 - 3h}
-              \end{bmatrix}
-            </md>
-          </p>
-
-          <p>
-            
-          </p>
-        </solution>
       </exercise>
 
       <exercise number="1.1.25">

@@ -28,7 +28,7 @@
         </li>
         <li>
           <p>
-            apply the <em>Gaussian Elimination Algorithm</em> to transform an augmented matrix into (reduced) echelon form; 
+            apply the <em>Gaussian Elimination Algorithm</em> to transform an augmented matrix into (reduced) echelon form (aka row reduction); 
           </p>
         </li>
         <li>
@@ -235,7 +235,7 @@
   </p>
 
   <note>
-    <title>Note on the homework system (and the second example above)</title>
+    <title>Note on second example above</title>
     
     <p>
       Technically, the full augmented matrix in the second example above is not in reduced row echelon form (but the coefficient matrix is, which is what we really care about). 
@@ -244,7 +244,7 @@
     </p>
 
     <p>
-      However, if you are asked for reduced row echelon form of an augmented matrix by the homework/quiz, it will annoyingly expect those last steps. 
+      However, if you are asked for reduced row echelon form of an augmented matrix, it will annoyingly expect those last steps. 
     </p>
   </note>
 

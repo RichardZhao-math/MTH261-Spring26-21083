@@ -35,6 +35,7 @@
 
     \newcommand{\proj}{\text{proj}}
     \newcommand{\comp}{\text{comp}}
+    \newcommand{\span}{\text{span}}
   </macros>
 
   <!-- If you put any latex-image elements you can include preambles -->

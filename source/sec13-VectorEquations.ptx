@@ -567,6 +567,8 @@
         <m>\v{u} = \begin{bmatrix}-1\\ 2\end{bmatrix}</m>, <m>\v{v} = \begin{bmatrix}-3\\ 3\end{bmatrix}</m>, <m>-\v{v}</m>, <m>-2\v{v}</m>, <m>\v{u}+\v{v}</m>, <m>\v{u}-\v{v}</m>, and <m>\v{u}-2\v{v}</m>.
         Notice that <m>\v{u}-\v{v}</m> is the vertex of a parallelogram whose other vertices are <m>\v{u}</m>, <m>\mathbf{0}</m>, and <m>-\v{v}</m>.
       </p>
+
+      <image source="sec13-HW7-SpanDiagram.png" width="80%"></image>
     </exercise>
 
   <exercisegroup>

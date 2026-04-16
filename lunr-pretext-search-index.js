@@ -1234,6 +1234,303 @@ var ptx_lunr_docs = [
   "body": " ( T\/F ) If is an matrix and if the equation is inconsistent for some in then cannot have a pivot position in every row.  "
 },
 {
+  "id": "sec15-SolutionSets",
+  "level": "1",
+  "url": "sec15-SolutionSets.html",
+  "type": "Section",
+  "number": "1.5",
+  "title": "Solution Sets of Linear Systems",
+  "body": " Solution Sets of Linear Systems  There are two types of systems of linear equations if we consider the values of the constants terms: homogeneous system and non-homogeneous system . They are of course related and we will focus on the homogeneous systems first, then we will see how to use the results to understand the non-homogeneous systems.   Homogeneous Linear System  Let's start by looking at a quick task! Richard claims that the following system of linear equations has at least one solution (hence a consistent system) at the first glance. Why does Richard know about it quickly?  Recall something is called a solution if it satisfies all the equations in the system! Richard made a keen observation that all equations would work out if the variables are all zero. That is, , , and .  To verify, Richard plugged in zero for every variable. He got zero on the left-hand side of every equation and solve all of them! So is a solution to this system of linear equations.  It turns out that this type of systems of linear equations is called a homogeneous system !    A homogeneous system of equations (or a system of homogeneous equations) is a system of linear equations where all of the constants to the right of the equal sign are zero.    For example, we worked with the following system of linear equations in a previous section: This is NOT a homogeneous system since the constants on the right-hand side are not all zero. We can make it homogeneous by changing the number on the right-hand side of every equation to a zero as follows: Then we have a homogeneous system!   Note: Just to be clear, this is a different system of linear equations. However, we will see later that it is actually related to the original one in an important way later on!  Usually, a system of linear equations can have either (1) zero, (2) one, or (3) infinitely many solutions. But it is impossible for a homogeneous system to have zero solutions! As we figured out the very first question in this section, every homogeneous system has at least the trivial solution (where all the variables are zero). So a homogeneous system either has one solution (trivial) OR it has infinitely many solutions .  Let's solve our homogeneous system! First, we will write the augmented matrix for the system: We can actually do the exact same steps that we did with the non-homogeneous version. The only difference is that the constant column doesn't require any work since all the entries hold steady at zero.  So if we put it into row echelon form, we get: Now we can convert back to a system of linear equations and we get: Just like with the regular version, and are the leading variables and is a free variable. We can back substitute into the first equation to get and write the solution in parametric form: or, using our linear algebra notation of vectors (which means in column vectors), an arbitrary vector in the solution set looks like: .  Now, notice that we can factor out a in the solution and see that the set of solutions is of the form where can be any real number. That means every solution of the system is a multiple of . Alternatively, we can say that every solution is in .  We call this a \" basis \" or \" basic vector\" of the solution set (Actually \"basis\" is much more common, but some textbooks use \"basic\"...).   Pretend that we had a (homogeneous) system of 4 linear equations in 5 variables and we put the augmented matrix into row echelon form and got: The leading variables are , , and , so our free variables are and . That is, we should be able to solve for the other three variables in terms of and .  Let's convert it to a system of linear equations: We know that and we can back substitute into the second equation to get as well.  Back substituting into the first equation, we get Now we can write an arbitrary point in the solution set as Now we can split this up into two vectors, one with only 's and one with only 's: This means that every solution is a linear combination of the \"basic\" solutions and . Hence, the solution set is .  Just to be clear, the two basis vectors and are solutions as well! That is one reason why they called the basic solutions (it explains the \"solution\" part). You can also imagine that we can construct infinitely many solutions using these two vectors as building blocks, so they are the \"basis vectors\" for the solution set!    Solve the following homogeneous system of linear equations and write an arbitrary solution as a linear combination of basic solutions (written as column vectors):    Let's start by writing the augmented matrix for the system: We will solve the system using the Gaussian elimination algorithm.  Step 1: Swap Row 1 and Row 2 so that we get a leading without using any fractions:   Step 2: Add times Row 1 to Row 2 (and replace Row 2), add times Row 1 to Row 3 (and replace Row 3), and add times Row 1 to Row 4 (and replace Row 4) to get:   Step 3: Multiply Row 2, Row 3, and Row 4 by (observe the last three rows are exactly the same!) to get:   Step 4: Add times Row 2 to Row 3 (and replace Row 3) and add times Row 2 to Row 4 (and replace Row 4) to get:   We can see from the leading s that and are the leading variables and and are the free variables. We can also see this from converting back to a system of linear equations: We can solve for in terms of , , and to get: We can also solve for in terms of and to get: Then we can back substitute this expression for into the first equation to get: Now let's write our general solution as a column vector! Every solution looks like    If you want to turn the augmented matrix into reduced row echelon form...  To get the augmented matrix into reduced row echelon form, we will just need to do one more step after Step 4.  Step 5: Add times Row 2 to Row 1 (and replace Row 1) to get:   Converting it back to the system of linear equations, we get: Similarly, we see that and are the free variables, and hence we will represent and in terms of and :   Then we can write our general solution as a column vector! Every solution looks like      Terminology! The way we write an arbitrary solution as a linear combination of basis vectors is called the parametric form of the solution set. If you are instructed to write the solution set in parametric form, you should write it as a linear combination of basis vectors using free variables as parameters.   But Richard... Are there only one set of basis vectors for a solution set?  The short answer is NO! There are many different ways to represent the basis vectors for a solution set. Sometimes we pick \"nice\" basis vectors to make the answer look pretty.  For example, in the checkpoint problem earlier, the solution in parametric form is But the two basis vectors look messy because of the fractions.  We can actually represent these two basis vectors differently. If , then the first basis vector becomes If , then the second basis vector becomes So we can also write the solution, in parametric form, as Look how much nicer this representation of the solution set is!  In the next section, we will talk about a concept called \"independence\". Basically, the idea here is that we swap two messy linearly independent basis vectors for two nice linearly independent vectors that span the same solution set.   Recall the solution set to a homogeneous system can be represented as the span of the basis vectors. We know how spans look like geometrically!   If there are no free variables, then the only solution is the trivial solution, and (just a point).    If there is one free variable, then the solution set is . We saw in the last section that this will be a line through the origin (since must be in the span).    If there are two free variables, then the solution set is . We saw in the last section that this will be a plane through the origin (again, since must be in the span).   And the list goes on if we have more free variables!    Non-Homogeneous Linear System  By contrast, a non-homogeneous system of equations (or a system of non-homogeneous equations) is a system of linear equations where at least one of the constants to the right of the equal sign is NOT zero (so NOT a homogeneous system).  There is a very important relationship between the solution set of a non-homogeneous system and the solution set of the corresponding homogeneous system! Let's revisit a non-homogeneous system we worked with before: Skimming through will help us locate the solution set of this system as Or, putting it in column vector form, we can write an arbitrary solution as Of course, we can do our previous trick of splitting this up into two vectors, one with only 's and one without any 's (so that we can factor out the ): Hmm... Does the first vector(s) look familiar? This is actually the same as the solution set of the corresponding homogeneous system!  One can verify quickly that the second vector , by itself, is also a solution to the non-homogeneous system as well! This is our BIG theorem in this section!    Suppose the equation is consistent for some given , and let be a solution to this equation. Then the solution set of is the set of all vectors of the form , where is a parameter and is a solution to the homogeneous equation .    In general, we can solve a system of linear equations using the Gaussian Elimination algorithm. Assuming the system is consistent, we can write an arbitrary solution in parametric form using the same trick that we have been doing: split up the vector by the variable (or lackof) and factor out the free variable to get a linear combination of the basis vectors of the homogeneous solution set plus a particular solution to the non-homogeneous system.   Describe all the solutions to the Matrix Equation where in parametric form.        We can also think about what it means in terms of geometry! Observe that the homogeneous equation looks a lot like our linear equation (in the sense that they are both linear and the constant term is zero). Then that means the non-homogeneous equation is like the linear equation .  How did we obtain from ? The answer is vertical translation by ! That is, we can think of the solution to the non-homogeneous equation as the solution to the corresponding homogeneous equation shifted a bit by a particular solution to the non-homogeneous equation.  Geometrically, let's think about as a solution to and as a particular solution to . Then we know that is also a solution to ! The diagram below shows the relationship between the two solutions to :    Adding to translates to   In addition, we can grab a vector from the span of and add it to to get another solution to . To keep things simple, let's just imagine there is only one free variable in the homogeneous solution set. That is, the span of is a line through the origin. Then the solution set of is a line parallel to the span of that goes through the particular solution .    Parallel solution sets of and with one free variable   Similarly, if there are two free variables in the homogeneous solution set, then the solution set of is a plane parallel to the span of the two basis vectors that goes through the particular solution . And the list goes on if there are more free variables!    Parallel solution sets of and with two free variables     Some Exercises for This Section   Richard included some practice problems that cover some main concepts in this section. You don't need to turn it in, but you are highly encouraged to work on this with your classmates. The problems here may end up being in-class practice problems, homework problems, and\/or exam problems. Reach out to Richard for help if you get stuck or have any questions.  Only the final answers are included to some of the problems for you to check your result. If you want to check your work, talk to Richard and he is happy to discuss the process with you.     In the following systems, determine if it has a nontrivial solution. Try to use as few row operations as possible.               Write the solution set of the given homogeneous system in parametric vector form.      Given the following matrix equivalent to some coefficient matrix , describe all solutions of in parametric vector form.              Verify that the solutions you found to Exercise 9 are indeed homogeneous solutions.    Verify that the solutions you found to Exercise 11 are indeed homogeneous solutions.    Suppose the solution set of a certain system of linear equations can be described as , , with free. Use vectors to describe this set as a line in .    Describe the solutions of the following system in parametric vector form. Also, give a geometric description of the solution set and compare it to that in Exercise 5.     Describe and compare the solution sets of and .    Find the parametric equation of the line through parallel to .      In Exercises 27-35, mark each statement True or False (T\/F). Justify each answer.    (T\/F) A homogeneous equation is always consistent.    (T\/F) The equation gives an explicit description of its solution set.    (T\/F) The homogeneous equation has the trivial solution if and only if the equation has at least one free variable.    (T\/F) The equation describes a line through parallel to .    (T\/F) The solution set of is the set of all vectors of the form , where is any solution of the equation .     "
+},
+{
+  "id": "sec15-SolutionSets-2",
+  "level": "2",
+  "url": "sec15-SolutionSets.html#sec15-SolutionSets-2",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "homogeneous system non-homogeneous system "
+},
+{
+  "id": "subsec-HomogeneousSystem-5",
+  "level": "2",
+  "url": "sec15-SolutionSets.html#subsec-HomogeneousSystem-5",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "homogeneous system "
+},
+{
+  "id": "def-HomogeneousSystem",
+  "level": "2",
+  "url": "sec15-SolutionSets.html#def-HomogeneousSystem",
+  "type": "Definition",
+  "number": "1.5.1",
+  "title": "",
+  "body": "  A homogeneous system of equations (or a system of homogeneous equations) is a system of linear equations where all of the constants to the right of the equal sign are zero.   "
+},
+{
+  "id": "subsec-HomogeneousSystem-9",
+  "level": "2",
+  "url": "sec15-SolutionSets.html#subsec-HomogeneousSystem-9",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "trivial solution "
+},
+{
+  "id": "subsec-HomogeneousSystem-13",
+  "level": "2",
+  "url": "sec15-SolutionSets.html#subsec-HomogeneousSystem-13",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "basis basic "
+},
+{
+  "id": "subsec-HomogeneousSystem-14",
+  "level": "2",
+  "url": "sec15-SolutionSets.html#subsec-HomogeneousSystem-14",
+  "type": "Example",
+  "number": "1.5.2",
+  "title": "",
+  "body": " Pretend that we had a (homogeneous) system of 4 linear equations in 5 variables and we put the augmented matrix into row echelon form and got: The leading variables are , , and , so our free variables are and . That is, we should be able to solve for the other three variables in terms of and .  Let's convert it to a system of linear equations: We know that and we can back substitute into the second equation to get as well.  Back substituting into the first equation, we get Now we can write an arbitrary point in the solution set as Now we can split this up into two vectors, one with only 's and one with only 's: This means that every solution is a linear combination of the \"basic\" solutions and . Hence, the solution set is .  Just to be clear, the two basis vectors and are solutions as well! That is one reason why they called the basic solutions (it explains the \"solution\" part). You can also imagine that we can construct infinitely many solutions using these two vectors as building blocks, so they are the \"basis vectors\" for the solution set!  "
+},
+{
+  "id": "subsec-HomogeneousSystem-15",
+  "level": "2",
+  "url": "sec15-SolutionSets.html#subsec-HomogeneousSystem-15",
+  "type": "Checkpoint",
+  "number": "1.5.3",
+  "title": "",
+  "body": " Solve the following homogeneous system of linear equations and write an arbitrary solution as a linear combination of basic solutions (written as column vectors):    Let's start by writing the augmented matrix for the system: We will solve the system using the Gaussian elimination algorithm.  Step 1: Swap Row 1 and Row 2 so that we get a leading without using any fractions:   Step 2: Add times Row 1 to Row 2 (and replace Row 2), add times Row 1 to Row 3 (and replace Row 3), and add times Row 1 to Row 4 (and replace Row 4) to get:   Step 3: Multiply Row 2, Row 3, and Row 4 by (observe the last three rows are exactly the same!) to get:   Step 4: Add times Row 2 to Row 3 (and replace Row 3) and add times Row 2 to Row 4 (and replace Row 4) to get:   We can see from the leading s that and are the leading variables and and are the free variables. We can also see this from converting back to a system of linear equations: We can solve for in terms of , , and to get: We can also solve for in terms of and to get: Then we can back substitute this expression for into the first equation to get: Now let's write our general solution as a column vector! Every solution looks like    If you want to turn the augmented matrix into reduced row echelon form...  To get the augmented matrix into reduced row echelon form, we will just need to do one more step after Step 4.  Step 5: Add times Row 2 to Row 1 (and replace Row 1) to get:   Converting it back to the system of linear equations, we get: Similarly, we see that and are the free variables, and hence we will represent and in terms of and :   Then we can write our general solution as a column vector! Every solution looks like     "
+},
+{
+  "id": "subsec-HomogeneousSystem-16",
+  "level": "2",
+  "url": "sec15-SolutionSets.html#subsec-HomogeneousSystem-16",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "parametric form "
+},
+{
+  "id": "subsec-HomogeneousSystem-17",
+  "level": "2",
+  "url": "sec15-SolutionSets.html#subsec-HomogeneousSystem-17",
+  "type": "Note",
+  "number": "1.5.5",
+  "title": "But Richard... Are there only one set of basis vectors for a solution set?",
+  "body": " But Richard... Are there only one set of basis vectors for a solution set?  The short answer is NO! There are many different ways to represent the basis vectors for a solution set. Sometimes we pick \"nice\" basis vectors to make the answer look pretty.  For example, in the checkpoint problem earlier, the solution in parametric form is But the two basis vectors look messy because of the fractions.  We can actually represent these two basis vectors differently. If , then the first basis vector becomes If , then the second basis vector becomes So we can also write the solution, in parametric form, as Look how much nicer this representation of the solution set is!  In the next section, we will talk about a concept called \"independence\". Basically, the idea here is that we swap two messy linearly independent basis vectors for two nice linearly independent vectors that span the same solution set.  "
+},
+{
+  "id": "subsec-NonHomogeneousSystem-2",
+  "level": "2",
+  "url": "sec15-SolutionSets.html#subsec-NonHomogeneousSystem-2",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "non-homogeneous system of equations "
+},
+{
+  "id": "thm-HomogeneousSolutionSet",
+  "level": "2",
+  "url": "sec15-SolutionSets.html#thm-HomogeneousSolutionSet",
+  "type": "Theorem",
+  "number": "1.5.6",
+  "title": "",
+  "body": "  Suppose the equation is consistent for some given , and let be a solution to this equation. Then the solution set of is the set of all vectors of the form , where is a parameter and is a solution to the homogeneous equation .   "
+},
+{
+  "id": "subsec-NonHomogeneousSystem-7",
+  "level": "2",
+  "url": "sec15-SolutionSets.html#subsec-NonHomogeneousSystem-7",
+  "type": "Checkpoint",
+  "number": "1.5.7",
+  "title": "",
+  "body": " Describe all the solutions to the Matrix Equation where in parametric form.       "
+},
+{
+  "id": "subsec-NonHomogeneousSystem-11",
+  "level": "2",
+  "url": "sec15-SolutionSets.html#subsec-NonHomogeneousSystem-11",
+  "type": "Figure",
+  "number": "1.5.8",
+  "title": "",
+  "body": "  Adding to translates to  "
+},
+{
+  "id": "subsec-NonHomogeneousSystem-13",
+  "level": "2",
+  "url": "sec15-SolutionSets.html#subsec-NonHomogeneousSystem-13",
+  "type": "Figure",
+  "number": "1.5.9",
+  "title": "",
+  "body": "  Parallel solution sets of and with one free variable  "
+},
+{
+  "id": "subsec-NonHomogeneousSystem-15",
+  "level": "2",
+  "url": "sec15-SolutionSets.html#subsec-NonHomogeneousSystem-15",
+  "type": "Figure",
+  "number": "1.5.10",
+  "title": "",
+  "body": "  Parallel solution sets of and with two free variables  "
+},
+{
+  "id": "ws-sec15-3-2",
+  "level": "2",
+  "url": "sec15-SolutionSets.html#ws-sec15-3-2",
+  "type": "Worksheet Exercise",
+  "number": "1.5.1",
+  "title": "",
+  "body": "    "
+},
+{
+  "id": "ws-sec15-3-3",
+  "level": "2",
+  "url": "sec15-SolutionSets.html#ws-sec15-3-3",
+  "type": "Worksheet Exercise",
+  "number": "1.5.3",
+  "title": "",
+  "body": "    "
+},
+{
+  "id": "ws-sec15-4",
+  "level": "2",
+  "url": "sec15-SolutionSets.html#ws-sec15-4",
+  "type": "Worksheet Exercise",
+  "number": "1.5.5",
+  "title": "",
+  "body": " Write the solution set of the given homogeneous system in parametric vector form.   "
+},
+{
+  "id": "ws-sec15-5-2",
+  "level": "2",
+  "url": "sec15-SolutionSets.html#ws-sec15-5-2",
+  "type": "Worksheet Exercise",
+  "number": "1.5.7",
+  "title": "",
+  "body": "  "
+},
+{
+  "id": "ws-sec15-5-3",
+  "level": "2",
+  "url": "sec15-SolutionSets.html#ws-sec15-5-3",
+  "type": "Worksheet Exercise",
+  "number": "1.5.9",
+  "title": "",
+  "body": "  "
+},
+{
+  "id": "ws-sec15-5-4",
+  "level": "2",
+  "url": "sec15-SolutionSets.html#ws-sec15-5-4",
+  "type": "Worksheet Exercise",
+  "number": "1.5.11",
+  "title": "",
+  "body": "  "
+},
+{
+  "id": "ws-sec15-6",
+  "level": "2",
+  "url": "sec15-SolutionSets.html#ws-sec15-6",
+  "type": "Worksheet Exercise",
+  "number": "1.5.13",
+  "title": "",
+  "body": " Verify that the solutions you found to Exercise 9 are indeed homogeneous solutions.  "
+},
+{
+  "id": "ws-sec15-7",
+  "level": "2",
+  "url": "sec15-SolutionSets.html#ws-sec15-7",
+  "type": "Worksheet Exercise",
+  "number": "1.5.15",
+  "title": "",
+  "body": " Verify that the solutions you found to Exercise 11 are indeed homogeneous solutions.  "
+},
+{
+  "id": "ws-sec15-8",
+  "level": "2",
+  "url": "sec15-SolutionSets.html#ws-sec15-8",
+  "type": "Worksheet Exercise",
+  "number": "1.5.17",
+  "title": "",
+  "body": " Suppose the solution set of a certain system of linear equations can be described as , , with free. Use vectors to describe this set as a line in .  "
+},
+{
+  "id": "ws-sec15-9",
+  "level": "2",
+  "url": "sec15-SolutionSets.html#ws-sec15-9",
+  "type": "Worksheet Exercise",
+  "number": "1.5.19",
+  "title": "",
+  "body": " Describe the solutions of the following system in parametric vector form. Also, give a geometric description of the solution set and compare it to that in Exercise 5.   "
+},
+{
+  "id": "ws-sec15-10",
+  "level": "2",
+  "url": "sec15-SolutionSets.html#ws-sec15-10",
+  "type": "Worksheet Exercise",
+  "number": "1.5.21",
+  "title": "",
+  "body": " Describe and compare the solution sets of and .  "
+},
+{
+  "id": "ws-sec15-11",
+  "level": "2",
+  "url": "sec15-SolutionSets.html#ws-sec15-11",
+  "type": "Worksheet Exercise",
+  "number": "1.5.23",
+  "title": "",
+  "body": " Find the parametric equation of the line through parallel to .   "
+},
+{
+  "id": "ws-sec15-12-2",
+  "level": "2",
+  "url": "sec15-SolutionSets.html#ws-sec15-12-2",
+  "type": "Worksheet Exercise",
+  "number": "1.5.27",
+  "title": "",
+  "body": " (T\/F) A homogeneous equation is always consistent.  "
+},
+{
+  "id": "ws-sec15-12-3",
+  "level": "2",
+  "url": "sec15-SolutionSets.html#ws-sec15-12-3",
+  "type": "Worksheet Exercise",
+  "number": "1.5.29",
+  "title": "",
+  "body": " (T\/F) The equation gives an explicit description of its solution set.  "
+},
+{
+  "id": "ws-sec15-12-4",
+  "level": "2",
+  "url": "sec15-SolutionSets.html#ws-sec15-12-4",
+  "type": "Worksheet Exercise",
+  "number": "1.5.31",
+  "title": "",
+  "body": " (T\/F) The homogeneous equation has the trivial solution if and only if the equation has at least one free variable.  "
+},
+{
+  "id": "ws-sec15-12-5",
+  "level": "2",
+  "url": "sec15-SolutionSets.html#ws-sec15-12-5",
+  "type": "Worksheet Exercise",
+  "number": "1.5.33",
+  "title": "",
+  "body": " (T\/F) The equation describes a line through parallel to .  "
+},
+{
+  "id": "ws-sec15-12-6",
+  "level": "2",
+  "url": "sec15-SolutionSets.html#ws-sec15-12-6",
+  "type": "Worksheet Exercise",
+  "number": "1.5.35",
+  "title": "",
+  "body": " (T\/F) The solution set of is the set of all vectors of the form , where is any solution of the equation .  "
+},
+{
   "id": "backmatter-2",
   "level": "1",
   "url": "backmatter-2.html",

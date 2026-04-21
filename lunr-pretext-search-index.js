@@ -1531,6 +1531,735 @@ var ptx_lunr_docs = [
   "body": " (T\/F) The solution set of is the set of all vectors of the form , where is any solution of the equation .  "
 },
 {
+  "id": "sec17-LinearIndependence",
+  "level": "1",
+  "url": "sec17-LinearIndependence.html",
+  "type": "Section",
+  "number": "1.6",
+  "title": "Linear Independence",
+  "body": " Linear Independence   When building a span, are all the vectors actually necessary? Often, a set contains \"redundant\" vectors that can be constructed entirely from the others. In this section, we will formalize this idea through the concepts of linear independence and dependence.    After this section, students will be able to:     define linear independence and dependence in terms of the trivial and nontrivial solutions to a homogeneous vector equation.    determine whether a given set of vectors is linearly independent or dependent.    identify \"redundant\" vectors within a linearly dependent set and express them as a linear combination of the other vectors.        An indexed set of vectors , , is linearly independent if the vector equation has only the trivial solution.  If the trivial solution is not unique, we call the set linear dependent .  That is, if a set , , is linearly dependent, then there exists some scalars , not all zero, such that     But how does the vector equation even related to the idea of independence? We will demonstrate the relation in the following example.   Suppose we have a set of three vectors , where Is this set of vectors linearly independent?  Let's follow the definition! That is, we want to determine if the solution to the following vector equation is unique.  We know how to solve this equation! We will first convert it to an augmented matrix: Now let's row reduce this augmented matrix!   Step 1: Adding times Row 1 to Row 2 (and replacing Row 2), we obtain     Step 2: Adding times Row 1 to Row 3 (and replacing Row 3), we obtain    We immediately know that is a free variable since there is no pivot position in the third column. Hence, this vector equation has infinitely many solutions.  By the definition, we know that is linearly dependent .  But what does it mean? Why do we call these three vectors linearly dependent ? Well let's finish solving this vector equation!  Since is a free variable, then we let , where . Then we obtain Okay. This is a general solution to the vector equation. Recall we can obtain a particular solution by assigning a value to our parameter, .  Let's make . Then our particular solution is Then plugging in the solution to the vector equation will make the equation true. That is, we have the following equation: We can isolate one of the three vectors! Just for demonstration purposes, let's isolate ! Then we have Observe that is a linear combination of and ! That is, is dependent on and .   The practical meaning of a linearly dependent set of vectors is that a vector can be expressed as a linear combination of the other vectors in the set. That is, this vector is dependent of other vectors. This specific relation is called the linear dependence relation .  In the above example, a linear dependence relation is since this relation allows us to express a vector, , as a linear combination of the other vectors, and .   Is the set linearly independent?   Yes, this set of vectors is linearly independent .  To justify this, we set up the homogeneous vector equation:   We can solve this by row reducing the corresponding augmented matrix:   Notice that every column in the coefficient matrix contains a pivot position, which means there are no free variables. Therefore, the vector equation has only the trivial solution ( ). Because no vector can be built from the others, the set is linearly independent.    You may notice that the procedure to determine whether a set of column vectors are linearly independent is essentially the same as row reducing an augmented matrix representing a homogeneous system of linear equations. That is, we are essentially solving the homogeneous matrix equation , where consists of the vectors of interest.   If has only the trivial solution, then the columns of are linearly independent;    If has infinitely many solutions, then the columns of are linearly dependent.      Suppose we are given the coefficient matrix . Observe that consists of three column vectors: Are they linearly independent?  We can answer this question by solving the homogeneous matrix equation . The augmented matrix is Of course we know how to row reduce it! Notice that the constant column of zeros will stay unchanged after all the elementary row operations. So we can only row reduce the coefficient matrix part! Recall the constant column will consist of all zeros.  Observe that every column of the coefficient matrix has a pivot position, which implies that there is no free variable. Then this homogeneous matrix equation has only the trivial solution. That is, the only \"linearly dependent relation\" is Well we can't isolate any of the three vectors since all the above relation tells us is that . Hence, it makes sense to call the vectors making up the columns of  linearly independent , in the sense that none of the vector is dependent of other vectors.   It turns out that there are some special theorems to determine whether a set of vectors are linearly independent. Let's look at the following example and see if we can generalize the theorems!   Is linearly independent?  Think about it first and see if you can figure it out. Then expand the following solution to check your answer!   These two vectors are linearly dependent since there is a way to write a vector as a linear combination of the other vector.  Clearly, . That is, the vector is a linear combination of the vector . So is dependent of .    Using the similar argument, we can make sense of the following theorem:    Consider . If for some nonzero constant , then and are linearly dependent.    Now let's look at the next example! Remember the goal is to generalize it!   Is linearly independent?  Think about it first and see if you can figure it out. Then expand the following solution to check your answer!   These three vectors are linearly dependent since there is a way to write a vector as a linear combination of the other vectors.  Clearly, we can represent the zero vector as a linear combination of the other two vectors with both scalars being zero. That is, Hence, these three vectors are linearly dependent.    Using the similar argument, we can make sense of the following theorem:    Any set containing is linearly dependent.     When is the set of a single vector linearly independent?   A set containing a single vector is linearly independent if and only if .  By definition, we are looking at the vector equation . If is the zero vector, then the scalar can be any real number (yielding infinitely many solutions), making it a dependent set. If is any non-zero vector, the only way for the equation to hold true is if the scalar (the trivial solution), making it an independent set.    Now let's look at the next example! Remember the goal is to generalize it!   Is linearly independent?  Think about it first and see if you can figure it out. Then expand the following solution to check your answer!   These three vectors are linearly dependent since the homogeneous matrix equation is guaranteed to have infinitely many solutions.  Let . What does the (reduced) row echelon look like after row reductions?  Well there are only two row so there can be at most two pivot positions.  Yet there are three variables in this equation since each vector gets a mystery scalars. That is, at least one variable is a free variable, and hence the homogeneous equation must have infinitely many solutions.  Therefore, these three vectors are linearly dependent.    Using the similar argument, we can make sense of the following theorem:    A set of vectors with more vectors than there are entries in those vectors are linearly dependent.    They are the linear dependence tests we can use to quickly determine if a set of vectors is linearly dependent. If you can apply one of the three tests immediately, great! We can conclude that the set is linearly dependent. But the failure to apply any of these tests doesn't mean the set is linearly independent . It just means we will have to go back to the definition to determine it.  Usually, we want more than just knowing that a set is linearly dependent. We want to pick out the \"redundant\" vectors. This brings us to our big theorem for this section!   Characterization of Linearly Dependent Sets   An indexed set , is linearly dependent if and only if at least one vector iin is a linear combination of the others. Moreover, if is linearly dependent and , then some is a linear combination of .     Proof of the big theorem  First, assume some is a linear combination of the other vectors, then where are not all zero.  Then so is linearly dependent.  On the other hand, assume is linearly dependent. If , then it is a trivial linear combination of the other vectors.  Suppose . Then there exist not all zero such that   Let be the largest subscript such that . Since ,    What this theorem says is that a linearly dependent set always have at least one \"redundant\" vector, and we can find such \"redundant\" vectors by going over the list one by one.   Let's revisit the set of three vectors , where We have shown that this is a linearly dependent set.  What the big theorem tells us is that at least one vector in this set is \"redundant\", and we can find this \"redundant\" vector by examining the vectors one by one.  Let's start with . This is not a zero vector, so it won't be a \"redundant\" vector in the set.  Now let's look at ! Obviously, is not a scalar multiple of , so it isn't a \"redundant\" vector.  Now it's ! We know that our linear dependence relation is Then we can express as a linear combination of the other two vectors to show that this is our \"redundant\" vector!   But why do we call \"redundant\"?  That is because we can build the span of the set without the need to include this \"redundant\" vector of . So we have because since it is a linear combination of the other two vectors. Hence, is redundant in the sense that it does not contribute to the span.    Consider the set of five vectors in , , where Describe .   Does the set look linearly dependent? If so, how can we pick out all the \"redundant\" vectors, since they don't contribute to the span.    We can quickly determine that is linearly dependent using some of the linear dependence tests (you can actually apply all three of them!). Let's pick out the \"redundant\" vectors!  Let's start with . Since , then it is not redundant.  Next is . Notice that is the zero vector! We can build it using a scalar of on our previous vector: . Therefore, is our first redundant vector.  Now let's look at . We need to see if is a linear combination of the valid vectors before it (just ). Clearly, there is no scalar such that . So, introduces a new direction. It is not redundant.  Moving on to . Can we build using and ? Yes! Observe that is exactly twice . Since it doesn't give us anything new, is our second redundant vector.  Finally, let's examine . Can we express as a linear combination of our core independent vectors, and ? If we scale by and by , we get: Because can be perfectly constructed from vectors already in our set, is our third redundant vector.  Since , , and are redundant, they do not contribute anything new to the coordinate space. We can build the exact same span using only the linearly independent vectors and .    If you really want to describe this span precisely...  We haven't learned enough to describe this span precisely, especially geometrically. And I don't think we will in this class (so let me know if someone wants to turn this into a class project)!  Long story short, the span is a plane in with the equation of .      Some Exercises for This Section   Richard included some practice problems that cover some main concepts in this section. You don't need to turn it in, but you are highly encouraged to work on this with your classmates. The problems here may end up being in-class practice problems, homework problems, and\/or exam problems. Reach out to Richard for help if you get stuck or have any questions.  Only the final answers are included to some of the problems for you to check your result. If you want to check your work, talk to Richard and he is happy to discuss the process with you.     Determine if the vectors are linearly independent. Justify each answer.            Determine if the columns of the matrix form a linearly independent set. Justify each answer.            (a) for what values of is in Span and (b) for what values of is linearly dependent? Justify each answer.       Find the value(s) of for which the vectors are linearly dependent. Justify each answer.            Determine by inspection whether the vectors are linearly independent. Justify each answer.               Mark each statement True or False (T\/F). Justify each answer on the basis of a careful reading of the text.    (T\/F) The columns of a matrix are linearly independent if the equation has the trivial solution.    (T\/F) If is a linearly dependent set, then each vector is a linear combination of the other vectors in .    (T\/F) The columns of any matrix are linearly dependent.    (T\/F) If and are linearly independent, and if is linearly dependent, then is in Span .      Construct matrices and such that has only the trivial solution and has a nontrivial solution.     "
+},
+{
+  "id": "sec17-LinearIndependence-2-2",
+  "level": "2",
+  "url": "sec17-LinearIndependence.html#sec17-LinearIndependence-2-2",
+  "type": "Objectives",
+  "number": "",
+  "title": "",
+  "body": "  After this section, students will be able to:     define linear independence and dependence in terms of the trivial and nontrivial solutions to a homogeneous vector equation.    determine whether a given set of vectors is linearly independent or dependent.    identify \"redundant\" vectors within a linearly dependent set and express them as a linear combination of the other vectors.    "
+},
+{
+  "id": "def-LinearIndependence",
+  "level": "2",
+  "url": "sec17-LinearIndependence.html#def-LinearIndependence",
+  "type": "Definition",
+  "number": "1.6.1",
+  "title": "",
+  "body": "  An indexed set of vectors , , is linearly independent if the vector equation has only the trivial solution.  If the trivial solution is not unique, we call the set linear dependent .  That is, if a set , , is linearly dependent, then there exists some scalars , not all zero, such that    "
+},
+{
+  "id": "sec17-LinearIndependence-5",
+  "level": "2",
+  "url": "sec17-LinearIndependence.html#sec17-LinearIndependence-5",
+  "type": "Example",
+  "number": "1.6.2",
+  "title": "",
+  "body": " Suppose we have a set of three vectors , where Is this set of vectors linearly independent?  Let's follow the definition! That is, we want to determine if the solution to the following vector equation is unique.  We know how to solve this equation! We will first convert it to an augmented matrix: Now let's row reduce this augmented matrix!   Step 1: Adding times Row 1 to Row 2 (and replacing Row 2), we obtain     Step 2: Adding times Row 1 to Row 3 (and replacing Row 3), we obtain    We immediately know that is a free variable since there is no pivot position in the third column. Hence, this vector equation has infinitely many solutions.  By the definition, we know that is linearly dependent .  But what does it mean? Why do we call these three vectors linearly dependent ? Well let's finish solving this vector equation!  Since is a free variable, then we let , where . Then we obtain Okay. This is a general solution to the vector equation. Recall we can obtain a particular solution by assigning a value to our parameter, .  Let's make . Then our particular solution is Then plugging in the solution to the vector equation will make the equation true. That is, we have the following equation: We can isolate one of the three vectors! Just for demonstration purposes, let's isolate ! Then we have Observe that is a linear combination of and ! That is, is dependent on and .  "
+},
+{
+  "id": "sec17-LinearIndependence-6",
+  "level": "2",
+  "url": "sec17-LinearIndependence.html#sec17-LinearIndependence-6",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "linear dependence relation "
+},
+{
+  "id": "sec17-LinearIndependence-8",
+  "level": "2",
+  "url": "sec17-LinearIndependence.html#sec17-LinearIndependence-8",
+  "type": "Checkpoint",
+  "number": "1.6.3",
+  "title": "",
+  "body": " Is the set linearly independent?   Yes, this set of vectors is linearly independent .  To justify this, we set up the homogeneous vector equation:   We can solve this by row reducing the corresponding augmented matrix:   Notice that every column in the coefficient matrix contains a pivot position, which means there are no free variables. Therefore, the vector equation has only the trivial solution ( ). Because no vector can be built from the others, the set is linearly independent.   "
+},
+{
+  "id": "sec17-LinearIndependence-10",
+  "level": "2",
+  "url": "sec17-LinearIndependence.html#sec17-LinearIndependence-10",
+  "type": "Example",
+  "number": "1.6.4",
+  "title": "",
+  "body": " Suppose we are given the coefficient matrix . Observe that consists of three column vectors: Are they linearly independent?  We can answer this question by solving the homogeneous matrix equation . The augmented matrix is Of course we know how to row reduce it! Notice that the constant column of zeros will stay unchanged after all the elementary row operations. So we can only row reduce the coefficient matrix part! Recall the constant column will consist of all zeros.  Observe that every column of the coefficient matrix has a pivot position, which implies that there is no free variable. Then this homogeneous matrix equation has only the trivial solution. That is, the only \"linearly dependent relation\" is Well we can't isolate any of the three vectors since all the above relation tells us is that . Hence, it makes sense to call the vectors making up the columns of  linearly independent , in the sense that none of the vector is dependent of other vectors.  "
+},
+{
+  "id": "sec17-LinearIndependence-12",
+  "level": "2",
+  "url": "sec17-LinearIndependence.html#sec17-LinearIndependence-12",
+  "type": "Example",
+  "number": "1.6.5",
+  "title": "",
+  "body": " Is linearly independent?  Think about it first and see if you can figure it out. Then expand the following solution to check your answer!   These two vectors are linearly dependent since there is a way to write a vector as a linear combination of the other vector.  Clearly, . That is, the vector is a linear combination of the vector . So is dependent of .   "
+},
+{
+  "id": "thm-LinearlyDependent-SetTwoVectors",
+  "level": "2",
+  "url": "sec17-LinearIndependence.html#thm-LinearlyDependent-SetTwoVectors",
+  "type": "Theorem",
+  "number": "1.6.6",
+  "title": "",
+  "body": "  Consider . If for some nonzero constant , then and are linearly dependent.   "
+},
+{
+  "id": "sec17-LinearIndependence-16",
+  "level": "2",
+  "url": "sec17-LinearIndependence.html#sec17-LinearIndependence-16",
+  "type": "Example",
+  "number": "1.6.7",
+  "title": "",
+  "body": " Is linearly independent?  Think about it first and see if you can figure it out. Then expand the following solution to check your answer!   These three vectors are linearly dependent since there is a way to write a vector as a linear combination of the other vectors.  Clearly, we can represent the zero vector as a linear combination of the other two vectors with both scalars being zero. That is, Hence, these three vectors are linearly dependent.   "
+},
+{
+  "id": "thm-LinearDependence-ZeroVector",
+  "level": "2",
+  "url": "sec17-LinearIndependence.html#thm-LinearDependence-ZeroVector",
+  "type": "Theorem",
+  "number": "1.6.8",
+  "title": "",
+  "body": "  Any set containing is linearly dependent.   "
+},
+{
+  "id": "sec17-LinearIndependence-19",
+  "level": "2",
+  "url": "sec17-LinearIndependence.html#sec17-LinearIndependence-19",
+  "type": "Checkpoint",
+  "number": "1.6.9",
+  "title": "",
+  "body": " When is the set of a single vector linearly independent?   A set containing a single vector is linearly independent if and only if .  By definition, we are looking at the vector equation . If is the zero vector, then the scalar can be any real number (yielding infinitely many solutions), making it a dependent set. If is any non-zero vector, the only way for the equation to hold true is if the scalar (the trivial solution), making it an independent set.   "
+},
+{
+  "id": "sec17-LinearIndependence-21",
+  "level": "2",
+  "url": "sec17-LinearIndependence.html#sec17-LinearIndependence-21",
+  "type": "Example",
+  "number": "1.6.10",
+  "title": "",
+  "body": " Is linearly independent?  Think about it first and see if you can figure it out. Then expand the following solution to check your answer!   These three vectors are linearly dependent since the homogeneous matrix equation is guaranteed to have infinitely many solutions.  Let . What does the (reduced) row echelon look like after row reductions?  Well there are only two row so there can be at most two pivot positions.  Yet there are three variables in this equation since each vector gets a mystery scalars. That is, at least one variable is a free variable, and hence the homogeneous equation must have infinitely many solutions.  Therefore, these three vectors are linearly dependent.   "
+},
+{
+  "id": "thm-LinearDependence-MoreVectors",
+  "level": "2",
+  "url": "sec17-LinearIndependence.html#thm-LinearDependence-MoreVectors",
+  "type": "Theorem",
+  "number": "1.6.11",
+  "title": "",
+  "body": "  A set of vectors with more vectors than there are entries in those vectors are linearly dependent.   "
+},
+{
+  "id": "thm-CharacterizationLinearlyDependentSets",
+  "level": "2",
+  "url": "sec17-LinearIndependence.html#thm-CharacterizationLinearlyDependentSets",
+  "type": "Theorem",
+  "number": "1.6.12",
+  "title": "Characterization of Linearly Dependent Sets.",
+  "body": " Characterization of Linearly Dependent Sets   An indexed set , is linearly dependent if and only if at least one vector iin is a linear combination of the others. Moreover, if is linearly dependent and , then some is a linear combination of .   "
+},
+{
+  "id": "sec17-LinearIndependence-27",
+  "level": "2",
+  "url": "sec17-LinearIndependence.html#sec17-LinearIndependence-27",
+  "type": "Proof",
+  "number": "1.6.1",
+  "title": "Proof of the big theorem.",
+  "body": " Proof of the big theorem  First, assume some is a linear combination of the other vectors, then where are not all zero.  Then so is linearly dependent.  On the other hand, assume is linearly dependent. If , then it is a trivial linear combination of the other vectors.  Suppose . Then there exist not all zero such that   Let be the largest subscript such that . Since ,   "
+},
+{
+  "id": "sec17-LinearIndependence-29",
+  "level": "2",
+  "url": "sec17-LinearIndependence.html#sec17-LinearIndependence-29",
+  "type": "Example",
+  "number": "1.6.13",
+  "title": "",
+  "body": " Let's revisit the set of three vectors , where We have shown that this is a linearly dependent set.  What the big theorem tells us is that at least one vector in this set is \"redundant\", and we can find this \"redundant\" vector by examining the vectors one by one.  Let's start with . This is not a zero vector, so it won't be a \"redundant\" vector in the set.  Now let's look at ! Obviously, is not a scalar multiple of , so it isn't a \"redundant\" vector.  Now it's ! We know that our linear dependence relation is Then we can express as a linear combination of the other two vectors to show that this is our \"redundant\" vector!   But why do we call \"redundant\"?  That is because we can build the span of the set without the need to include this \"redundant\" vector of . So we have because since it is a linear combination of the other two vectors. Hence, is redundant in the sense that it does not contribute to the span.  "
+},
+{
+  "id": "sec17-LinearIndependence-30",
+  "level": "2",
+  "url": "sec17-LinearIndependence.html#sec17-LinearIndependence-30",
+  "type": "Checkpoint",
+  "number": "1.6.14",
+  "title": "",
+  "body": " Consider the set of five vectors in , , where Describe .   Does the set look linearly dependent? If so, how can we pick out all the \"redundant\" vectors, since they don't contribute to the span.    We can quickly determine that is linearly dependent using some of the linear dependence tests (you can actually apply all three of them!). Let's pick out the \"redundant\" vectors!  Let's start with . Since , then it is not redundant.  Next is . Notice that is the zero vector! We can build it using a scalar of on our previous vector: . Therefore, is our first redundant vector.  Now let's look at . We need to see if is a linear combination of the valid vectors before it (just ). Clearly, there is no scalar such that . So, introduces a new direction. It is not redundant.  Moving on to . Can we build using and ? Yes! Observe that is exactly twice . Since it doesn't give us anything new, is our second redundant vector.  Finally, let's examine . Can we express as a linear combination of our core independent vectors, and ? If we scale by and by , we get: Because can be perfectly constructed from vectors already in our set, is our third redundant vector.  Since , , and are redundant, they do not contribute anything new to the coordinate space. We can build the exact same span using only the linearly independent vectors and .    If you really want to describe this span precisely...  We haven't learned enough to describe this span precisely, especially geometrically. And I don't think we will in this class (so let me know if someone wants to turn this into a class project)!  Long story short, the span is a plane in with the equation of .    "
+},
+{
+  "id": "ws-sec17-3-2",
+  "level": "2",
+  "url": "sec17-LinearIndependence.html#ws-sec17-3-2",
+  "type": "Worksheet Exercise",
+  "number": "1.6.1.7.1",
+  "title": "",
+  "body": "  "
+},
+{
+  "id": "ws-sec17-3-3",
+  "level": "2",
+  "url": "sec17-LinearIndependence.html#ws-sec17-3-3",
+  "type": "Worksheet Exercise",
+  "number": "1.6.1.7.3",
+  "title": "",
+  "body": "  "
+},
+{
+  "id": "ws-sec17-4-2",
+  "level": "2",
+  "url": "sec17-LinearIndependence.html#ws-sec17-4-2",
+  "type": "Worksheet Exercise",
+  "number": "1.6.1.7.5",
+  "title": "",
+  "body": "  "
+},
+{
+  "id": "ws-sec17-4-3",
+  "level": "2",
+  "url": "sec17-LinearIndependence.html#ws-sec17-4-3",
+  "type": "Worksheet Exercise",
+  "number": "1.6.1.7.7",
+  "title": "",
+  "body": "  "
+},
+{
+  "id": "ws-sec17-5",
+  "level": "2",
+  "url": "sec17-LinearIndependence.html#ws-sec17-5",
+  "type": "Worksheet Exercise",
+  "number": "1.6.1.7.9",
+  "title": "",
+  "body": "  (a) for what values of is in Span and (b) for what values of is linearly dependent? Justify each answer.    "
+},
+{
+  "id": "ws-sec17-6-2",
+  "level": "2",
+  "url": "sec17-LinearIndependence.html#ws-sec17-6-2",
+  "type": "Worksheet Exercise",
+  "number": "1.6.1.7.11",
+  "title": "",
+  "body": "  "
+},
+{
+  "id": "ws-sec17-6-3",
+  "level": "2",
+  "url": "sec17-LinearIndependence.html#ws-sec17-6-3",
+  "type": "Worksheet Exercise",
+  "number": "1.6.1.7.13",
+  "title": "",
+  "body": "  "
+},
+{
+  "id": "ws-sec17-7-2",
+  "level": "2",
+  "url": "sec17-LinearIndependence.html#ws-sec17-7-2",
+  "type": "Worksheet Exercise",
+  "number": "1.6.1.7.15",
+  "title": "",
+  "body": "  "
+},
+{
+  "id": "ws-sec17-7-3",
+  "level": "2",
+  "url": "sec17-LinearIndependence.html#ws-sec17-7-3",
+  "type": "Worksheet Exercise",
+  "number": "1.6.1.7.17",
+  "title": "",
+  "body": "  "
+},
+{
+  "id": "ws-sec17-7-4",
+  "level": "2",
+  "url": "sec17-LinearIndependence.html#ws-sec17-7-4",
+  "type": "Worksheet Exercise",
+  "number": "1.6.1.7.19",
+  "title": "",
+  "body": "  "
+},
+{
+  "id": "ws-sec17-8-2",
+  "level": "2",
+  "url": "sec17-LinearIndependence.html#ws-sec17-8-2",
+  "type": "Worksheet Exercise",
+  "number": "1.6.1.7.21",
+  "title": "",
+  "body": " (T\/F) The columns of a matrix are linearly independent if the equation has the trivial solution.  "
+},
+{
+  "id": "ws-sec17-8-3",
+  "level": "2",
+  "url": "sec17-LinearIndependence.html#ws-sec17-8-3",
+  "type": "Worksheet Exercise",
+  "number": "1.6.1.7.23",
+  "title": "",
+  "body": " (T\/F) If is a linearly dependent set, then each vector is a linear combination of the other vectors in .  "
+},
+{
+  "id": "ws-sec17-8-4",
+  "level": "2",
+  "url": "sec17-LinearIndependence.html#ws-sec17-8-4",
+  "type": "Worksheet Exercise",
+  "number": "1.6.1.7.25",
+  "title": "",
+  "body": " (T\/F) The columns of any matrix are linearly dependent.  "
+},
+{
+  "id": "ws-sec17-8-5",
+  "level": "2",
+  "url": "sec17-LinearIndependence.html#ws-sec17-8-5",
+  "type": "Worksheet Exercise",
+  "number": "1.6.1.7.27",
+  "title": "",
+  "body": " (T\/F) If and are linearly independent, and if is linearly dependent, then is in Span .  "
+},
+{
+  "id": "ws-sec17-9",
+  "level": "2",
+  "url": "sec17-LinearIndependence.html#ws-sec17-9",
+  "type": "Worksheet Exercise",
+  "number": "1.6.1.7.35",
+  "title": "",
+  "body": "  Construct matrices and such that has only the trivial solution and has a nontrivial solution.   "
+},
+{
+  "id": "sec18-IntroLinearTransformations",
+  "level": "1",
+  "url": "sec18-IntroLinearTransformations.html",
+  "type": "Section",
+  "number": "1.7",
+  "title": "Linear Transformations",
+  "body": " Linear Transformations   Stuff    After this section, students will be able to:     Do stuff       Transformations are pretty much the same thing as functions you have learned in the past. Given that we are in MTH 261 linear algebra, the things we care about are vectors. Hence, a transformation in linear algebra is a function that takes vectors from one place and assign it to other vectors in another place.    A linear transformation from to via Matrix Multiplication   Recall we learned that functions have three components: domain, range, and the rule. Similarly, transformations also have these three components. In addition, we will define a new concept (related to the range of a function), called the codomain .  Formally speaking, the codomain of a linear transformation is the set that includes all the possible values of a given transformation, which are called images . While this definition sounds a lot like the range of a function, there is a key difference: not everything in the codomain needs to be an image of the transformation , while everything in the range has to be some images from the transformation. Immediately, we can see that codomain should be a larger set that capture the range.    Domain, Codomain, and Range of the Linear Transformation    But Richard... Why bother defining this special set of codomain?  This is because in practice, we want a place to capture all the images but doesn't necessarily need to know what the range is.  Here is a quick example: consider the function . We all know that the domain is and the range is instantly because we know that all number squared cannot be negative. Then we don't need to define its codomain, another set to tell us where all possible outputs are going to live.  But what if my function is more complicated, like .  Of course, the domain remains to be but we can't quickly identify the range... All we knew, by just skimming through the function, is that outputs should also be in . Yet we can't say that all real numbers can be an output. Hence, rather than calling the range (which is not true), we say that is the codomain.   It is totally possible for a function to have the codomain exactly the same as the range! This type of functions are called surjection (or onto transformation).   The word \"linear\" means that the transformation must satisfy some special property. This special property is called the linearity , captured in the following definition.    If is a function with the following two properties:   For any scalar and any vector ,     For any two vectors ,    then is a linear transformation .    The two properties in the definition are called the linearity . Of course, it makes sense to call a transformation \"linear\" if the linearity property is satisfied.   Note: Sometimes these two properties are combined to form one rule that looks like this: This basically tells us that we can figure out the output for a linear combination of vectors by taking the same linear combination of the outputs of those vectors.   Determine if the following transformations are linear transformation.    defined by      defined by      defined by      defined by           No. It fails the scalar multiplication property. For instance, let and . However, Since , it is not linear.     Yes. Let's verify both properties. First, for any scalar : Second, for vector addition:      No. It fails vector addition. Let and . But evaluating them separately gives:      Yes. Similar to part (b), we test the properties. For scalar multiplication: For vector addition:         What are some linear transformations you have learned in the past?  What are some non-linear transformations you have learned in the past?   Just some more examples of linear and non-linear transformation   Linear Transformations:   Proportional relationships like .  Taking the derivative of a function (Calculus!). The derivative of a sum is the sum of the derivatives, and constants pull out to the front.  Evaluating definite integrals.     Non-linear Transformations:   Quadratic functions like .  Exponential functions like .  Absolute value functions like .  Functions in the form where . This is a huge trap! In high school algebra, we call these \"linear equations,\" but in linear algebra, they do NOT pass the test for linear transformations because . We actually call these affine transformations.      Recall in , every matrix defines a linear transformation in a way that In the next chapter, we will learn about matrix operations. Just a preview, by the Matrix Multiplication rules, we know that            Hence, we have the linearity in the definition of linear transformations.   A non-example  The function given by is NOT a linear transformation.   Proof: Notice that If this were a linear transformation, then property (ii) would mean that But in fact, Oopsie!    An example  The function given by IS indeed a linear transformation!   Proof: We will verify the two properties in the definition of linear transformations.   Suppose is a scalar and is a vector in . Then     Suppose and are two vectors in . Then    Since both properties hold, we can conclude that IS indeed a linear transformation!   Note: In this example, observe that the coefficients do not contribute to the proof at all (so the proof would work exactly the same even if we had different coefficients). Using the same proof, we can show that the function given by is a linear transformation for any choice of scalars .   The two properties of linear transformations make it possible to \"plug in\" a vector even if we don't know the rule. That is, we can evaluate linear transformations using linear combinations .   Suppose is a linear transformation (but we don't know the rule) and we do know that Let's say we want to evaluate .   How do we do that?   Notice that So property (i) and (ii) of linear transformations tell us that    But Richard... How can you find the linear combination?  There are two ways to find the linear combination: (1) using guess and check, and\/or (2) by setting up a system of equations.  Let's do a quick example using the formal setting-up-a-system-of-equations method!  Can be written as a linear combination of and ?  Let's assume we can! Then there exist scalars such that This is essentially a vector equation since the \"variables\" here are the scalars and . We can rewrite the vector equation as a system of linear equations: Basically, we are asking ourselves if this system of linear equations has a solution.  We are all experts in solving systems of linear equations now! The augmented matrix is We can do our Gaussian Elimination magic to get: Converting back to a system of linear equations, we have   We can quickly check our work! We did it!    This is a very important kind of problem! Not only does it show up on exams commonly, it will also be the key to finding the matrix for a linear transformation which is one of the most important things in linear algebra!   Suppose is a linear transformation and we know that Find .   First, we need to express as a linear combination of the two input vectors we know. We are looking for scalars and such that:   Looking at the third row, we immediately see that , which means .  Substituting into the second row gives us , which means . Let's quickly verify with the first row: . It works!  Now we can use the linearity properties to evaluate the transformation:     What about the other way around? What if we are given the image of some linear transformation and we are trying to find the input?  Then instead of \"evaluating\", we will be \"solving\" the matrix equation. We are all experts in row reduction so this shouldn't be a problem!   Let . We define by . Now we want to find such that .  If we plug in everything we know into the transformation, then we will get the following matrix equation: Converting this into an augmented matrix, we obtain   Let's apply our Gaussian Elimination skills to solve for :   Translating the reduced row echelon form back into an equation, we get and . Therefore, the input vector we were looking for is:     TO BE CONTINUED!    Some Exercises for This Section   Richard included some practice problems that cover some main concepts in this section. You don't need to turn it in, but you are highly encouraged to work on this with your classmates. The problems here may end up being in-class practice problems, homework problems, and\/or exam problems. Reach out to Richard for help if you get stuck or have any questions.  Only the final answers are included to some of the problems for you to check your result. If you want to check your work, talk to Richard and he is happy to discuss the process with you.     Let , and define by . Find the images under of and .      With defined by , find a vector whose image under is , and determine whether is unique.            Let be a matrix. What must and be in order to define by ?      Find all in that are mapped into the zero vector by the transformation for the given matrix .       Let , and let be the matrix in Exercise 9. Is in the range of the linear transformation ? Why or why not?      Use a rectangular coordinate system to plot , , and their images under the given transformation . (Make a separate and reasonably large sketch for each exercise.) Describe geometrically what does to each vector in .            Let , , , and , and let be a linear transformation that maps into and maps into . Find the images of and .      Mark each statement True or False (T\/F). Justify each answer.    (T\/F) A linear transformation is a special type of function.    (T\/F) If is a matrix and is a transformation defined by , then the domain of is .    (T\/F) If is an matrix, then the range of the transformation is .    (T\/F) Every linear transformation is a matrix transformation.    (T\/F) A transformation is linear if and only if for all and in the domain of and for all scalars and .      Show that the transformation defined by is not linear.      Let be the transformation that reflects each vector through the plane onto . Show that is a linear transformation. [See Example 4 for ideas.]      Assume that is a linear transformation. Find the standard matrix of .     , and , where and .      rotates points (about the origin) through radians (in the counterclockwise direction).      is a vertical shear transformation that maps into but leaves the vector unchanged.      first rotates points through radians (since the number is negative, the actual rotation is clockwise) and then reflects points through the horizontal -axis. [Hint: .]      first performs a horizontal shear that transforms into (leaving unchanged) and then reflects points through the line .       Fill in the missing entries of the matrix, assuming that the equation holds for all values of the variables.       Show that is a linear transformation by finding a matrix that implements the mapping. Note that are not vectors but are entries in vectors.                Let be a linear transformation such that . Find such that .      Mark each statement True or False (T\/F). Justify each answer.     (T\/F) A linear transformation is completely determined by its effect on the columns of the identity matrix.      (T\/F) If rotates vectors about the origin through an angle , then is a linear transformation.      (T\/F) When two linear transformations are performed one after another, the combined effect may not always be a linear transformation.      (T\/F) A mapping is onto if every vector in maps onto some vector in .      (T\/F) If is a matrix, then the transformation cannot be one-to-one.       Complete the following statements to make them true.     Let be a linear transformation, with its standard matrix. Complete the following statement to make it true: \" is one-to-one if and only if has ____ pivot columns.\" Explain why the statement is true. [Hint: Look in the exercises for Section 1.7.]      Let be a linear transformation, with its standard matrix. Complete the following statement to make it true: \" maps onto if and only if has ____ pivot columns.\" Find some theorems that explain why the statement is true.      "
+},
+{
+  "id": "sec18-IntroLinearTransformations-2-2",
+  "level": "2",
+  "url": "sec18-IntroLinearTransformations.html#sec18-IntroLinearTransformations-2-2",
+  "type": "Objectives",
+  "number": "",
+  "title": "",
+  "body": "  After this section, students will be able to:     Do stuff    "
+},
+{
+  "id": "sec18-IntroLinearTransformations-3",
+  "level": "2",
+  "url": "sec18-IntroLinearTransformations.html#sec18-IntroLinearTransformations-3",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Transformations "
+},
+{
+  "id": "sec18-IntroLinearTransformations-4",
+  "level": "2",
+  "url": "sec18-IntroLinearTransformations.html#sec18-IntroLinearTransformations-4",
+  "type": "Figure",
+  "number": "1.7.1",
+  "title": "",
+  "body": "  A linear transformation from to via Matrix Multiplication  "
+},
+{
+  "id": "sec18-IntroLinearTransformations-6",
+  "level": "2",
+  "url": "sec18-IntroLinearTransformations.html#sec18-IntroLinearTransformations-6",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "codomain images "
+},
+{
+  "id": "sec18-IntroLinearTransformations-7",
+  "level": "2",
+  "url": "sec18-IntroLinearTransformations.html#sec18-IntroLinearTransformations-7",
+  "type": "Figure",
+  "number": "1.7.2",
+  "title": "",
+  "body": "  Domain, Codomain, and Range of the Linear Transformation  "
+},
+{
+  "id": "sec18-IntroLinearTransformations-8",
+  "level": "2",
+  "url": "sec18-IntroLinearTransformations.html#sec18-IntroLinearTransformations-8",
+  "type": "Note",
+  "number": "1.7.3",
+  "title": "But Richard... Why bother defining this special set of codomain?",
+  "body": " But Richard... Why bother defining this special set of codomain?  This is because in practice, we want a place to capture all the images but doesn't necessarily need to know what the range is.  Here is a quick example: consider the function . We all know that the domain is and the range is instantly because we know that all number squared cannot be negative. Then we don't need to define its codomain, another set to tell us where all possible outputs are going to live.  But what if my function is more complicated, like .  Of course, the domain remains to be but we can't quickly identify the range... All we knew, by just skimming through the function, is that outputs should also be in . Yet we can't say that all real numbers can be an output. Hence, rather than calling the range (which is not true), we say that is the codomain.   It is totally possible for a function to have the codomain exactly the same as the range! This type of functions are called surjection (or onto transformation).  "
+},
+{
+  "id": "def-LinearTransformation-Operator",
+  "level": "2",
+  "url": "sec18-IntroLinearTransformations.html#def-LinearTransformation-Operator",
+  "type": "Definition",
+  "number": "1.7.4",
+  "title": "",
+  "body": "  If is a function with the following two properties:   For any scalar and any vector ,     For any two vectors ,    then is a linear transformation .   "
+},
+{
+  "id": "sec18-IntroLinearTransformations-11",
+  "level": "2",
+  "url": "sec18-IntroLinearTransformations.html#sec18-IntroLinearTransformations-11",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "linearity "
+},
+{
+  "id": "sec18-IntroLinearTransformations-13",
+  "level": "2",
+  "url": "sec18-IntroLinearTransformations.html#sec18-IntroLinearTransformations-13",
+  "type": "Example",
+  "number": "1.7.5",
+  "title": "",
+  "body": " Determine if the following transformations are linear transformation.    defined by      defined by      defined by      defined by           No. It fails the scalar multiplication property. For instance, let and . However, Since , it is not linear.     Yes. Let's verify both properties. First, for any scalar : Second, for vector addition:      No. It fails vector addition. Let and . But evaluating them separately gives:      Yes. Similar to part (b), we test the properties. For scalar multiplication: For vector addition:       "
+},
+{
+  "id": "sec18-IntroLinearTransformations-14",
+  "level": "2",
+  "url": "sec18-IntroLinearTransformations.html#sec18-IntroLinearTransformations-14",
+  "type": "Checkpoint",
+  "number": "1.7.6",
+  "title": "",
+  "body": " What are some linear transformations you have learned in the past?  What are some non-linear transformations you have learned in the past?   Just some more examples of linear and non-linear transformation   Linear Transformations:   Proportional relationships like .  Taking the derivative of a function (Calculus!). The derivative of a sum is the sum of the derivatives, and constants pull out to the front.  Evaluating definite integrals.     Non-linear Transformations:   Quadratic functions like .  Exponential functions like .  Absolute value functions like .  Functions in the form where . This is a huge trap! In high school algebra, we call these \"linear equations,\" but in linear algebra, they do NOT pass the test for linear transformations because . We actually call these affine transformations.     "
+},
+{
+  "id": "sec18-IntroLinearTransformations-16",
+  "level": "2",
+  "url": "sec18-IntroLinearTransformations.html#sec18-IntroLinearTransformations-16",
+  "type": "Example",
+  "number": "1.7.7",
+  "title": "A non-example.",
+  "body": " A non-example  The function given by is NOT a linear transformation.   Proof: Notice that If this were a linear transformation, then property (ii) would mean that But in fact, Oopsie!  "
+},
+{
+  "id": "sec18-IntroLinearTransformations-17",
+  "level": "2",
+  "url": "sec18-IntroLinearTransformations.html#sec18-IntroLinearTransformations-17",
+  "type": "Example",
+  "number": "1.7.8",
+  "title": "An example.",
+  "body": " An example  The function given by IS indeed a linear transformation!   Proof: We will verify the two properties in the definition of linear transformations.   Suppose is a scalar and is a vector in . Then     Suppose and are two vectors in . Then    Since both properties hold, we can conclude that IS indeed a linear transformation!   Note: In this example, observe that the coefficients do not contribute to the proof at all (so the proof would work exactly the same even if we had different coefficients). Using the same proof, we can show that the function given by is a linear transformation for any choice of scalars .  "
+},
+{
+  "id": "sec18-IntroLinearTransformations-19",
+  "level": "2",
+  "url": "sec18-IntroLinearTransformations.html#sec18-IntroLinearTransformations-19",
+  "type": "Example",
+  "number": "1.7.9",
+  "title": "",
+  "body": " Suppose is a linear transformation (but we don't know the rule) and we do know that Let's say we want to evaluate .   How do we do that?   Notice that So property (i) and (ii) of linear transformations tell us that    But Richard... How can you find the linear combination?  There are two ways to find the linear combination: (1) using guess and check, and\/or (2) by setting up a system of equations.  Let's do a quick example using the formal setting-up-a-system-of-equations method!  Can be written as a linear combination of and ?  Let's assume we can! Then there exist scalars such that This is essentially a vector equation since the \"variables\" here are the scalars and . We can rewrite the vector equation as a system of linear equations: Basically, we are asking ourselves if this system of linear equations has a solution.  We are all experts in solving systems of linear equations now! The augmented matrix is We can do our Gaussian Elimination magic to get: Converting back to a system of linear equations, we have   We can quickly check our work! We did it!   "
+},
+{
+  "id": "sec18-IntroLinearTransformations-21",
+  "level": "2",
+  "url": "sec18-IntroLinearTransformations.html#sec18-IntroLinearTransformations-21",
+  "type": "Checkpoint",
+  "number": "1.7.11",
+  "title": "",
+  "body": " Suppose is a linear transformation and we know that Find .   First, we need to express as a linear combination of the two input vectors we know. We are looking for scalars and such that:   Looking at the third row, we immediately see that , which means .  Substituting into the second row gives us , which means . Let's quickly verify with the first row: . It works!  Now we can use the linearity properties to evaluate the transformation:    "
+},
+{
+  "id": "sec18-IntroLinearTransformations-24",
+  "level": "2",
+  "url": "sec18-IntroLinearTransformations.html#sec18-IntroLinearTransformations-24",
+  "type": "Example",
+  "number": "1.7.12",
+  "title": "",
+  "body": " Let . We define by . Now we want to find such that .  If we plug in everything we know into the transformation, then we will get the following matrix equation: Converting this into an augmented matrix, we obtain   Let's apply our Gaussian Elimination skills to solve for :   Translating the reduced row echelon form back into an equation, we get and . Therefore, the input vector we were looking for is:   "
+},
+{
+  "id": "ws-sec18-3",
+  "level": "2",
+  "url": "sec18-IntroLinearTransformations.html#ws-sec18-3",
+  "type": "Worksheet Exercise",
+  "number": "1.7.1.8.1",
+  "title": "",
+  "body": "  Let , and define by . Find the images under of and .   "
+},
+{
+  "id": "ws-sec18-4-2",
+  "level": "2",
+  "url": "sec18-IntroLinearTransformations.html#ws-sec18-4-2",
+  "type": "Worksheet Exercise",
+  "number": "1.7.1.8.3",
+  "title": "",
+  "body": "  "
+},
+{
+  "id": "ws-sec18-4-3",
+  "level": "2",
+  "url": "sec18-IntroLinearTransformations.html#ws-sec18-4-3",
+  "type": "Worksheet Exercise",
+  "number": "1.7.1.8.5",
+  "title": "",
+  "body": "  "
+},
+{
+  "id": "ws-sec18-5",
+  "level": "2",
+  "url": "sec18-IntroLinearTransformations.html#ws-sec18-5",
+  "type": "Worksheet Exercise",
+  "number": "1.7.1.8.7",
+  "title": "",
+  "body": "  Let be a matrix. What must and be in order to define by ?   "
+},
+{
+  "id": "ws-sec18-6",
+  "level": "2",
+  "url": "sec18-IntroLinearTransformations.html#ws-sec18-6",
+  "type": "Worksheet Exercise",
+  "number": "1.7.1.8.9",
+  "title": "",
+  "body": "  Find all in that are mapped into the zero vector by the transformation for the given matrix .    "
+},
+{
+  "id": "ws-sec18-7",
+  "level": "2",
+  "url": "sec18-IntroLinearTransformations.html#ws-sec18-7",
+  "type": "Worksheet Exercise",
+  "number": "1.7.1.8.11",
+  "title": "",
+  "body": "  Let , and let be the matrix in Exercise 9. Is in the range of the linear transformation ? Why or why not?   "
+},
+{
+  "id": "ws-sec18-8-2",
+  "level": "2",
+  "url": "sec18-IntroLinearTransformations.html#ws-sec18-8-2",
+  "type": "Worksheet Exercise",
+  "number": "1.7.1.8.13",
+  "title": "",
+  "body": "  "
+},
+{
+  "id": "ws-sec18-8-3",
+  "level": "2",
+  "url": "sec18-IntroLinearTransformations.html#ws-sec18-8-3",
+  "type": "Worksheet Exercise",
+  "number": "1.7.1.8.15",
+  "title": "",
+  "body": "  "
+},
+{
+  "id": "ws-sec18-9",
+  "level": "2",
+  "url": "sec18-IntroLinearTransformations.html#ws-sec18-9",
+  "type": "Worksheet Exercise",
+  "number": "1.7.1.8.19",
+  "title": "",
+  "body": "  Let , , , and , and let be a linear transformation that maps into and maps into . Find the images of and .   "
+},
+{
+  "id": "ws-sec18-10-2",
+  "level": "2",
+  "url": "sec18-IntroLinearTransformations.html#ws-sec18-10-2",
+  "type": "Worksheet Exercise",
+  "number": "1.7.1.8.21",
+  "title": "",
+  "body": " (T\/F) A linear transformation is a special type of function.  "
+},
+{
+  "id": "ws-sec18-10-3",
+  "level": "2",
+  "url": "sec18-IntroLinearTransformations.html#ws-sec18-10-3",
+  "type": "Worksheet Exercise",
+  "number": "1.7.1.8.23",
+  "title": "",
+  "body": " (T\/F) If is a matrix and is a transformation defined by , then the domain of is .  "
+},
+{
+  "id": "ws-sec18-10-4",
+  "level": "2",
+  "url": "sec18-IntroLinearTransformations.html#ws-sec18-10-4",
+  "type": "Worksheet Exercise",
+  "number": "1.7.1.8.25",
+  "title": "",
+  "body": " (T\/F) If is an matrix, then the range of the transformation is .  "
+},
+{
+  "id": "ws-sec18-10-5",
+  "level": "2",
+  "url": "sec18-IntroLinearTransformations.html#ws-sec18-10-5",
+  "type": "Worksheet Exercise",
+  "number": "1.7.1.8.27",
+  "title": "",
+  "body": " (T\/F) Every linear transformation is a matrix transformation.  "
+},
+{
+  "id": "ws-sec18-10-6",
+  "level": "2",
+  "url": "sec18-IntroLinearTransformations.html#ws-sec18-10-6",
+  "type": "Worksheet Exercise",
+  "number": "1.7.1.8.29",
+  "title": "",
+  "body": " (T\/F) A transformation is linear if and only if for all and in the domain of and for all scalars and .  "
+},
+{
+  "id": "ws-sec18-11",
+  "level": "2",
+  "url": "sec18-IntroLinearTransformations.html#ws-sec18-11",
+  "type": "Worksheet Exercise",
+  "number": "1.7.1.8.41",
+  "title": "",
+  "body": "  Show that the transformation defined by is not linear.   "
+},
+{
+  "id": "ws-sec18-12",
+  "level": "2",
+  "url": "sec18-IntroLinearTransformations.html#ws-sec18-12",
+  "type": "Worksheet Exercise",
+  "number": "1.7.1.8.43",
+  "title": "",
+  "body": "  Let be the transformation that reflects each vector through the plane onto . Show that is a linear transformation. [See Example 4 for ideas.]   "
+},
+{
+  "id": "ws-sec18-13-2",
+  "level": "2",
+  "url": "sec18-IntroLinearTransformations.html#ws-sec18-13-2",
+  "type": "Worksheet Exercise",
+  "number": "1.7.1.9.1",
+  "title": "",
+  "body": "  , and , where and .   "
+},
+{
+  "id": "ws-sec18-13-3",
+  "level": "2",
+  "url": "sec18-IntroLinearTransformations.html#ws-sec18-13-3",
+  "type": "Worksheet Exercise",
+  "number": "1.7.1.9.3",
+  "title": "",
+  "body": "  rotates points (about the origin) through radians (in the counterclockwise direction).   "
+},
+{
+  "id": "ws-sec18-13-4",
+  "level": "2",
+  "url": "sec18-IntroLinearTransformations.html#ws-sec18-13-4",
+  "type": "Worksheet Exercise",
+  "number": "1.7.1.9.5",
+  "title": "",
+  "body": "  is a vertical shear transformation that maps into but leaves the vector unchanged.   "
+},
+{
+  "id": "ws-sec18-13-5",
+  "level": "2",
+  "url": "sec18-IntroLinearTransformations.html#ws-sec18-13-5",
+  "type": "Worksheet Exercise",
+  "number": "1.7.1.9.7",
+  "title": "",
+  "body": "  first rotates points through radians (since the number is negative, the actual rotation is clockwise) and then reflects points through the horizontal -axis. [Hint: .]   "
+},
+{
+  "id": "ws-sec18-13-6",
+  "level": "2",
+  "url": "sec18-IntroLinearTransformations.html#ws-sec18-13-6",
+  "type": "Worksheet Exercise",
+  "number": "1.7.1.9.9",
+  "title": "",
+  "body": "  first performs a horizontal shear that transforms into (leaving unchanged) and then reflects points through the line .   "
+},
+{
+  "id": "ws-sec18-14",
+  "level": "2",
+  "url": "sec18-IntroLinearTransformations.html#ws-sec18-14",
+  "type": "Worksheet Exercise",
+  "number": "1.7.1.9.15",
+  "title": "",
+  "body": "  Fill in the missing entries of the matrix, assuming that the equation holds for all values of the variables.    "
+},
+{
+  "id": "ws-sec18-15-2",
+  "level": "2",
+  "url": "sec18-IntroLinearTransformations.html#ws-sec18-15-2",
+  "type": "Worksheet Exercise",
+  "number": "1.7.1.9.17",
+  "title": "",
+  "body": "    "
+},
+{
+  "id": "ws-sec18-15-3",
+  "level": "2",
+  "url": "sec18-IntroLinearTransformations.html#ws-sec18-15-3",
+  "type": "Worksheet Exercise",
+  "number": "1.7.1.9.19",
+  "title": "",
+  "body": "    "
+},
+{
+  "id": "ws-sec18-16",
+  "level": "2",
+  "url": "sec18-IntroLinearTransformations.html#ws-sec18-16",
+  "type": "Worksheet Exercise",
+  "number": "1.7.1.9.21",
+  "title": "",
+  "body": "  Let be a linear transformation such that . Find such that .   "
+},
+{
+  "id": "ws-sec18-17-2",
+  "level": "2",
+  "url": "sec18-IntroLinearTransformations.html#ws-sec18-17-2",
+  "type": "Worksheet Exercise",
+  "number": "1.7.1.9.23",
+  "title": "",
+  "body": "  (T\/F) A linear transformation is completely determined by its effect on the columns of the identity matrix.   "
+},
+{
+  "id": "ws-sec18-17-3",
+  "level": "2",
+  "url": "sec18-IntroLinearTransformations.html#ws-sec18-17-3",
+  "type": "Worksheet Exercise",
+  "number": "1.7.1.9.25",
+  "title": "",
+  "body": "  (T\/F) If rotates vectors about the origin through an angle , then is a linear transformation.   "
+},
+{
+  "id": "ws-sec18-17-4",
+  "level": "2",
+  "url": "sec18-IntroLinearTransformations.html#ws-sec18-17-4",
+  "type": "Worksheet Exercise",
+  "number": "1.7.1.9.27",
+  "title": "",
+  "body": "  (T\/F) When two linear transformations are performed one after another, the combined effect may not always be a linear transformation.   "
+},
+{
+  "id": "ws-sec18-17-5",
+  "level": "2",
+  "url": "sec18-IntroLinearTransformations.html#ws-sec18-17-5",
+  "type": "Worksheet Exercise",
+  "number": "1.7.1.9.29",
+  "title": "",
+  "body": "  (T\/F) A mapping is onto if every vector in maps onto some vector in .   "
+},
+{
+  "id": "ws-sec18-17-6",
+  "level": "2",
+  "url": "sec18-IntroLinearTransformations.html#ws-sec18-17-6",
+  "type": "Worksheet Exercise",
+  "number": "1.7.1.9.31",
+  "title": "",
+  "body": "  (T\/F) If is a matrix, then the transformation cannot be one-to-one.   "
+},
+{
+  "id": "ws-sec18-18-2",
+  "level": "2",
+  "url": "sec18-IntroLinearTransformations.html#ws-sec18-18-2",
+  "type": "Worksheet Exercise",
+  "number": "1.7.1.9.39",
+  "title": "",
+  "body": "  Let be a linear transformation, with its standard matrix. Complete the following statement to make it true: \" is one-to-one if and only if has ____ pivot columns.\" Explain why the statement is true. [Hint: Look in the exercises for Section 1.7.]   "
+},
+{
+  "id": "ws-sec18-18-3",
+  "level": "2",
+  "url": "sec18-IntroLinearTransformations.html#ws-sec18-18-3",
+  "type": "Worksheet Exercise",
+  "number": "1.7.1.9.40",
+  "title": "",
+  "body": "  Let be a linear transformation, with its standard matrix. Complete the following statement to make it true: \" maps onto if and only if has ____ pivot columns.\" Find some theorems that explain why the statement is true.   "
+},
+{
   "id": "backmatter-2",
   "level": "1",
   "url": "backmatter-2.html",

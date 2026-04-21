@@ -1,8 +1,786 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<section xml:id="sec18-IntroLinearTransformation" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Introduction to Linear Transformations</title>
+<section xml:id="sec18-IntroLinearTransformations" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Linear Transformations</title>
 
-  <p> Text of section. </p>
+  <introduction>
+    <p>
+      Stuff
+    </p>
+
+    <objectives>
+      <introduction>
+        <p>
+          After this section, students will be able to:
+        </p>
+      </introduction>
+      <ul>
+        <li>
+          <p>
+            Do stuff
+          </p>
+        </li>
+      </ul>
+    </objectives>
+  </introduction>
+
+  <p>
+    <term>Transformations</term> are pretty much the same thing as <em>functions</em> you have learned in the past. 
+    Given that we are in MTH 261 linear algebra, the things we care about are vectors. 
+    Hence, a transformation in linear algebra is a function that takes vectors from one place and assign it to other vectors in another place. 
+  </p>
+
+  <figure>
+    <image source="sec18-IntroLinearTransformation-Diagram.png" width="80%"></image>
+    <caption>A linear transformation from <m>\R^4</m> to <m>\R^2</m> via Matrix Multiplication</caption>
+  </figure>
+
+  <p>
+    Recall we learned that functions have three components: domain, range, and the rule. 
+    Similarly, transformations also have these three components. 
+    In addition, we will define a new concept (related to the range of a function), called the <alert>codomain</alert>. 
+  </p>
+
+  <p>
+    Formally speaking, the <term>codomain</term> of a linear transformation is the set that includes all the possible values of a given transformation, which are called <term>images</term>. 
+    While this definition sounds a lot like the range of a function, there is a key difference: 
+    <alert>not everything in the codomain needs to be an image of the transformation</alert>, while everything in the range has to be some images from the transformation. 
+    Immediately, we can see that codomain should be a larger set that capture the range. 
+  </p>
+
+  <figure>
+    <image source="sec18-DomainCodomain-Diagram.png" width="80%"></image>
+    <caption>Domain, Codomain, and Range of the Linear Transformation <m>T</m></caption>
+  </figure>
+
+  <note>
+    <title>But Richard... Why bother defining this special set of codomain?</title>
+
+    <p>
+      This is because in practice, we want a place to capture all the images but doesn't necessarily need to know what the range is. 
+    </p>
+
+    <p>
+      Here is a quick example: consider the function <m>f(x) = x^2</m>. 
+      We all know that the domain is <m>\R</m> and the range is <m>[0,\infty)</m> instantly because we know that all number squared cannot be negative. 
+      Then we don't need to define its codomain, another set to tell us where all possible outputs are going to live. 
+    </p>
+
+    <p>
+      But what if my function is more complicated, like <m>g(x) = x^4 - x^3 + 3</m>. 
+    </p>
+
+    <p>
+      Of course, the domain remains to be <m>\R</m> but we can't quickly identify the range... 
+      All we knew, by just skimming through the function, is that outputs should also be in <m>\R</m>. 
+      Yet we can't say that all real numbers can be an output. 
+      Hence, rather than calling <m>\R</m> the range (which is not true), we say that <m>\R</m> is the codomain. 
+    </p>
+
+    <p>
+      <alert>It is totally possible for a function to have the codomain exactly the same as the range!</alert>
+      This type of functions are called <term>surjection</term> (or onto transformation). 
+    </p>
+  </note>
+
+  <p>
+    The word "linear" means that the transformation must satisfy some special property. 
+    This special property is called the <alert>linearity</alert>, captured in the following definition. 
+  </p>
+
+  <definition xml:id="def-LinearTransformation-Operator">
+    <statement>
+      <p>
+        If <m>T: \R^n \to \R^m</m> is a function with the following two properties: 
+        <ol marker="i.">
+          <li>
+            <p>
+              For any scalar <m>c</m> and any vector <m>\v{x} \in \R^n</m>, 
+              <md>
+                T(c\v{x}) = cT(\v{x})
+              </md>
+            </p>
+          </li>
+          <li>
+            <p>
+              For any two vectors <m>\v{x}_1, \v{x}_2 \in \R^n</m>, 
+              <md>
+                T(\v{x}_1 + \v{x}_2) = T(\v{x}_1) + T(\v{x}_2)
+              </md>
+            </p>
+          </li>
+        </ol>
+        then <m>T</m> is a <term>linear transformation</term>.
+      </p>
+    </statement>
+  </definition>
+
+  <p>
+    The two properties in the definition are called the <term>linearity</term>. 
+    Of course, it makes sense to call a transformation "linear" if the linearity property is satisfied. 
+  </p>
+
+  <p>
+    <em>Note:</em> Sometimes these two properties are combined to form one rule that looks like this: 
+    <md>
+      T(c_1 \v{x}_1 + c_2 \v{x}_2) = c_1 T(\v{x}_1) + c_2 T(\v{x}_2)
+    </md>
+    This basically tells us that we can figure out the output for a linear combination of vectors by taking the <alert>same linear combination of the outputs</alert> of those vectors. 
+  </p>
+
+  <example>
+    <p>
+      Determine if the following transformations are linear transformation. 
+      <ol marker="(a)">
+        <li>
+          <p>
+            <m>T: \R \to \R </m> defined by <m>T(x) = |x|</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>T: \R^2 \to \R</m> defined by <m>T(x,y) = x + y</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>T: \R^2 \to \R</m> defined by <m>T(x,y) = \sin(x + y)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>T: \R^2 \to \R</m> defined by <m>T(x,y) = 3x - 2y</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+
+    <solution>
+      <p>
+        <ol marker="(a)">
+          <li>
+            <p>
+              <alert>No.</alert> It fails the scalar multiplication property. For instance, let <m>c = -1</m> and <m>x = 5</m>. 
+              <md>
+                T(-1 \cdot 5) = T(-5) = |-5| = 5
+              </md>
+              However, 
+              <md>
+                -1 \cdot T(5) = -1 \cdot |5| = -5
+              </md>
+              Since <m>T(-5) \neq -1 \cdot T(5)</m>, it is not linear.
+            </p>
+          </li>
+          <li>
+            <p>
+              <alert>Yes.</alert> Let's verify both properties. First, for any scalar <m>c</m>:
+              <md>
+                T(cx, cy) = cx + cy = c(x + y) = cT(x,y)
+              </md>
+              Second, for vector addition:
+              <md>
+                <mrow> T(x_1 + x_2, y_1 + y_2) \amp= (x_1 + x_2) + (y_1 + y_2) </mrow>
+                <mrow> \amp= (x_1 + y_1) + (x_2 + y_2) </mrow>
+                <mrow> \amp= T(x_1, y_1) + T(x_2, y_2) </mrow>
+              </md>
+            </p>
+          </li>
+          <li>
+            <p>
+              <alert>No.</alert> It fails vector addition. Let <m>\v{v}_1 = (\pi/2, 0)</m> and <m>\v{v}_2 = (0, \pi/2)</m>. 
+              <md>
+                T(\v{v}_1 + \v{v}_2) = T(\pi/2, \pi/2) = \sin(\pi/2 + \pi/2) = \sin(\pi) = 0
+              </md>
+              But evaluating them separately gives:
+              <md>
+                T(\v{v}_1) + T(\v{v}_2) = \sin(\pi/2 + 0) + \sin(0 + \pi/2) = 1 + 1 = 2
+              </md>
+            </p>
+          </li>
+          <li>
+            <p>
+              <alert>Yes.</alert> Similar to part (b), we test the properties. For scalar multiplication:
+              <md>
+                T(cx, cy) = 3(cx) - 2(cy) = c(3x - 2y) = cT(x,y)
+              </md>
+              For vector addition:
+              <md>
+                <mrow> T(x_1 + x_2, y_1 + y_2) \amp= 3(x_1 + x_2) - 2(y_1 + y_2) </mrow>
+                <mrow> \amp= 3x_1 + 3x_2 - 2y_1 - 2y_2 </mrow>
+                <mrow> \amp= (3x_1 - 2y_1) + (3x_2 - 2y_2) </mrow>
+                <mrow> \amp= T(x_1, y_1) + T(x_2, y_2) </mrow>
+              </md>
+            </p>
+          </li>
+        </ol>
+      </p>
+    </solution>
+  </example>
+
+  <exercise>
+    <p>
+      What are some linear transformations you have learned in the past? 
+    </p>
+
+    <p>
+      What are some non-linear transformations you have learned in the past? 
+    </p>
+
+    <solution>
+      <title>Just some more examples of linear and non-linear transformation</title>
+      <p>
+        <alert>Linear Transformations:</alert>
+        <ul>
+          <li>Proportional relationships like <m>y = kx</m>.</li>
+          <li>Taking the derivative of a function (Calculus!). The derivative of a sum is the sum of the derivatives, and constants pull out to the front.</li>
+          <li>Evaluating definite integrals.</li>
+        </ul>
+      </p>
+      <p>
+        <alert>Non-linear Transformations:</alert>
+        <ul>
+          <li>Quadratic functions like <m>y = x^2</m>.</li>
+          <li>Exponential functions like <m>y = e^x</m>.</li>
+          <li>Absolute value functions like <m>y = |x|</m>.</li>
+          <li><alert>Functions in the form <m>y = mx + b</m> where <m>b \neq 0</m>.</alert> This is a huge trap! In high school algebra, we call these "linear equations," but in linear algebra, they do NOT pass the test for linear transformations because <m>T(cx) = m(cx) + b \neq c(mx+b)</m>. We actually call these <em>affine</em> transformations.</li>
+        </ul>
+      </p>
+    </solution>
+  </exercise>
+
+  <p>
+    Recall in <xref ref="sec14-MatrixEquation"/>, every matrix defines a linear transformation in a way that
+    <md>
+      T(\v{x}) = A\v{x}
+    </md>
+    In the next chapter, we will learn about matrix operations. 
+    Just a preview, by the Matrix Multiplication rules, we know that
+    <ol marker="i.">
+      <li>
+        <p>
+          <m>T(c\v{x}) = A(c\v{x}) = cA\v{x} = cT(\v{x})</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>T(\v{x}_1 + \v{x}_2) = A(\v{x}_1 + \v{x}_2) = A\v{x}_1 + A\v{x}_2 = T(\v{x}_1) + T(\v{x}_2)</m>
+        </p>
+      </li>
+    </ol>
+    Hence, we have the linearity in the definition of linear transformations. 
+  </p>
+
+  <example>
+    <title>A non-example</title>
+    <p>
+      The function <m>T: \R^2 \to \R^3</m> given by 
+      <md>
+        T\lp \begin{bmatrix} x \\ y \end{bmatrix} \rp = \begin{bmatrix} 2x \\ 3y \\ 5x + 7 \end{bmatrix}
+      </md>
+      is NOT a linear transformation. 
+    </p>
+
+    <p>
+      <em>Proof:</em> Notice that 
+        <md>
+          T\lp \begin{bmatrix} 1 \\ 0 \end{bmatrix} \rp = \begin{bmatrix} 2 \\ 0 \\ 12 \end{bmatrix}
+          \qquad \text{ and } \qquad
+          T\lp \begin{bmatrix} 0 \\ 1 \end{bmatrix} \rp = \begin{bmatrix} 0 \\ 3 \\ 7 \end{bmatrix}
+        </md>
+        If this were a linear transformation, then property (ii) would mean that
+        <md>
+          T\lp \begin{bmatrix} 1 \\ 1 \end{bmatrix} \rp = T\lp \begin{bmatrix} 1 \\ 0 \end{bmatrix} \rp + T\lp \begin{bmatrix} 0 \\ 1 \end{bmatrix} \rp
+          = \begin{bmatrix} 2 \\ 0 \\ 12 \end{bmatrix} + \begin{bmatrix} 0 \\ 3 \\ 7 \end{bmatrix}
+          = \begin{bmatrix} 2 \\ 3 \\ 19 \end{bmatrix}
+        </md>
+        But in fact, 
+        <md>
+          T\lp \begin{bmatrix} 1 \\ 1 \end{bmatrix} \rp = \begin{bmatrix} 2 \\ 3 \\ 12 \end{bmatrix}
+        </md>
+        Oopsie! 
+    </p>
+  </example>
+
+  <example>
+    <title>An example</title>
+    <p>
+      The function <m>T: \R^2 \to \R^2</m> given by
+      <md>
+        T\lp \begin{bmatrix} x \\ y \end{bmatrix} \rp = \begin{bmatrix} 2x + 3y \\ 5x + 7y \end{bmatrix}
+      </md>
+      IS indeed a linear transformation!
+    </p>
+
+    <p>
+      <em>Proof:</em> We will verify the two properties in the definition of linear transformations. 
+      <ol marker="i.">
+        <li>
+          <p>
+            Suppose <m>c</m> is a scalar and <m>\begin{bmatrix} x \\ y \end{bmatrix}</m> is a vector in <m>\R^2</m>. 
+            Then
+            <md>
+              <mrow>T\lp c\begin{bmatrix} x \\ y \end{bmatrix} \rp = T\lp \begin{bmatrix} cx \\ cy \end{bmatrix} \rp \amp= \begin{bmatrix} 2(cx) + 3(cy) \\ 5(cx) + 7(cy) \end{bmatrix} </mrow>
+              <mrow> \amp= \begin{bmatrix} c(2x + 3y) \\ c(5x + 7y) \end{bmatrix} </mrow>
+              <mrow> \amp= c\begin{bmatrix} 2x + 3y \\ 5x + 7y \end{bmatrix} </mrow>
+              <mrow> \amp= cT\lp \begin{bmatrix} x \\ y \end{bmatrix} \rp </mrow>
+            </md>
+          </p>
+        </li>
+        <li>
+          <p>
+            Suppose <m>\begin{bmatrix} x_1 \\ y_1 \end{bmatrix}</m> and <m>\begin{bmatrix} x_2 \\ y_2 \end{bmatrix}</m> are two vectors in <m>\R^2</m>. 
+            Then
+            <md>
+              <mrow>T\lp \begin{bmatrix} x_1 \\ y_1 \end{bmatrix} + \begin{bmatrix} x_2 \\ y_2 \end{bmatrix} \rp = T\lp \begin{bmatrix} x_1 + x_2 \\ y_1 + y_2 \end{bmatrix} \rp \amp= \begin{bmatrix} 2(x_1 + x_2) + 3(y_1 + y_2) \\ 5(x_1 + x_2) + 7(y_1 + y_2) \end{bmatrix} </mrow>
+              <mrow> \amp= \begin{bmatrix} (2x_1 + 3y_1) + (2x_2 + 3y_2) \\ (5x_1 + 7y_1) + (5x_2 + 7y_2) \end{bmatrix} </mrow>
+              <mrow> \amp= \begin{bmatrix} 2x_1 + 3y_1 \\ 5x_1 + 7y_1 \end{bmatrix} + \begin{bmatrix} 2x_2 + 3y_2 \\ 5x_2 + 7y_2 \end{bmatrix} </mrow>
+              <mrow> \amp= T\lp \begin{bmatrix} x_1 \\ y_1 \end{bmatrix} \rp + T\lp \begin{bmatrix} x_2 \\ y_2 \end{bmatrix} \rp </mrow>
+            </md>
+          </p>
+        </li>
+      </ol>
+      Since both properties hold, we can conclude that <m>T</m> IS indeed a linear transformation! 
+    </p>
+
+    <p>
+      <em>Note:</em> In this example, observe that the coefficients do not contribute to the proof at all (so the proof would work exactly the same even if we had different coefficients). 
+      Using the same proof, we can show that the function <m>T: \R^2 \to \R^2</m> given by
+      <md>
+        T\lp \begin{bmatrix} x \\ y \end{bmatrix} \rp = \begin{bmatrix} a_1x + b_1y \\ a_2x + b_2y \end{bmatrix}
+      </md>
+      is a linear transformation for any choice of scalars <m>a_1, b_1, a_2, b_2</m>.
+    </p>
+  </example>
+
+  <p>
+    The two properties of linear transformations make it possible to "plug in" a vector even if we don't know the rule. 
+    That is, we can <alert>evaluate linear transformations using linear combinations</alert>. 
+  </p>
+
+  <example>
+    <p>
+      Suppose <m>T: \R^3 \to \R^2</m> is a linear transformation (but we don't know the rule) and we do know that
+      <md>
+        T \lp \begin{bmatrix} 1 \\ 2 \\ -1 \end{bmatrix} \rp = \begin{bmatrix} 2 \\ 0 \end{bmatrix} 
+        \qquad \text{ and } \qquad
+        T \lp \begin{bmatrix} 1 \\ 2 \\ 3 \end{bmatrix} \rp = \begin{bmatrix} 1 \\ -4 \end{bmatrix} 
+      </md>
+      Let's say we want to evaluate <m>T \lp \begin{bmatrix} 5 \\ 10 \\ 3 \end{bmatrix} \rp</m>.
+    </p>
+
+    <p>
+      <alert>How do we do that? </alert>
+    </p>
+
+    <p>
+      Notice that 
+      <md>
+        \begin{bmatrix} 5 \\ 10 \\ 3 \end{bmatrix} = 3\begin{bmatrix} 1 \\ 2 \\ -1 \end{bmatrix} + 2\begin{bmatrix} 1 \\ 2 \\ 3 \end{bmatrix}
+      </md>
+      So property (i) and (ii) of linear transformations tell us that
+      <md>
+        <mrow> T \lp \begin{bmatrix} 5 \\ 10 \\ 3 \end{bmatrix} \rp \amp= T \lp 3\begin{bmatrix} 1 \\ 2 \\ -1 \end{bmatrix} + 2\begin{bmatrix} 1 \\ 2 \\ 3 \end{bmatrix} \rp </mrow>
+        <mrow> \amp= 3T \lp \begin{bmatrix} 1 \\ 2 \\ -1 \end{bmatrix} \rp + 2T \lp \begin{bmatrix} 1 \\ 2 \\ 3 \end{bmatrix} \rp </mrow>
+        <mrow> \amp= 3\begin{bmatrix} 2 \\ 0 \end{bmatrix} + 2\begin{bmatrix} 1 \\ -4 \end{bmatrix} </mrow>
+        <mrow> \amp= \begin{bmatrix} 8 \\ -8 \end{bmatrix} </mrow>
+      </md>
+    </p>
+
+    <note>
+      <title>But Richard... How can you find the linear combination?</title>
+
+      <p>
+        There are two ways to find the linear combination: (1) using guess and check, and/or (2) by setting up a system of equations. 
+      </p>
+
+      <p>
+        Let's do a quick example using the formal setting-up-a-system-of-equations method! 
+      </p>
+
+      <p>
+        Can <m>\begin{bmatrix} 4 \\ 3 \end{bmatrix}</m> be written as a linear combination of <m>\begin{bmatrix} 5 \\ 3 \end{bmatrix}</m> and <m>\begin{bmatrix} 2 \\ 1 \end{bmatrix}</m>?
+      </p>
+
+      <p>
+        Let's assume we can! 
+        Then there exist scalars <m>c_1, c_2 \in \R</m> such that
+        <md>
+          c_1\begin{bmatrix} 5 \\ 3 \end{bmatrix} + c_2\begin{bmatrix} 2 \\ 1 \end{bmatrix} = \begin{bmatrix} 4 \\ 3 \end{bmatrix}
+        </md>
+        This is essentially a vector equation since the "variables" here are the scalars <m>c_1</m> and <m>c_2</m>. 
+        We can rewrite the vector equation as a system of linear equations:
+          <md>
+            \begin{cases}
+              5c_1 + 2c_2 = 4 \\
+              3c_1 + c_2 = 3
+            \end{cases}
+          </md>
+          Basically, we are asking ourselves if this system of linear equations has a solution.
+        </p>
+
+        <p>
+          We are all experts in solving systems of linear equations now! 
+          The augmented matrix is
+          <md>
+            \begin{bmatrix} 5 \amp 2 \amp \mid \amp 4 \\ 3 \amp 1 \amp \mid \amp 3 \end{bmatrix}
+          </md>
+          We can do our Gaussian Elimination magic to get: 
+          <md>
+            <mrow> \begin{bmatrix} 5 \amp 2 \amp \mid \amp 4 \\ 3 \amp 1 \amp \mid \amp 3 \end{bmatrix} \amp\sim \begin{bmatrix} 1 \amp \frac{2}{5} \amp \mid \amp \frac{4}{5} \\ 3 \amp 1 \amp \mid \amp 3 \end{bmatrix} \amp\amp \frac{1}{5}\text{Row 1}</mrow>
+            <mrow> \amp\sim \begin{bmatrix} 1 \amp \frac{2}{5} \amp \mid \amp \frac{4}{5} \\ 0 \amp -\frac{1}{5} \amp \mid \amp \frac{3}{5} \end{bmatrix} \amp\amp - 3\text{Row 1} + \text{Row 2}</mrow>
+            <mrow> \amp\sim \begin{bmatrix} 1 \amp \frac{2}{5} \amp \mid \amp \frac{4}{5} \\ 0 \amp 1 \amp \mid \amp -3 \end{bmatrix} \amp\amp -5\text{Row 2}</mrow>
+            <mrow> \amp\sim \begin{bmatrix} 1 \amp 0 \amp \mid \amp 2 \\ 0 \amp 1 \amp \mid \amp -3 \end{bmatrix} \amp\amp -\frac{2}{5}\text{Row 2} + \text{Row 1}</mrow>
+          </md>
+          Converting back to a system of linear equations, we have
+          <md>
+            \begin{cases}
+              c_1 = 2 \\
+              c_2 = -3
+            \end{cases}
+          </md>
+        </p>
+
+        <p>
+          We can quickly check our work! 
+          <md>
+            2 \begin{bmatrix} 5 \\ 3 \end{bmatrix} - 3 \begin{bmatrix} 2 \\ 1 \end{bmatrix} = \begin{bmatrix} 4 \\ 3 \end{bmatrix}. 
+          </md>
+          We did it! 
+        </p>
+    </note>
+  </example>
+
+  <p>
+    This is a very important kind of problem! 
+    Not only does it show up on exams commonly, it will also be the key to finding the matrix for a linear transformation which is one of the most important things in linear algebra!
+  </p>
+
+  <exercise>
+    <p>
+      Suppose <m>T: \R^3 \to \R^2</m> is a linear transformation and we know that
+      <md>
+        T \lp \begin{bmatrix} 1 \\ 1 \\ 3 \end{bmatrix} \rp = \begin{bmatrix} 2 \\ 1 \end{bmatrix} 
+        \qquad \text{ and } \qquad
+        T \lp \begin{bmatrix} 2 \\ 1 \\ 0 \end{bmatrix} \rp = \begin{bmatrix} -2 \\ 3 \end{bmatrix}
+      </md>
+      Find <m>T \lp \begin{bmatrix} 1 \\ -1 \\ -9 \end{bmatrix} \rp</m>.
+    </p>
+
+    <solution>
+      <p>
+        First, we need to express <m>\begin{bmatrix} 1 \\ -1 \\ -9 \end{bmatrix}</m> as a linear combination of the two input vectors we know. We are looking for scalars <m>c_1</m> and <m>c_2</m> such that:
+        <md>
+          c_1\begin{bmatrix} 1 \\ 1 \\ 3 \end{bmatrix} + c_2\begin{bmatrix} 2 \\ 1 \\ 0 \end{bmatrix} = \begin{bmatrix} 1 \\ -1 \\ -9 \end{bmatrix}
+        </md>
+      </p>
+      <p>
+        Looking at the third row, we immediately see that <m>3c_1 + 0 = -9</m>, which means <m>c_1 = -3</m>. 
+      </p>
+      <p>
+        Substituting <m>c_1 = -3</m> into the second row gives us <m>-3(1) + c_2(1) = -1</m>, which means <m>c_2 = 2</m>. 
+        Let's quickly verify with the first row: <m>-3(1) + 2(2) = -3 + 4 = 1</m>. It works! 
+      </p>
+      <p>
+        Now we can use the linearity properties to evaluate the transformation:
+        <md>
+          <mrow> T\lp \begin{bmatrix} 1 \\ -1 \\ -9 \end{bmatrix} \rp \amp= T\lp -3\begin{bmatrix} 1 \\ 1 \\ 3 \end{bmatrix} + 2\begin{bmatrix} 2 \\ 1 \\ 0 \end{bmatrix} \rp </mrow>
+          <mrow> \amp= -3T\lp \begin{bmatrix} 1 \\ 1 \\ 3 \end{bmatrix} \rp + 2T\lp \begin{bmatrix} 2 \\ 1 \\ 0 \end{bmatrix} \rp </mrow>
+          <mrow> \amp= -3\begin{bmatrix} 2 \\ 1 \end{bmatrix} + 2\begin{bmatrix} -2 \\ 3 \end{bmatrix} </mrow>
+          <mrow> \amp= \begin{bmatrix} -6 \\ -3 \end{bmatrix} + \begin{bmatrix} -4 \\ 6 \end{bmatrix} = \begin{bmatrix} -10 \\ 3 \end{bmatrix} </mrow>
+        </md>
+      </p>
+    </solution>
+  </exercise>
+
+  <p>
+    What about the other way around? 
+    What if we are given the image of some linear transformation and we are trying to find the input? 
+  </p>
+
+  <p>
+    Then instead of "evaluating", we will be "solving" the matrix equation. 
+    We are all experts in row reduction so this shouldn't be a problem! 
+  </p>
+
+  <example>
+    <p>
+      Let <m>A = \begin{bmatrix} 1 \amp 3 \\ 9 \amp -1 \\ -2 \amp 5 \end{bmatrix}</m>. 
+      We define <m>T: \R^2 \to \R^3</m> by <m>T(\v{x}) = A\v{x}</m>. 
+      Now we want to find <m>\v{x}\in \R^2</m> such that <m>T\lp \v{x} \rp = \begin{bmatrix} 3 \\ -29 \\ 16 \end{bmatrix}</m>. 
+    </p>
+
+    <p>
+      If we plug in everything we know into the transformation, then we will get the following matrix equation: 
+      <md>
+        \begin{bmatrix} 1 \amp 3 \\ 9 \amp -1 \\ -2 \amp 5 \end{bmatrix} \v{x} = \begin{bmatrix} 3 \\ -29 \\ 16 \end{bmatrix}
+      </md>
+      Converting this into an augmented matrix, we obtain
+      <md>
+        \begin{bmatrix} 1 \amp 3 \amp \mid \amp 3 \\ 9 \amp -1 \amp \mid \amp -29 \\ -2 \amp 5 \amp \mid \amp 16 \end{bmatrix}
+      </md>
+    </p>
+    
+    <p>
+      Let's apply our Gaussian Elimination skills to solve for <m>\v{x}</m>:
+      <md>
+        <mrow> \begin{bmatrix} 1 \amp 3 \amp \mid \amp 3 \\ 9 \amp -1 \amp \mid \amp -29 \\ -2 \amp 5 \amp \mid \amp 16 \end{bmatrix} 
+        \amp\sim \begin{bmatrix} 1 \amp 3 \amp \mid \amp 3 \\ 0 \amp -28 \amp \mid \amp -56 \\ 0 \amp 11 \amp \mid \amp 22 \end{bmatrix} 
+        \amp\amp \begin{matrix} -9\text{Row 1} + \text{Row 2} \\ 2\text{Row 1} + \text{Row 3} \end{matrix} </mrow>
+        
+        <mrow> \amp\sim \begin{bmatrix} 1 \amp 3 \amp \mid \amp 3 \\ 0 \amp 1 \amp \mid \amp 2 \\ 0 \amp 1 \amp \mid \amp 2 \end{bmatrix} 
+        \amp\amp \begin{matrix} -\frac{1}{28}\text{Row 2} \\ \frac{1}{11}\text{Row 3} \end{matrix} </mrow>
+
+        <mrow> \amp\sim \begin{bmatrix} 1 \amp 0 \amp \mid \amp -3 \\ 0 \amp 1 \amp \mid \amp 2 \\ 0 \amp 0 \amp \mid \amp 0 \end{bmatrix} 
+        \amp\amp \begin{matrix} -3\text{Row 2} + \text{Row 1} \\ -\text{Row 2} + \text{Row 3} \end{matrix} </mrow>
+      </md>
+    </p>
+    <p>
+      Translating the reduced row echelon form back into an equation, we get <m>x_1 = -3</m> and <m>x_2 = 2</m>. Therefore, the input vector we were looking for is:
+      <md>
+        \v{x} = \begin{bmatrix} -3 \\ 2 \end{bmatrix}
+      </md>
+    </p>
+  </example>
+
+  <p>
+    <alert>TO BE CONTINUED!</alert>
+  </p>
+
+  <worksheet xml:id="ws-sec18">
+    <title>Some Exercises for This Section</title>
+    
+    <introduction>
+      <p>
+        Richard included some practice problems that cover some main concepts in this section. 
+        You don't need to turn it in, but you are highly encouraged to work on this with your classmates. 
+        The problems here may end up being in-class practice problems, homework problems, and/or exam problems. 
+        Reach out to Richard for help if you get stuck or have any questions. 
+      </p>
+
+      <p>
+        Only the final answers are included to some of the problems for you to check your result. 
+        If you want to check your work, talk to Richard and he is happy to discuss the process with you. 
+      </p>
+    </introduction>
+
+    <exercise number="1.8.1">
+        <statement>
+            <p>Let <m>A = \begin{bmatrix} 2 \amp 0 \\ 0 \amp 2 \end{bmatrix}</m>, and define <m>T:\mathbb{R}^2 \rightarrow \mathbb{R}^2</m> by <m>T(\v{x}) = A\v{x}</m>. Find the images under <m>T</m> of <m>\v{u} = \begin{bmatrix} 1 \\ -3 \end{bmatrix}</m> and <m>\v{v} = \begin{bmatrix} a \\ b \end{bmatrix}</m>.</p>
+        </statement>
+    </exercise>
+
+    <exercisegroup>
+        <introduction>
+            <p>With <m>T</m> defined by <m>T(\v{x})=A\v{x}</m>, find a vector <m>\v{x}</m> whose image under <m>T</m> is <m>\v{b}</m>, and determine whether <m>\v{x}</m> is unique.</p>
+        </introduction>
+        
+        <exercise number="1.8.3">
+            <me>A = \begin{bmatrix} 1 \amp 0 \amp -2 \\ -2 \amp 1 \amp 6 \\ 3 \amp -2 \amp -5 \end{bmatrix}, \quad \v{b} = \begin{bmatrix} -1 \\ 7 \\ -3 \end{bmatrix}</me>
+        </exercise>
+        
+        <exercise number="1.8.5">
+            <me>A = \begin{bmatrix} 1 \amp -5 \amp -7 \\ -3 \amp 7 \amp 5 \end{bmatrix}, \quad \v{b} = \begin{bmatrix} -2 \\ -2 \end{bmatrix}</me>
+        </exercise>
+    </exercisegroup>
+
+    <exercise number="1.8.7">
+        <statement>
+            <p>Let <m>A</m> be a <m>6 \times 5</m> matrix. What must <m>a</m> and <m>b</m> be in order to define <m>T:\mathbb{R}^a \rightarrow \mathbb{R}^b</m> by <m>T(\v{x}) = A\v{x}</m>?</p>
+        </statement>
+    </exercise>
+
+    <exercise number="1.8.9">
+        <statement>
+            <p>Find all <m>\v{x}</m> in <m>\mathbb{R}^4</m> that are mapped into the zero vector by the transformation <m>\v{x} \mapsto A\v{x}</m> for the given matrix <m>A</m>.</p>
+            <me>A = \begin{bmatrix} 1 \amp -4 \amp 7 \amp -5 \\ 0 \amp 1 \amp -4 \amp 3 \\ 2 \amp -6 \amp 6 \amp -4 \end{bmatrix}</me>
+        </statement>
+    </exercise>
+
+    <exercise number="1.8.11">
+        <statement>
+            <p>Let <m>\v{b} = \begin{bmatrix} -1 \\ 1 \\ 0 \end{bmatrix}</m>, and let <m>A</m> be the matrix in Exercise 9. Is <m>\v{b}</m> in the range of the linear transformation <m>\v{x} \mapsto A\v{x}</m>? Why or why not?</p>
+        </statement>
+    </exercise>
+
+    <exercisegroup>
+        <introduction>
+            <p>Use a rectangular coordinate system to plot <m>\v{u} = \begin{bmatrix} 5 \\ 2 \end{bmatrix}</m>, <m>\v{v} = \begin{bmatrix} -2 \\ 4 \end{bmatrix}</m>, and their images under the given transformation <m>T</m>. (Make a separate and reasonably large sketch for each exercise.) Describe geometrically what <m>T</m> does to each vector <m>\v{x}</m> in <m>\mathbb{R}^2</m>.</p>
+        </introduction>
+        
+        <exercise number="1.8.13">
+            <me>T(\v{x}) = \begin{bmatrix} -1 \amp 0 \\ 0 \amp -1 \end{bmatrix} \begin{bmatrix} x_1 \\ x_2 \end{bmatrix}</me>
+        </exercise>
+        
+        <exercise number="1.8.15">
+            <me>T(\v{x}) = \begin{bmatrix} 0 \amp 0 \\ 0 \amp 1 \end{bmatrix} \begin{bmatrix} x_1 \\ x_2 \end{bmatrix}</me>
+        </exercise>
+    </exercisegroup>
+
+    <exercise number="1.8.19">
+        <statement>
+            <p>Let <m>\v{e}_1 = \begin{bmatrix} 1 \\ 0 \end{bmatrix}</m>, <m>\v{e}_2 = \begin{bmatrix} 0 \\ 1 \end{bmatrix}</m>, <m>\v{y}_1 = \begin{bmatrix} 2 \\ 5 \end{bmatrix}</m>, and <m>\v{y}_2 = \begin{bmatrix} -1 \\ 6 \end{bmatrix}</m>, and let <m>T:\mathbb{R}^2 \rightarrow \mathbb{R}^2</m> be a linear transformation that maps <m>\v{e}_1</m> into <m>\v{y}_1</m> and maps <m>\v{e}_2</m> into <m>\v{y}_2</m>. Find the images of <m>\begin{bmatrix} 5 \\ -3 \end{bmatrix}</m> and <m>\begin{bmatrix} x_1 \\ x_2 \end{bmatrix}</m>.</p>
+        </statement>
+    </exercise>
+
+    <exercisegroup>
+        <introduction>
+            <p>Mark each statement True or False (T/F). Justify each answer.</p>
+        </introduction>
+        
+        <exercise number="1.8.21">
+            <p>(T/F) A linear transformation is a special type of function.</p>
+        </exercise>
+        
+        <exercise number="1.8.23">
+            <p>(T/F) If <m>A</m> is a <m>3 \times 5</m> matrix and <m>T</m> is a transformation defined by <m>T(\v{x})=A\v{x}</m>, then the domain of <m>T</m> is <m>\mathbb{R}^3</m>.</p>
+        </exercise>
+        
+        <exercise number="1.8.25">
+            <p>(T/F) If <m>A</m> is an <m>m \times n</m> matrix, then the range of the transformation <m>\v{x} \mapsto A\v{x}</m> is <m>\mathbb{R}^m</m>.</p>
+        </exercise>
+        
+        <exercise number="1.8.27">
+            <p>(T/F) Every linear transformation is a matrix transformation.</p>
+        </exercise>
+        
+        <exercise number="1.8.29">
+            <p>(T/F) A transformation <m>T</m> is linear if and only if <m>T(c_1\v{v}_1 + c_2\v{v}_2) = c_1T(\v{v}_1) + c_2T(\v{v}_2)</m> for all <m>\v{v}_1</m> and <m>\v{v}_2</m> in the domain of <m>T</m> and for all scalars <m>c_1</m> and <m>c_2</m>.</p>
+        </exercise>
+    </exercisegroup>
+
+    <exercise number="1.8.41">
+        <statement>
+            <p>Show that the transformation <m>T</m> defined by <m>T(x_1, x_2) = (2x_1 - 3x_2, x_1 + 4, 5x_2)</m> is not linear.</p>
+        </statement>
+    </exercise>
+
+    <exercise number="1.8.43">
+        <statement>
+            <p>Let <m>T:\mathbb{R}^3 \rightarrow \mathbb{R}^3</m> be the transformation that reflects each vector <m>\v{x} = (x_1, x_2, x_3)</m> through the plane <m>x_3=0</m> onto <m>T(\v{x}) = (x_1, x_2, -x_3)</m>. Show that <m>T</m> is a linear transformation. [See Example 4 for ideas.]</p>
+        </statement>
+    </exercise>
+
+    <exercisegroup>
+        <introduction>
+            <p>Assume that <m>T</m> is a linear transformation. Find the standard matrix of <m>T</m>.</p>
+        </introduction>
+        
+        <exercise number="1.9.1">
+            <statement>
+                <p><m>T:\mathbb{R}^2 \rightarrow \mathbb{R}^4</m>, <m>T(\v{e}_1) = (2, 1, 2, 1)</m> and <m>T(\v{e}_2) = (-5, 2, 0, 0)</m>, where <m>\v{e}_1 = (1, 0)</m> and <m>\v{e}_2 = (0, 1)</m>.</p>
+            </statement>
+        </exercise>
+
+        <exercise number="1.9.3">
+            <statement>
+                <p><m>T:\mathbb{R}^2 \rightarrow \mathbb{R}^2</m> rotates points (about the origin) through <m>3\pi/2</m> radians (in the counterclockwise direction).</p>
+            </statement>
+        </exercise>
+
+        <exercise number="1.9.5">
+            <statement>
+                <p><m>T:\mathbb{R}^2 \rightarrow \mathbb{R}^2</m> is a vertical shear transformation that maps <m>\v{e}_1</m> into <m>\v{e}_1 - 2\v{e}_2</m> but leaves the vector <m>\v{e}_2</m> unchanged.</p>
+            </statement>
+        </exercise>
+
+        <exercise number="1.9.7">
+            <statement>
+                <p><m>T:\mathbb{R}^2 \rightarrow \mathbb{R}^2</m> first rotates points through <m>-3\pi/4</m> radians (since the number is negative, the actual rotation is clockwise) and then reflects points through the horizontal <m>x_1</m>-axis. [Hint: <m>T(\v{e}_1) = (-1/\sqrt{2}, 1/\sqrt{2})</m>.]</p>
+            </statement>
+        </exercise>
+
+        <exercise number="1.9.9">
+            <statement>
+                <p><m>T:\mathbb{R}^2 \rightarrow \mathbb{R}^2</m> first performs a horizontal shear that transforms <m>\v{e}_2</m> into <m>\v{e}_2 - 3\v{e}_1</m> (leaving <m>\v{e}_1</m> unchanged) and then reflects points through the line <m>x_2 = -x_1</m>.</p>
+            </statement>
+        </exercise>
+    </exercisegroup>
+
+    <exercise number="1.9.15">
+        <statement>
+            <p>Fill in the missing entries of the matrix, assuming that the equation holds for all values of the variables.</p>
+            <me>\begin{bmatrix} ? \amp ? \amp ? \\ ? \amp ? \amp ? \end{bmatrix} \begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix} = \begin{bmatrix} 2x_1 - 3x_3 \\ 4x_1 - x_2 + x_3 \end{bmatrix}</me>
+        </statement>
+    </exercise>
+
+    <exercisegroup>
+        <introduction>
+            <p>Show that <m>T</m> is a linear transformation by finding a matrix that implements the mapping. Note that <m>x_1, x_2, \dots</m> are not vectors but are entries in vectors.</p>
+        </introduction>
+        
+        <exercise number="1.9.17">
+            <statement>
+                <p><m>T(x_1, x_2, x_3, x_4) = (0, x_1 + x_2, x_2 + x_3, x_3 + x_4)</m></p>
+            </statement>
+        </exercise>
+
+        <exercise number="1.9.19">
+            <statement>
+                <p><m>T(x_1, x_2, x_3) = (x_1 - 5x_2 + 4x_3, x_2 - 6x_3)</m></p>
+            </statement>
+        </exercise>
+    </exercisegroup>
+
+    <exercise number="1.9.21">
+        <statement>
+            <p>Let <m>T:\mathbb{R}^2 \rightarrow \mathbb{R}^2</m> be a linear transformation such that <m>T(x_1, x_2) = (x_1 + x_2, 4x_1 + 5x_2)</m>. Find <m>\v{x}</m> such that <m>T(\v{x}) = (3, 8)</m>.</p>
+        </statement>
+    </exercise>
+
+    <exercisegroup>
+        <introduction>
+            <p>Mark each statement True or False (T/F). Justify each answer.</p>
+        </introduction>
+        
+        <exercise number="1.9.23">
+            <statement>
+                <p>(T/F) A linear transformation <m>T:\mathbb{R}^n \rightarrow \mathbb{R}^m</m> is completely determined by its effect on the columns of the <m>n \times n</m> identity matrix.</p>
+            </statement>
+        </exercise>
+
+        <exercise number="1.9.25">
+            <statement>
+                <p>(T/F) If <m>T:\mathbb{R}^2 \rightarrow \mathbb{R}^2</m> rotates vectors about the origin through an angle <m>\theta</m>, then <m>T</m> is a linear transformation.</p>
+            </statement>
+        </exercise>
+
+        <exercise number="1.9.27">
+            <statement>
+                <p>(T/F) When two linear transformations are performed one after another, the combined effect may not always be a linear transformation.</p>
+            </statement>
+        </exercise>
+
+        <exercise number="1.9.29">
+            <statement>
+                <p>(T/F) A mapping <m>T:\mathbb{R}^n \rightarrow \mathbb{R}^m</m> is onto <m>\mathbb{R}^m</m> if every vector <m>\v{x}</m> in <m>\mathbb{R}^n</m> maps onto some vector in <m>\mathbb{R}^m</m>.</p>
+            </statement>
+        </exercise>
+
+        <exercise number="1.9.31">
+            <statement>
+                <p>(T/F) If <m>A</m> is a <m>3 \times 2</m> matrix, then the transformation <m>\v{x} \mapsto A\v{x}</m> cannot be one-to-one.</p>
+            </statement>
+        </exercise>
+    </exercisegroup>
+
+    <exercisegroup>
+        <introduction>
+            <p>Complete the following statements to make them true.</p>
+        </introduction>
+        
+        <exercise number="1.9.39">
+            <statement>
+                <p>Let <m>T:\mathbb{R}^n \rightarrow \mathbb{R}^m</m> be a linear transformation, with <m>A</m> its standard matrix. Complete the following statement to make it true: "<m>T</m> is one-to-one if and only if <m>A</m> has ____ pivot columns." Explain why the statement is true. [Hint: Look in the exercises for Section 1.7.]</p>
+            </statement>
+        </exercise>
+
+        <exercise number="1.9.40">
+            <statement>
+                <p>Let <m>T:\mathbb{R}^n \rightarrow \mathbb{R}^m</m> be a linear transformation, with <m>A</m> its standard matrix. Complete the following statement to make it true: "<m>T</m> maps <m>\mathbb{R}^n</m> onto <m>\mathbb{R}^m</m> if and only if <m>A</m> has ____ pivot columns." Find some theorems that explain why the statement is true.</p>
+            </statement>
+        </exercise>
+    </exercisegroup>
+
+  </worksheet>
 
 </section>

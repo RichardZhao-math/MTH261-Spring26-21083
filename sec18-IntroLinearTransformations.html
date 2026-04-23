@@ -642,14 +642,26 @@ T\lp \begin{bmatrix} x \\ y \end{bmatrix} \rp = \begin{bmatrix} a_1x + b_1y \\ a
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sec18-IntroLinearTransformations-17-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Example 1.7.8: An example"><a href="#sec18-IntroLinearTransformations-17" title="Copy heading and permalink for Example 1.7.8: An example" aria-label="Copy heading and permalink for Example 1.7.8: An example">🔗</a></div></article><div class="para" id="sec18-IntroLinearTransformations-18">The two properties of linear transformations make it possible to "plug in" a vector even if we don’t know the rule. That is, we can <em class="alert">evaluate linear transformations using linear combinations</em>.<div class="autopermalink" data-description="Paragraph"><a href="#sec18-IntroLinearTransformations-18" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Example 1.7.8: An example"><a href="#sec18-IntroLinearTransformations-17" title="Copy heading and permalink for Example 1.7.8: An example" aria-label="Copy heading and permalink for Example 1.7.8: An example">🔗</a></div></article><div class="para" id="sec18-IntroLinearTransformations-18">Using linearity, we can quickly obtain the following theorem:<div class="autopermalink" data-description="Paragraph"><a href="#sec18-IntroLinearTransformations-18" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<article class="example example-like" id="sec18-IntroLinearTransformations-19"><h3 class="heading">
-<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.7.9</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<article class="theorem theorem-like" id="thm-LinearTransformation-Zero"><h3 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.7.9</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
-<div class="para logical" id="sec18-IntroLinearTransformations-19-1">
+<div class="para" id="thm-LinearTransformation-Zero-1-1">If <span class="process-math">\(T\)</span> is a linear transformation, then <span class="process-math">\(T\lp \v{0} \rp = \v{0}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-LinearTransformation-Zero-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 1.7.9"><a href="#thm-LinearTransformation-Zero" title="Copy heading and permalink for Theorem 1.7.9" aria-label="Copy heading and permalink for Theorem 1.7.9">🔗</a></div></article><details id="sec18-IntroLinearTransformations-20" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="title">Very quick proof of this theorem.</span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="sec18-IntroLinearTransformations-20-2">
+<span class="process-math">\(T\lp \v{0} \rp = T\lp 0 \v{u} \rp = 0 T\lp \v{u} \rp = \v{0}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec18-IntroLinearTransformations-20-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 1.7.1: Very quick proof of this theorem"><a href="#sec18-IntroLinearTransformations-20" title="Copy heading and permalink for Proof 1.7.1: Very quick proof of this theorem" aria-label="Copy heading and permalink for Proof 1.7.1: Very quick proof of this theorem">🔗</a></div></article></details><div class="para" id="sec18-IntroLinearTransformations-21">This is an important observation later when we investigate the idea of subspaces (spoiler: the kernel is a subspace and one of the reasons is because of this!)<div class="autopermalink" data-description="Paragraph"><a href="#sec18-IntroLinearTransformations-21" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec18-IntroLinearTransformations-22">The linearity property of linear transformations makes it possible to "plug in" a vector even if we don’t know the rule. That is, we can <em class="alert">evaluate linear transformations using linear combinations</em>.<div class="autopermalink" data-description="Paragraph"><a href="#sec18-IntroLinearTransformations-22" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="example example-like" id="sec18-IntroLinearTransformations-23"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.7.10</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para logical" id="sec18-IntroLinearTransformations-23-1">
 <div class="para">Suppose <span class="process-math">\(T: \R^3 \to \R^2\)</span> is a linear transformation (but we don’t know the rule) and we do know that</div>
-<div class="displaymath process-math" id="sec18-IntroLinearTransformations-19-1-2">
+<div class="displaymath process-math" id="sec18-IntroLinearTransformations-23-1-2">
 \begin{equation*}
 T \lp \begin{bmatrix} 1 \\ 2 \\ -1 \end{bmatrix} \rp = \begin{bmatrix} 2 \\ 0 \end{bmatrix} 
 \qquad \text{ and } \qquad
@@ -658,20 +670,20 @@ T \lp \begin{bmatrix} 1 \\ 2 \\ 3 \end{bmatrix} \rp = \begin{bmatrix} 1 \\ -4 \e
 </div>
 <div class="para">Let’s say we want to evaluate <span class="process-math">\(T \lp \begin{bmatrix} 5 \\ 10 \\ 3 \end{bmatrix} \rp\text{.}\)</span>
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec18-IntroLinearTransformations-19-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec18-IntroLinearTransformations-23-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec18-IntroLinearTransformations-19-2">
-<em class="alert">How do we do that?</em><div class="autopermalink" data-description="Paragraph"><a href="#sec18-IntroLinearTransformations-19-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sec18-IntroLinearTransformations-23-2">
+<em class="alert">How do we do that?</em><div class="autopermalink" data-description="Paragraph"><a href="#sec18-IntroLinearTransformations-23-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para logical" id="sec18-IntroLinearTransformations-19-3">
+<div class="para logical" id="sec18-IntroLinearTransformations-23-3">
 <div class="para">Notice that</div>
-<div class="displaymath process-math" id="sec18-IntroLinearTransformations-19-3-1">
+<div class="displaymath process-math" id="sec18-IntroLinearTransformations-23-3-1">
 \begin{equation*}
 \begin{bmatrix} 5 \\ 10 \\ 3 \end{bmatrix} = 3\begin{bmatrix} 1 \\ 2 \\ -1 \end{bmatrix} + 2\begin{bmatrix} 1 \\ 2 \\ 3 \end{bmatrix}
 \end{equation*}
 </div>
 <div class="para">So property (i) and (ii) of linear transformations tell us that</div>
-<div class="displaymath process-math" id="sec18-IntroLinearTransformations-19-3-2">
+<div class="displaymath process-math" id="sec18-IntroLinearTransformations-23-3-2">
 \begin{align*}
 T \lp \begin{bmatrix} 5 \\ 10 \\ 3 \end{bmatrix} \rp \amp= T \lp 3\begin{bmatrix} 1 \\ 2 \\ -1 \end{bmatrix} + 2\begin{bmatrix} 1 \\ 2 \\ 3 \end{bmatrix} \rp \\
 \amp= 3T \lp \begin{bmatrix} 1 \\ 2 \\ -1 \end{bmatrix} \rp + 2T \lp \begin{bmatrix} 1 \\ 2 \\ 3 \end{bmatrix} \rp \\
@@ -679,80 +691,16 @@ T \lp \begin{bmatrix} 5 \\ 10 \\ 3 \end{bmatrix} \rp \amp= T \lp 3\begin{bmatrix
 \amp= \begin{bmatrix} 8 \\ -8 \end{bmatrix} 
 \end{align*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec18-IntroLinearTransformations-19-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec18-IntroLinearTransformations-23-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<details id="sec18-IntroLinearTransformations-19-4" class="note remark-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
-<span class="type">Note</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.7.10</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">But Richard... How can you find the linear combination?</span>
-</h4></summary><article class="note remark-like knowl__content"><div class="para" id="sec18-IntroLinearTransformations-19-4-2">There are two ways to find the linear combination: (1) using guess and check, and/or (2) by setting up a system of equations.<div class="autopermalink" data-description="Paragraph"><a href="#sec18-IntroLinearTransformations-19-4-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Example 1.7.10"><a href="#sec18-IntroLinearTransformations-23" title="Copy heading and permalink for Example 1.7.10" aria-label="Copy heading and permalink for Example 1.7.10">🔗</a></div></article><div class="para" id="sec18-IntroLinearTransformations-24">This is a very important kind of problem! Not only does it show up on exams commonly, it will also be the key to finding the matrix for a linear transformation which is one of the most important things in linear algebra!<div class="autopermalink" data-description="Paragraph"><a href="#sec18-IntroLinearTransformations-24" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec18-IntroLinearTransformations-19-4-3">Let’s do a quick example using the formal setting-up-a-system-of-equations method!<div class="autopermalink" data-description="Paragraph"><a href="#sec18-IntroLinearTransformations-19-4-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para" id="sec18-IntroLinearTransformations-19-4-4">Can <span class="process-math">\(\begin{bmatrix} 4 \\ 3 \end{bmatrix}\)</span> be written as a linear combination of <span class="process-math">\(\begin{bmatrix} 5 \\ 3 \end{bmatrix}\)</span> and <span class="process-math">\(\begin{bmatrix} 2 \\ 1 \end{bmatrix}\text{?}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec18-IntroLinearTransformations-19-4-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para logical" id="sec18-IntroLinearTransformations-19-4-5">
-<div class="para">Let’s assume we can! Then there exist scalars <span class="process-math">\(c_1, c_2 \in \R\)</span> such that</div>
-<div class="displaymath process-math" id="sec18-IntroLinearTransformations-19-4-5-2">
-\begin{equation*}
-c_1\begin{bmatrix} 5 \\ 3 \end{bmatrix} + c_2\begin{bmatrix} 2 \\ 1 \end{bmatrix} = \begin{bmatrix} 4 \\ 3 \end{bmatrix}
-\end{equation*}
-</div>
-<div class="para">This is essentially a vector equation since the "variables" here are the scalars <span class="process-math">\(c_1\)</span> and <span class="process-math">\(c_2\text{.}\)</span> We can rewrite the vector equation as a system of linear equations:</div>
-<div class="displaymath process-math" id="sec18-IntroLinearTransformations-19-4-5-5">
-\begin{equation*}
-\begin{cases}
-5c_1 + 2c_2 = 4 \\
-3c_1 + c_2 = 3
-\end{cases}
-\end{equation*}
-</div>
-<div class="para">Basically, we are asking ourselves if this system of linear equations has a solution.</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec18-IntroLinearTransformations-19-4-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para logical" id="sec18-IntroLinearTransformations-19-4-6">
-<div class="para">We are all experts in solving systems of linear equations now! The augmented matrix is</div>
-<div class="displaymath process-math" id="sec18-IntroLinearTransformations-19-4-6-1">
-\begin{equation*}
-\begin{bmatrix} 5 \amp 2 \amp \mid \amp 4 \\ 3 \amp 1 \amp \mid \amp 3 \end{bmatrix}
-\end{equation*}
-</div>
-<div class="para">We can do our Gaussian Elimination magic to get:</div>
-<div class="displaymath process-math" id="sec18-IntroLinearTransformations-19-4-6-2">
-\begin{align*}
-\begin{bmatrix} 5 \amp 2 \amp \mid \amp 4 \\ 3 \amp 1 \amp \mid \amp 3 \end{bmatrix} \amp\sim \begin{bmatrix} 1 \amp \frac{2}{5} \amp \mid \amp \frac{4}{5} \\ 3 \amp 1 \amp \mid \amp 3 \end{bmatrix} \amp\amp \frac{1}{5}\text{Row 1}\\
-\amp\sim \begin{bmatrix} 1 \amp \frac{2}{5} \amp \mid \amp \frac{4}{5} \\ 0 \amp -\frac{1}{5} \amp \mid \amp \frac{3}{5} \end{bmatrix} \amp\amp - 3\text{Row 1} + \text{Row 2}\\
-\amp\sim \begin{bmatrix} 1 \amp \frac{2}{5} \amp \mid \amp \frac{4}{5} \\ 0 \amp 1 \amp \mid \amp -3 \end{bmatrix} \amp\amp -5\text{Row 2}\\
-\amp\sim \begin{bmatrix} 1 \amp 0 \amp \mid \amp 2 \\ 0 \amp 1 \amp \mid \amp -3 \end{bmatrix} \amp\amp -\frac{2}{5}\text{Row 2} + \text{Row 1}
-\end{align*}
-</div>
-<div class="para">Converting back to a system of linear equations, we have</div>
-<div class="displaymath process-math" id="sec18-IntroLinearTransformations-19-4-6-3">
-\begin{equation*}
-\begin{cases}
-c_1 = 2 \\
-c_2 = -3
-\end{cases}
-\end{equation*}
-</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec18-IntroLinearTransformations-19-4-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para logical" id="sec18-IntroLinearTransformations-19-4-7">
-<div class="para">We can quickly check our work!</div>
-<div class="displaymath process-math" id="sec18-IntroLinearTransformations-19-4-7-1">
-\begin{equation*}
-2 \begin{bmatrix} 5 \\ 3 \end{bmatrix} - 3 \begin{bmatrix} 2 \\ 1 \end{bmatrix} = \begin{bmatrix} 4 \\ 3 \end{bmatrix}. 
-\end{equation*}
-</div>
-<div class="para">We did it!</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec18-IntroLinearTransformations-19-4-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Note 1.7.10: But Richard... How can you find the linear combination?"><a href="#sec18-IntroLinearTransformations-19-4" title="Copy heading and permalink for Note 1.7.10: But Richard... How can you find the linear combination?" aria-label="Copy heading and permalink for Note 1.7.10: But Richard... How can you find the linear combination?">🔗</a></div></article></details><div class="autopermalink" data-description="Example 1.7.9"><a href="#sec18-IntroLinearTransformations-19" title="Copy heading and permalink for Example 1.7.9" aria-label="Copy heading and permalink for Example 1.7.9">🔗</a></div></article><div class="para" id="sec18-IntroLinearTransformations-20">This is a very important kind of problem! Not only does it show up on exams commonly, it will also be the key to finding the matrix for a linear transformation which is one of the most important things in linear algebra!<div class="autopermalink" data-description="Paragraph"><a href="#sec18-IntroLinearTransformations-20" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<article class="exercise exercise-like" id="sec18-IntroLinearTransformations-21"><h3 class="heading">
+<article class="exercise exercise-like" id="sec18-IntroLinearTransformations-25"><h3 class="heading">
 <span class="type">Checkpoint</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.7.11</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
-<div class="para logical" id="sec18-IntroLinearTransformations-21-1">
+<div class="para logical" id="sec18-IntroLinearTransformations-25-1">
 <div class="para">Suppose <span class="process-math">\(T: \R^3 \to \R^2\)</span> is a linear transformation and we know that</div>
-<div class="displaymath process-math" id="sec18-IntroLinearTransformations-21-1-2">
+<div class="displaymath process-math" id="sec18-IntroLinearTransformations-25-1-2">
 \begin{equation*}
 T \lp \begin{bmatrix} 1 \\ 1 \\ 3 \end{bmatrix} \rp = \begin{bmatrix} 2 \\ 1 \end{bmatrix} 
 \qquad \text{ and } \qquad
@@ -761,25 +709,25 @@ T \lp \begin{bmatrix} 2 \\ 1 \\ 0 \end{bmatrix} \rp = \begin{bmatrix} -2 \\ 3 \e
 </div>
 <div class="para">Find <span class="process-math">\(T \lp \begin{bmatrix} 1 \\ -1 \\ -9 \end{bmatrix} \rp\text{.}\)</span>
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec18-IntroLinearTransformations-21-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec18-IntroLinearTransformations-25-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<details id="sec18-IntroLinearTransformations-21-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
-<div class="para logical" id="sec18-IntroLinearTransformations-21-2-1">
+<details id="sec18-IntroLinearTransformations-25-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para logical" id="sec18-IntroLinearTransformations-25-2-1">
 <div class="para">First, we need to express <span class="process-math">\(\begin{bmatrix} 1 \\ -1 \\ -9 \end{bmatrix}\)</span> as a linear combination of the two input vectors we know. We are looking for scalars <span class="process-math">\(c_1\)</span> and <span class="process-math">\(c_2\)</span> such that:</div>
-<div class="displaymath process-math" id="sec18-IntroLinearTransformations-21-2-1-4">
+<div class="displaymath process-math" id="sec18-IntroLinearTransformations-25-2-1-4">
 \begin{equation*}
 c_1\begin{bmatrix} 1 \\ 1 \\ 3 \end{bmatrix} + c_2\begin{bmatrix} 2 \\ 1 \\ 0 \end{bmatrix} = \begin{bmatrix} 1 \\ -1 \\ -9 \end{bmatrix}
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec18-IntroLinearTransformations-21-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec18-IntroLinearTransformations-25-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec18-IntroLinearTransformations-21-2-2">Looking at the third row, we immediately see that <span class="process-math">\(3c_1 + 0 = -9\text{,}\)</span> which means <span class="process-math">\(c_1 = -3\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec18-IntroLinearTransformations-21-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sec18-IntroLinearTransformations-25-2-2">Looking at the third row, we immediately see that <span class="process-math">\(3c_1 + 0 = -9\text{,}\)</span> which means <span class="process-math">\(c_1 = -3\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec18-IntroLinearTransformations-25-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec18-IntroLinearTransformations-21-2-3">Substituting <span class="process-math">\(c_1 = -3\)</span> into the second row gives us <span class="process-math">\(-3(1) + c_2(1) = -1\text{,}\)</span> which means <span class="process-math">\(c_2 = 2\text{.}\)</span> Let’s quickly verify with the first row: <span class="process-math">\(-3(1) + 2(2) = -3 + 4 = 1\text{.}\)</span> It works!<div class="autopermalink" data-description="Paragraph"><a href="#sec18-IntroLinearTransformations-21-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sec18-IntroLinearTransformations-25-2-3">Substituting <span class="process-math">\(c_1 = -3\)</span> into the second row gives us <span class="process-math">\(-3(1) + c_2(1) = -1\text{,}\)</span> which means <span class="process-math">\(c_2 = 2\text{.}\)</span> Let’s quickly verify with the first row: <span class="process-math">\(-3(1) + 2(2) = -3 + 4 = 1\text{.}\)</span> It works!<div class="autopermalink" data-description="Paragraph"><a href="#sec18-IntroLinearTransformations-25-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para logical" id="sec18-IntroLinearTransformations-21-2-4">
+<div class="para logical" id="sec18-IntroLinearTransformations-25-2-4">
 <div class="para">Now we can use the linearity properties to evaluate the transformation:</div>
-<div class="displaymath process-math" id="sec18-IntroLinearTransformations-21-2-4-1">
+<div class="displaymath process-math" id="sec18-IntroLinearTransformations-25-2-4-1">
 \begin{align*}
 T\lp \begin{bmatrix} 1 \\ -1 \\ -9 \end{bmatrix} \rp \amp= T\lp -3\begin{bmatrix} 1 \\ 1 \\ 3 \end{bmatrix} + 2\begin{bmatrix} 2 \\ 1 \\ 0 \end{bmatrix} \rp \\
 \amp= -3T\lp \begin{bmatrix} 1 \\ 1 \\ 3 \end{bmatrix} \rp + 2T\lp \begin{bmatrix} 2 \\ 1 \\ 0 \end{bmatrix} \rp \\
@@ -787,37 +735,37 @@ T\lp \begin{bmatrix} 1 \\ -1 \\ -9 \end{bmatrix} \rp \amp= T\lp -3\begin{bmatrix
 \amp= \begin{bmatrix} -6 \\ -3 \end{bmatrix} + \begin{bmatrix} -4 \\ 6 \end{bmatrix} = \begin{bmatrix} -10 \\ 3 \end{bmatrix} 
 \end{align*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec18-IntroLinearTransformations-21-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec18-IntroLinearTransformations-25-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Solution 1.7.11.1"><a href="#sec18-IntroLinearTransformations-21-2" title="Copy heading and permalink for Solution 1.7.11.1" aria-label="Copy heading and permalink for Solution 1.7.11.1">🔗</a></div>
-</div></details><div class="autopermalink" data-description="Checkpoint 1.7.11"><a href="#sec18-IntroLinearTransformations-21" title="Copy heading and permalink for Checkpoint 1.7.11" aria-label="Copy heading and permalink for Checkpoint 1.7.11">🔗</a></div></article><div class="para" id="sec18-IntroLinearTransformations-22">What about the other way around? What if we are given the image of some linear transformation and we are trying to find the input?<div class="autopermalink" data-description="Paragraph"><a href="#sec18-IntroLinearTransformations-22" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Solution 1.7.11.1"><a href="#sec18-IntroLinearTransformations-25-2" title="Copy heading and permalink for Solution 1.7.11.1" aria-label="Copy heading and permalink for Solution 1.7.11.1">🔗</a></div>
+</div></details><div class="autopermalink" data-description="Checkpoint 1.7.11"><a href="#sec18-IntroLinearTransformations-25" title="Copy heading and permalink for Checkpoint 1.7.11" aria-label="Copy heading and permalink for Checkpoint 1.7.11">🔗</a></div></article><div class="para" id="sec18-IntroLinearTransformations-26">What about the other way around? What if we are given the image of some linear transformation and we are trying to find the input?<div class="autopermalink" data-description="Paragraph"><a href="#sec18-IntroLinearTransformations-26" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec18-IntroLinearTransformations-23">Then instead of "evaluating", we will be "solving" the matrix equation. We are all experts in row reduction so this shouldn’t be a problem!<div class="autopermalink" data-description="Paragraph"><a href="#sec18-IntroLinearTransformations-23" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sec18-IntroLinearTransformations-27">Then instead of "evaluating", we will be "solving" the matrix equation. We are all experts in row reduction so this shouldn’t be a problem!<div class="autopermalink" data-description="Paragraph"><a href="#sec18-IntroLinearTransformations-27" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<article class="example example-like" id="sec18-IntroLinearTransformations-24"><h3 class="heading">
+<article class="example example-like" id="sec18-IntroLinearTransformations-28"><h3 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.7.12</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
-<div class="para" id="sec18-IntroLinearTransformations-24-1">Let <span class="process-math">\(A = \begin{bmatrix} 1 \amp 3 \\ 9 \amp -1 \\ -2 \amp 5 \end{bmatrix}\text{.}\)</span> We define <span class="process-math">\(T: \R^2 \to \R^3\)</span> by <span class="process-math">\(T(\v{x}) = A\v{x}\text{.}\)</span> Now we want to find <span class="process-math">\(\v{x}\in \R^2\)</span> such that <span class="process-math">\(T\lp \v{x} \rp = \begin{bmatrix} 3 \\ -29 \\ 16 \end{bmatrix}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec18-IntroLinearTransformations-24-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sec18-IntroLinearTransformations-28-1">Let <span class="process-math">\(A = \begin{bmatrix} 1 \amp 3 \\ 9 \amp -1 \\ -2 \amp 5 \end{bmatrix}\text{.}\)</span> We define <span class="process-math">\(T: \R^2 \to \R^3\)</span> by <span class="process-math">\(T(\v{x}) = A\v{x}\text{.}\)</span> Now we want to find <span class="process-math">\(\v{x}\in \R^2\)</span> such that <span class="process-math">\(T\lp \v{x} \rp = \begin{bmatrix} 3 \\ -29 \\ 16 \end{bmatrix}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec18-IntroLinearTransformations-28-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para logical" id="sec18-IntroLinearTransformations-24-2">
+<div class="para logical" id="sec18-IntroLinearTransformations-28-2">
 <div class="para">If we plug in everything we know into the transformation, then we will get the following matrix equation:</div>
-<div class="displaymath process-math" id="sec18-IntroLinearTransformations-24-2-1">
+<div class="displaymath process-math" id="sec18-IntroLinearTransformations-28-2-1">
 \begin{equation*}
 \begin{bmatrix} 1 \amp 3 \\ 9 \amp -1 \\ -2 \amp 5 \end{bmatrix} \v{x} = \begin{bmatrix} 3 \\ -29 \\ 16 \end{bmatrix}
 \end{equation*}
 </div>
 <div class="para">Converting this into an augmented matrix, we obtain</div>
-<div class="displaymath process-math" id="sec18-IntroLinearTransformations-24-2-2">
+<div class="displaymath process-math" id="sec18-IntroLinearTransformations-28-2-2">
 \begin{equation*}
 \begin{bmatrix} 1 \amp 3 \amp \mid \amp 3 \\ 9 \amp -1 \amp \mid \amp -29 \\ -2 \amp 5 \amp \mid \amp 16 \end{bmatrix}
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec18-IntroLinearTransformations-24-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec18-IntroLinearTransformations-28-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para logical" id="sec18-IntroLinearTransformations-24-3">
+<div class="para logical" id="sec18-IntroLinearTransformations-28-3">
 <div class="para">Let’s apply our Gaussian Elimination skills to solve for <span class="process-math">\(\v{x}\text{:}\)</span>
 </div>
-<div class="displaymath process-math" id="sec18-IntroLinearTransformations-24-3-2">
+<div class="displaymath process-math" id="sec18-IntroLinearTransformations-28-3-2">
 \begin{align*}
 \begin{bmatrix} 1 \amp 3 \amp \mid \amp 3 \\ 9 \amp -1 \amp \mid \amp -29 \\ -2 \amp 5 \amp \mid \amp 16 \end{bmatrix} 
 \amp\sim \begin{bmatrix} 1 \amp 3 \amp \mid \amp 3 \\ 0 \amp -28 \amp \mid \amp -56 \\ 0 \amp 11 \amp \mid \amp 22 \end{bmatrix} 
@@ -828,19 +776,378 @@ T\lp \begin{bmatrix} 1 \\ -1 \\ -9 \end{bmatrix} \rp \amp= T\lp -3\begin{bmatrix
 \amp\amp \begin{matrix} -3\text{Row 2} + \text{Row 1} \\ -\text{Row 2} + \text{Row 3} \end{matrix} 
 \end{align*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec18-IntroLinearTransformations-24-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec18-IntroLinearTransformations-28-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para logical" id="sec18-IntroLinearTransformations-24-4">
+<div class="para logical" id="sec18-IntroLinearTransformations-28-4">
 <div class="para">Translating the reduced row echelon form back into an equation, we get <span class="process-math">\(x_1 = -3\)</span> and <span class="process-math">\(x_2 = 2\text{.}\)</span> Therefore, the input vector we were looking for is:</div>
-<div class="displaymath process-math" id="sec18-IntroLinearTransformations-24-4-3">
+<div class="displaymath process-math" id="sec18-IntroLinearTransformations-28-4-3">
 \begin{equation*}
 \v{x} = \begin{bmatrix} -3 \\ 2 \end{bmatrix}
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec18-IntroLinearTransformations-24-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec18-IntroLinearTransformations-28-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Example 1.7.12"><a href="#sec18-IntroLinearTransformations-24" title="Copy heading and permalink for Example 1.7.12" aria-label="Copy heading and permalink for Example 1.7.12">🔗</a></div></article><div class="para" id="sec18-IntroLinearTransformations-25">
-<em class="alert">TO BE CONTINUED!</em><div class="autopermalink" data-description="Paragraph"><a href="#sec18-IntroLinearTransformations-25" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Example 1.7.12"><a href="#sec18-IntroLinearTransformations-28" title="Copy heading and permalink for Example 1.7.12" aria-label="Copy heading and permalink for Example 1.7.12">🔗</a></div></article><div class="para" id="sec18-IntroLinearTransformations-29">Notice that any vector in <span class="process-math">\(\R^2\)</span> can be written as a linear combination of <span class="process-math">\(\v{e}_1 = \begin{bmatrix} 1 \\ 0 \end{bmatrix}\)</span> and <span class="process-math">\(\v{e}_2 = \begin{bmatrix} 0 \\ 1 \end{bmatrix}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec18-IntroLinearTransformations-29" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details id="sec18-IntroLinearTransformations-30" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="title">Quick proof of this claim.</span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical" id="sec18-IntroLinearTransformations-30-2">
+<div class="para">Let <span class="process-math">\(\begin{bmatrix} x \\ y \end{bmatrix}\)</span> be an arbitrary vector in <span class="process-math">\(\R^2\text{.}\)</span> Then</div>
+<div class="displaymath process-math" id="sec18-IntroLinearTransformations-30-2-3">
+\begin{equation*}
+\begin{bmatrix} x \\ y \end{bmatrix} = x\begin{bmatrix} 1 \\ 0 \end{bmatrix} + y\begin{bmatrix} 0 \\ 1 \end{bmatrix} = x\v{e}_1 + y\v{e}_2
+\end{equation*}
+</div>
+<div class="para">Proved!</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec18-IntroLinearTransformations-30-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 1.7.2: Quick proof of this claim"><a href="#sec18-IntroLinearTransformations-30" title="Copy heading and permalink for Proof 1.7.2: Quick proof of this claim" aria-label="Copy heading and permalink for Proof 1.7.2: Quick proof of this claim">🔗</a></div></article></details><div class="para" id="sec18-IntroLinearTransformations-31">
+<span class="process-math">\(\left\{ \v{e}_1, \v{e}_2 \right\}\)</span> is called the <dfn class="terminology">standard basis</dfn> of <span class="process-math">\(\R^2\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec18-IntroLinearTransformations-31" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec18-IntroLinearTransformations-32">For <span class="process-math">\(\R^n\text{,}\)</span> the standard basis consists of the vectors <span class="process-math">\(\left\{\v{e}_1, \v{e}_2, \ldots, \v{e}_n\right\}\)</span> where the <span class="process-math">\(k\)</span>-th entry of <span class="process-math">\(\v{e}_k\)</span> is a <span class="process-math">\(1\)</span> and all of the rest are zeros. Clearly these are all <span class="process-math">\(n\)</span>-dimensional vectors. That means the <span class="process-math">\(\v{e}_1\)</span> is actually a different vector depending on which <span class="process-math">\(\R^n\)</span> you are working with.<div class="autopermalink" data-description="Paragraph"><a href="#sec18-IntroLinearTransformations-32" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec18-IntroLinearTransformations-33">For example, <span class="process-math">\(\v{e}_1\)</span> in <span class="process-math">\(\R^2\)</span> is <span class="process-math">\(\begin{bmatrix} 1 \\ 0 \end{bmatrix}\text{,}\)</span> but <span class="process-math">\(\v{e}_1\)</span> in <span class="process-math">\(\R^3\)</span> is <span class="process-math">\(\begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix}\text{.}\)</span> They are NOT the same vectors!<div class="autopermalink" data-description="Paragraph"><a href="#sec18-IntroLinearTransformations-33" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec18-IntroLinearTransformations-34">Combining this fact with the two properties that every linear transformation satisfies, we can see that every linear combination defined on <span class="process-math">\(\R^2\)</span> (this works for <span class="process-math">\(\R^n\)</span> as well, but let’s start small!) is actually determined by what it does to the standard basis vectors <span class="process-math">\(\v{e}_1\)</span> and <span class="process-math">\(\v{e}_2\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec18-IntroLinearTransformations-34" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details id="sec18-IntroLinearTransformations-35" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="title">Quick proof of this claim.</span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical" id="sec18-IntroLinearTransformations-35-2">
+<div class="para">Let <span class="process-math">\(\v{x}\)</span> be a vector in <span class="process-math">\(\R^2\text{.}\)</span> Then there exist scalars <span class="process-math">\(a, b \in \R\)</span> such that</div>
+<div class="displaymath process-math" id="sec18-IntroLinearTransformations-35-2-4">
+\begin{equation*}
+\v{x} = a\v{e}_1 + b\v{e}_2
+\end{equation*}
+</div>
+<div class="para">Then for any linear transformation <span class="process-math">\(T\)</span> defined on <span class="process-math">\(\R^2\text{,}\)</span> we have</div>
+<div class="displaymath process-math" id="sec18-IntroLinearTransformations-35-2-7">
+\begin{equation*}
+T(\v{x}) = T(a\v{e}_1 + b\v{e}_2) = aT(\v{e}_1) + bT(\v{e}_2)
+\end{equation*}
+</div>
+<div class="para">So the output of <span class="process-math">\(T\)</span> at <span class="process-math">\(\v{x}\)</span> is completely determined by the output of <span class="process-math">\(T\)</span> at <span class="process-math">\(\v{e}_1\)</span> and <span class="process-math">\(\v{e}_2\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec18-IntroLinearTransformations-35-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 1.7.3: Quick proof of this claim"><a href="#sec18-IntroLinearTransformations-35" title="Copy heading and permalink for Proof 1.7.3: Quick proof of this claim" aria-label="Copy heading and permalink for Proof 1.7.3: Quick proof of this claim">🔗</a></div></article></details><div class="para" id="sec18-IntroLinearTransformations-36">We can use this fact to figure out how to find the matrix for a linear transformation (and in doing so, we really prove that such a matrix will always exist for any linear transformation)!<div class="autopermalink" data-description="Paragraph"><a href="#sec18-IntroLinearTransformations-36" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="example example-like" id="sec18-IntroLinearTransformations-37"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.7.13</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para logical" id="sec18-IntroLinearTransformations-37-1">
+<div class="para">Suppose that <span class="process-math">\(T: \R^2 \to \R^3\)</span> is a linear transformation such that</div>
+<div class="displaymath process-math" id="sec18-IntroLinearTransformations-37-1-2">
+\begin{equation*}
+T\lp \v{e}_1 \rp = \begin{bmatrix} 2 \\ 0 \\ 3 \end{bmatrix}
+\qquad \text{ and } \qquad
+T\lp \v{e}_2 \rp = \begin{bmatrix} 1 \\ 2 \\ 3 \end{bmatrix}
+\end{equation*}
+</div>
+<div class="para">What is the matrix <span class="process-math">\(A\)</span> such that <span class="process-math">\(T(\v{x}) = A\v{x}\)</span> for all <span class="process-math">\(\v{x} \in \R^2\text{?}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec18-IntroLinearTransformations-37-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec18-IntroLinearTransformations-37-2">
+<div class="para">Consider any vector <span class="process-math">\(\v{x} = \begin{bmatrix} x \\ y \end{bmatrix}\)</span> in <span class="process-math">\(\R^2\text{.}\)</span> We know that</div>
+<div class="displaymath process-math" id="sec18-IntroLinearTransformations-37-2-3">
+\begin{align*}
+T\lp \begin{bmatrix} x \\ y \end{bmatrix} \rp \amp= T\lp x\begin{bmatrix} 1 \\ 0 \end{bmatrix} + y\begin{bmatrix} 0 \\ 1 \end{bmatrix} \rp \\
+\amp= xT\lp \begin{bmatrix} 1 \\ 0 \end{bmatrix} \rp + yT\lp \begin{bmatrix} 0 \\ 1 \end{bmatrix} \rp \\
+\amp= x\begin{bmatrix} 2 \\ 0 \\ 3 \end{bmatrix} + y\begin{bmatrix} 1 \\ 2 \\ 3 \end{bmatrix} \\
+\amp= \begin{bmatrix} 2x + y \\ 2y \\ 3x + 3y \end{bmatrix} 
+\end{align*}
+</div>
+<div class="para">Notice that the output is what we would get if we multiplied the matrix <span class="process-math">\(\begin{bmatrix} 2 \amp 1 \\ 0 \amp 2 \\ 3 \amp 3 \end{bmatrix}\)</span> by the vector <span class="process-math">\(\begin{bmatrix} x \\ y \end{bmatrix}\text{!}\)</span> So</div>
+<div class="displaymath process-math" id="sec18-IntroLinearTransformations-37-2-6">
+\begin{equation*}
+T\lp \begin{bmatrix} x \\ y \end{bmatrix} \rp = \begin{bmatrix} 2 \amp 1 \\ 0 \amp 2 \\ 3 \amp 3 \end{bmatrix} \begin{bmatrix} x \\ y \end{bmatrix}
+\end{equation*}
+</div>
+<div class="para">We found the matrix that goes with this linear transformation!</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec18-IntroLinearTransformations-37-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 1.7.13"><a href="#sec18-IntroLinearTransformations-37" title="Copy heading and permalink for Example 1.7.13" aria-label="Copy heading and permalink for Example 1.7.13">🔗</a></div></article><div class="para" id="sec18-IntroLinearTransformations-38">Notice that in the above example, <em class="alert">the columns of our matrix were the outputs of the standard basis vectors</em>. That tells us exactly how to find a matrix for any linear transformation!<div class="autopermalink" data-description="Paragraph"><a href="#sec18-IntroLinearTransformations-38" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec18-IntroLinearTransformations-39">
+<div class="para">Suppose <span class="process-math">\(T: \R^n \to \R^m\)</span> is a linear transformation. To find the matrix <span class="process-math">\(A\)</span> such that <span class="process-math">\(T\)</span> is given by the rule <span class="process-math">\(T(\v{x}) = A\v{x}\text{,}\)</span> we...</div>
+<ol class="decimal ol-marker-8" id="sec18-IntroLinearTransformations-39-5">
+<li id="sec18-IntroLinearTransformations-39-5-1">
+<div class="para" id="sec18-IntroLinearTransformations-39-5-1-1">Figure out <span class="process-math">\(T\lp \v{e_1} \rp, T\lp \v{e_2} \rp, \ldots T\lp \v{e_n} \rp\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec18-IntroLinearTransformations-39-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 1"><a href="#sec18-IntroLinearTransformations-39-5-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="sec18-IntroLinearTransformations-39-5-2">
+<div class="para logical" id="sec18-IntroLinearTransformations-39-5-2-1">
+<div class="para">Write the matrix that has columns <span class="process-math">\(T\lp \v{e_1} \rp, T\lp \v{e_2} \rp, \ldots T\lp \v{e_n} \rp\text{:}\)</span>
+</div>
+<div class="displaymath process-math" id="sec18-IntroLinearTransformations-39-5-2-1-2">
+\begin{equation*}
+A = \begin{bmatrix} T\lp \v{e_1} \rp \amp T\lp \v{e_2} \rp \amp \cdots \amp T\lp \v{e_n} \rp \end{bmatrix}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec18-IntroLinearTransformations-39-5-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2"><a href="#sec18-IntroLinearTransformations-39-5-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li id="sec18-IntroLinearTransformations-39-5-3">
+<div class="para" id="sec18-IntroLinearTransformations-39-5-3-1">Pat yourself on the back<div class="autopermalink" data-description="Paragraph"><a href="#sec18-IntroLinearTransformations-39-5-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 3"><a href="#sec18-IntroLinearTransformations-39-5-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+</ol>
+<div class="para">Special terminology! This matrix <span class="process-math">\(A\)</span> that we found is called the <dfn class="terminology">standard matrix</dfn> for the linear transformation <span class="process-math">\(T\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec18-IntroLinearTransformations-39" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="example example-like" id="sec18-IntroLinearTransformations-40"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.7.14</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para logical" id="sec18-IntroLinearTransformations-40-1">
+<div class="para">Let <span class="process-math">\(T: \R^2 \to \R^2\)</span> be a linear transformation given by</div>
+<div class="displaymath process-math" id="sec18-IntroLinearTransformations-40-1-2">
+\begin{equation*}
+T\lp \begin{bmatrix} x \\ y \end{bmatrix} \rp = \begin{bmatrix} 2x + 3y \\ 5x + 7y \end{bmatrix}
+\end{equation*}
+</div>
+<div class="para">Let’s find the matrix <span class="process-math">\(A\)</span> such that <span class="process-math">\(T(\v{x}) = A\v{x}\)</span> for all <span class="process-math">\(\v{x} \in \R^2\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec18-IntroLinearTransformations-40-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec18-IntroLinearTransformations-40-2">
+<div class="para">Step 1: In this case, <span class="process-math">\(\v{e}_1 = \begin{bmatrix} 1 \\ 0 \end{bmatrix}\)</span> and <span class="process-math">\(\v{e}_2 = \begin{bmatrix} 0 \\ 1 \end{bmatrix}\text{.}\)</span> So</div>
+<div class="displaymath process-math" id="sec18-IntroLinearTransformations-40-2-3">
+\begin{equation*}
+T(\v{e}_1) = T\lp \begin{bmatrix} 1 \\ 0 \end{bmatrix} \rp = \begin{bmatrix} 2 \\ 5 \end{bmatrix}
+\qquad \text{ and } \qquad
+T(\v{e}_2) = T\lp \begin{bmatrix} 0 \\ 1 \end{bmatrix} \rp = \begin{bmatrix} 3 \\ 7 \end{bmatrix}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec18-IntroLinearTransformations-40-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec18-IntroLinearTransformations-40-3">Step 2: <span class="process-math">\(A = \begin{bmatrix} T(\v{e}_1)\amp T(\v{e}_2) \end{bmatrix} = \begin{bmatrix} 2 \amp 3 \\ 5 \amp 7 \end{bmatrix}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec18-IntroLinearTransformations-40-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec18-IntroLinearTransformations-40-4">
+<div class="para">Let’s check to see if <span class="process-math">\(A\)</span> really works!</div>
+<div class="displaymath process-math" id="sec18-IntroLinearTransformations-40-4-2">
+\begin{equation*}
+A\begin{bmatrix} x \\ y \end{bmatrix} = \begin{bmatrix} 2 \amp 3 \\ 5 \amp 7 \end{bmatrix} \begin{bmatrix} x \\ y \end{bmatrix} = \begin{bmatrix} 2x + 3y \\ 5x + 7y \end{bmatrix} 
+\end{equation*}
+</div>
+<div class="para">Woo!</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec18-IntroLinearTransformations-40-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 1.7.14"><a href="#sec18-IntroLinearTransformations-40" title="Copy heading and permalink for Example 1.7.14" aria-label="Copy heading and permalink for Example 1.7.14">🔗</a></div></article><article class="exercise exercise-like" id="sec18-IntroLinearTransformations-41"><h3 class="heading">
+<span class="type">Checkpoint</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.7.15</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para logical" id="sec18-IntroLinearTransformations-41-1">
+<div class="para">Find the matrix that corresponds to the linear transformation <span class="process-math">\(T: \R^3 \to \R^2\)</span> given by</div>
+<div class="displaymath process-math" id="sec18-IntroLinearTransformations-41-1-2">
+\begin{equation*}
+T\lp \begin{bmatrix} x \\ y \\ z \end{bmatrix} \rp = \begin{bmatrix} x + 3y + 7z \\ 3x + 5y - 8z \end{bmatrix}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec18-IntroLinearTransformations-41-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details id="sec18-IntroLinearTransformations-41-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para logical" id="sec18-IntroLinearTransformations-41-2-1">
+<div class="para">Step 1: In this case, since the domain is <span class="process-math">\(\R^3\text{,}\)</span> our standard basis vectors are <span class="process-math">\(\v{e}_1 = \begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix}\text{,}\)</span> <span class="process-math">\(\v{e}_2 = \begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix}\text{,}\)</span> and <span class="process-math">\(\v{e}_3 = \begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix}\text{.}\)</span> Evaluating the transformation at each gives:</div>
+<div class="displaymath process-math" id="sec18-IntroLinearTransformations-41-2-1-5">
+\begin{equation*}
+T(\v{e}_1) = T\lp \begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix} \rp = \begin{bmatrix} 1 \\ 3 \end{bmatrix},
+\end{equation*}
+</div>
+<div class="displaymath process-math" id="sec18-IntroLinearTransformations-41-2-1-6">
+\begin{equation*}
+T(\v{e}_2) = T\lp \begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix} \rp = \begin{bmatrix} 3 \\ 5 \end{bmatrix},
+\end{equation*}
+</div>
+<div class="displaymath process-math" id="sec18-IntroLinearTransformations-41-2-1-7">
+\begin{equation*}
+T(\v{e}_3) = T\lp \begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix} \rp = \begin{bmatrix} 7 \\ -8 \end{bmatrix}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec18-IntroLinearTransformations-41-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec18-IntroLinearTransformations-41-2-2">
+<div class="para">Step 2: We form the matrix by placing these resulting vectors into the columns.</div>
+<div class="displaymath process-math" id="sec18-IntroLinearTransformations-41-2-2-1">
+\begin{equation*}
+A = \begin{bmatrix} T(\v{e}_1)\amp T(\v{e}_2)\amp T(\v{e}_3) \end{bmatrix} = \begin{bmatrix} 1 \amp 3 \amp 7 \\ 3 \amp 5 \amp -8 \end{bmatrix}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec18-IntroLinearTransformations-41-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec18-IntroLinearTransformations-41-2-3">
+<div class="para">Let’s check to see if <span class="process-math">\(A\)</span> really works!</div>
+<div class="displaymath process-math" id="sec18-IntroLinearTransformations-41-2-3-2">
+\begin{equation*}
+A\begin{bmatrix} x \\ y \\ z \end{bmatrix} = \begin{bmatrix} 1 \amp 3 \amp 7 \\ 3 \amp 5 \amp -8 \end{bmatrix} \begin{bmatrix} x \\ y \\ z \end{bmatrix} = \begin{bmatrix} x + 3y + 7z \\ 3x + 5y - 8z \end{bmatrix} 
+\end{equation*}
+</div>
+<div class="para">Yay!</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec18-IntroLinearTransformations-41-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 1.7.15.1"><a href="#sec18-IntroLinearTransformations-41-2" title="Copy heading and permalink for Solution 1.7.15.1" aria-label="Copy heading and permalink for Solution 1.7.15.1">🔗</a></div>
+</div></details><div class="autopermalink" data-description="Checkpoint 1.7.15"><a href="#sec18-IntroLinearTransformations-41" title="Copy heading and permalink for Checkpoint 1.7.15" aria-label="Copy heading and permalink for Checkpoint 1.7.15">🔗</a></div></article><div class="para" id="sec18-IntroLinearTransformations-42">It turns out that rotations and reflections are also linear transformations!<div class="autopermalink" data-description="Paragraph"><a href="#sec18-IntroLinearTransformations-42" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec18-IntroLinearTransformations-43">
+<em class="alert">Let’s find a matrix for a rotation <span class="process-math">\(\theta\)</span> in <span class="process-math">\(\R^2\text{!}\)</span></em> We need to figure out what such a rotation does to the vectors <span class="process-math">\(\begin{bmatrix} 1 \\ 0 \end{bmatrix}\)</span> and <span class="process-math">\(\begin{bmatrix} 0 \\ 1 \end{bmatrix}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec18-IntroLinearTransformations-43" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec18-IntroLinearTransformations-44">Let’s suppose that the vector <span class="process-math">\(\begin{bmatrix} x \\ y \end{bmatrix}\)</span> is the result of rotating <span class="process-math">\(\begin{bmatrix} 1 \\ 0 \end{bmatrix}\)</span> counterclockwise by the angle <span class="process-math">\(\theta\text{.}\)</span> This vector can be represented as an arrow starting at the origin and ending at the point <span class="process-math">\((x, y)\text{.}\)</span> We can draw a triangle to figure out the exact coordinates of the vector <span class="process-math">\(\begin{bmatrix} x \\ y \end{bmatrix}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec18-IntroLinearTransformations-44" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/sec18-RotationalMatrix-UnitCircle.png" class="contained"></div>
+<div class="para" id="sec18-IntroLinearTransformations-46">The <span class="process-math">\(x\)</span>-coordinate will be <span class="process-math">\(\cos(\theta)\)</span> and the <span class="process-math">\(y\)</span>-coordinate will be <span class="process-math">\(\sin(\theta)\text{.}\)</span> So the rotation takes <span class="process-math">\(\begin{bmatrix} 1 \\ 0 \end{bmatrix}\)</span> to <span class="process-math">\(\begin{bmatrix} \cos(\theta) \\ \sin(\theta) \end{bmatrix}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec18-IntroLinearTransformations-46" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec18-IntroLinearTransformations-47">If we also draw the vector <span class="process-math">\(\begin{bmatrix} 0 \\ 1 \end{bmatrix}\)</span> and rotate it (counterclockwise) by an angle of <span class="process-math">\(\theta\text{,}\)</span> we get a picture like this:<div class="autopermalink" data-description="Paragraph"><a href="#sec18-IntroLinearTransformations-47" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/sec18-RotationalMatrix-RotatingTriangle.png" class="contained"></div>
+<div class="para" id="sec18-IntroLinearTransformations-49">This time, the <span class="process-math">\(x\)</span>-coordinate will be <span class="process-math">\(-\sin(\theta)\)</span> and the <span class="process-math">\(y\)</span>-coordinate will be <span class="process-math">\(\cos(\theta)\text{.}\)</span> So the rotation takes <span class="process-math">\(\begin{bmatrix} 0 \\ 1 \end{bmatrix}\)</span> to <span class="process-math">\(\begin{bmatrix} -\sin(\theta) \\ \cos(\theta) \end{bmatrix}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec18-IntroLinearTransformations-49" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec18-IntroLinearTransformations-50">
+<em class="emphasis">Note:</em> These pictures make it easy to see this is true when <span class="process-math">\(\theta\)</span> is between <span class="process-math">\(0^\circ\)</span> and <span class="process-math">\(90^\circ\text{,}\)</span> To see that this is true regardless of how big <span class="process-math">\(\theta\)</span> is, you can either look at cases in all of the four quadrants or you can use trig identities.<div class="autopermalink" data-description="Paragraph"><a href="#sec18-IntroLinearTransformations-50" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec18-IntroLinearTransformations-51">
+<div class="para">This means that you can find any rotation matrix by plugging <span class="process-math">\(\theta\)</span> into</div>
+<div class="displaymath process-math" id="sec18-IntroLinearTransformations-51-2">
+\begin{equation*}
+R_\theta = \begin{bmatrix} \cos(\theta) \amp -\sin(\theta) \\ \sin(\theta) \amp \cos(\theta) \end{bmatrix}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec18-IntroLinearTransformations-51" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec18-IntroLinearTransformations-52">
+<em class="alert">Now let’s find a matrix for the reflection across the line <span class="process-math">\(y = mx\text{!}\)</span></em> We need fo figure out what happens to <span class="process-math">\(\begin{bmatrix} 1 \\ 0 \end{bmatrix}\)</span> and <span class="process-math">\(\begin{bmatrix} 0 \\ 1 \end{bmatrix}\)</span> when we reflect them across the line <span class="process-math">\(y = mx\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec18-IntroLinearTransformations-52" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec18-IntroLinearTransformations-53">From analytic geometry, we know that the slope of any line perpendicular to <span class="process-math">\(y = mx\)</span> will have slope <span class="process-math">\(-\frac{1}{m}\text{.}\)</span> We want to find the line through <span class="process-math">\((1,0)\)</span> that has slope <span class="process-math">\(-\frac{1}{m}\text{.}\)</span> That is because we need to find the intersection of that line with <span class="process-math">\(y = mx\)</span> to get the midpoint of the segment between <span class="process-math">\((1,0)\)</span> and the point we get after reflecting <span class="process-math">\((1,0)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec18-IntroLinearTransformations-53" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/sec18-ReflectionalMatrix.png" class="contained"></div>
+<div class="para" id="sec18-IntroLinearTransformations-55">That perpendicular line is given by <span class="process-math">\(y - 0 = -\frac{1}{m}(x - 1)\text{,}\)</span> which simplifies to <span class="process-math">\(y = -\frac{1}{m}x + \frac{1}{m}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec18-IntroLinearTransformations-55" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec18-IntroLinearTransformations-56">
+<div class="para">Now let’s find the point of intersection! Substituting <span class="process-math">\(y = mx\)</span> into this equation, we get</div>
+<div class="displaymath process-math" id="sec18-IntroLinearTransformations-56-2">
+\begin{equation*}
+mx = -\frac{1}{m}x + \frac{1}{m}
+\qquad \implies \qquad 
+m^2x = -x + 1
+\end{equation*}
+</div>
+<div class="para">This means that <span class="process-math">\(x = \frac{1}{1 + m^2}\text{.}\)</span> Then substituting again, we get <span class="process-math">\(y = m\frac{1}{1 + m^2}\text{.}\)</span> So the midpoint between <span class="process-math">\((1,0)\)</span> and the result of reflecting <span class="process-math">\((1,0)\)</span> across the line <span class="process-math">\(y = mx\)</span> is <span class="process-math">\(\lp \frac{1}{1 + m^2}, m\frac{1}{1 + m^2} \rp\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec18-IntroLinearTransformations-56" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec18-IntroLinearTransformations-57">
+<div class="para">The midpoint formula tells us that the midpoint of a segment between points <span class="process-math">\((x_1, y_1)\)</span> and <span class="process-math">\((x_2, y_2)\)</span> is <span class="process-math">\(\lp \frac{x_1 + x_2}{2}, \frac{y_1 + y_2}{2} \rp\text{.}\)</span> So</div>
+<div class="displaymath process-math" id="sec18-IntroLinearTransformations-57-4">
+\begin{equation*}
+\lp \frac{1}{1 + m^2}, m\frac{1}{1 + m^2} \rp = \lp \frac{1 + x}{2}, \frac{0 + y}{2} \rp
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\((x,y)\)</span> is the point we are looking for. This gives us the equations</div>
+<div class="displaymath process-math" id="sec18-IntroLinearTransformations-57-6">
+\begin{equation*}
+\begin{cases}
+\frac{1}{1 + m^2} = \frac{1 + x}{2} \\
+m\frac{1}{1 + m^2} = \frac{y}{2}
+\end{cases}
+\end{equation*}
+</div>
+<div class="para">Solving these equations, we get</div>
+<div class="displaymath process-math" id="sec18-IntroLinearTransformations-57-7">
+\begin{equation*}
+\begin{cases}
+x = \frac{1 - m^2}{1 + m^2} \\
+y = \frac{2m}{1 + m^2}
+\end{cases}  
+\end{equation*}
+</div>
+<div class="para">So the reflection takes <span class="process-math">\((1,0)\)</span> to <span class="process-math">\(\lp \frac{1 - m^2}{1 + m^2}, \frac{2m}{1 + m^2} \rp\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec18-IntroLinearTransformations-57" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec18-IntroLinearTransformations-58">A similar method can be used to find out that the reflection takes the point <span class="process-math">\((0,1)\)</span> to the point <span class="process-math">\(\lp \frac{2m}{1 + m^2}, \frac{m^2 - 1}{1 + m^2} \rp\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec18-IntroLinearTransformations-58" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec18-IntroLinearTransformations-59">
+<div class="para">Converting these to column vectors, the matrix for reflecting across the line <span class="process-math">\(y = mx\)</span> is given by</div>
+<div class="displaymath process-math" id="sec18-IntroLinearTransformations-59-2">
+\begin{equation*}
+R_m = \begin{bmatrix} \frac{1 - m^2}{1 + m^2} \amp \frac{2m}{1 + m^2} \\ \frac{2m}{1 + m^2} \amp \frac{m^2 - 1}{1 + m^2} \end{bmatrix}
+\end{equation*}
+</div>
+<div class="para">Pulling out the common factor, we can rewrite this as</div>
+<div class="displaymath process-math" id="sec18-IntroLinearTransformations-59-3">
+\begin{equation*}
+R_m = \frac{1}{1 + m^2} \begin{bmatrix} 1 - m^2 \amp 2m \\ 2m \amp m^2 - 1 \end{bmatrix}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec18-IntroLinearTransformations-59" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="exercise exercise-like" id="sec18-IntroLinearTransformations-60"><h3 class="heading">
+<span class="type">Checkpoint</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.7.16</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="sec18-IntroLinearTransformations-60-1">Now let’s help out Richard with his research! (yes, this is actually something Richard worked on in a research project before, but minus the part with heavy abstract algebra theory part)<div class="autopermalink" data-description="Paragraph"><a href="#sec18-IntroLinearTransformations-60-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec18-IntroLinearTransformations-60-2">Suppose we want to construct a regular hexagon centered at the origin. What are the coordinates of the vertices?<div class="autopermalink" data-description="Paragraph"><a href="#sec18-IntroLinearTransformations-60-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec18-IntroLinearTransformations-60-3">Let’s start by pinning down one of the six vertices at <span class="process-math">\((1,0)\text{.}\)</span> Then what are the other five coordinates for this regular hexagon?<div class="autopermalink" data-description="Paragraph"><a href="#sec18-IntroLinearTransformations-60-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details id="sec18-IntroLinearTransformations-60-4" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="sec18-IntroLinearTransformations-60-4-1">Another fantastic way to find these coordinates is by using a linear transformation! Since the hexagon is regular, each vertex is a <span class="process-math">\(60^\circ\)</span> counterclockwise rotation from the previous one around the origin.<div class="autopermalink" data-description="Paragraph"><a href="#sec18-IntroLinearTransformations-60-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec18-IntroLinearTransformations-60-4-2">
+<div class="para">The standard matrix for a rotation by an angle <span class="process-math">\(\theta\)</span> in <span class="process-math">\(\R^2\)</span> is:</div>
+<div class="displaymath process-math" id="sec18-IntroLinearTransformations-60-4-2-3">
+\begin{equation*}
+R_\theta = \begin{bmatrix} \cos \theta \amp -\sin \theta \\ \sin \theta \amp \cos \theta \end{bmatrix}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec18-IntroLinearTransformations-60-4-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec18-IntroLinearTransformations-60-4-3">
+<div class="para">For <span class="process-math">\(\theta = 60^\circ\text{,}\)</span> our rotation matrix becomes:</div>
+<div class="displaymath process-math" id="sec18-IntroLinearTransformations-60-4-3-2">
+\begin{equation*}
+R_{60^\circ} = \begin{bmatrix} \cos 60^\circ \amp -\sin 60^\circ \\ \sin 60^\circ \amp \cos 60^\circ \end{bmatrix} 
+= \begin{bmatrix} \frac{1}{2} \amp -\frac{\sqrt{3}}{2} \\ \frac{\sqrt{3}}{2} \amp \frac{1}{2} \end{bmatrix}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec18-IntroLinearTransformations-60-4-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec18-IntroLinearTransformations-60-4-4">We start with our pinned vertex as a column vector, <span class="process-math">\(\v{v}_0 = \begin{bmatrix} 1 \\ 0 \end{bmatrix}\text{.}\)</span> To find each subsequent vertex, we multiply the previous vector by <span class="process-math">\(R_{60^\circ}\text{:}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec18-IntroLinearTransformations-60-4-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<ul class="disc" id="sec18-IntroLinearTransformations-60-4-5">
+<li id="sec18-IntroLinearTransformations-60-4-5-1">
+<div class="para" id="sec18-IntroLinearTransformations-60-4-5-1-1">
+<span class="process-math">\(\displaystyle \v{v}_1 = R_{60^\circ}\v{v}_0 = \begin{bmatrix} \frac{1}{2} \amp -\frac{\sqrt{3}}{2} \\ \frac{\sqrt{3}}{2} \amp \frac{1}{2} \end{bmatrix} \begin{bmatrix} 1 \\ 0 \end{bmatrix} = \begin{bmatrix} \frac{1}{2} \\ \frac{\sqrt{3}}{2} \end{bmatrix}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec18-IntroLinearTransformations-60-4-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#sec18-IntroLinearTransformations-60-4-5-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec18-IntroLinearTransformations-60-4-5-2">
+<div class="para" id="sec18-IntroLinearTransformations-60-4-5-2-1">
+<span class="process-math">\(\displaystyle \v{v}_2 = R_{60^\circ}\v{v}_1 = \begin{bmatrix} \frac{1}{2} \amp -\frac{\sqrt{3}}{2} \\ \frac{\sqrt{3}}{2} \amp \frac{1}{2} \end{bmatrix} \begin{bmatrix} \frac{1}{2} \\ \frac{\sqrt{3}}{2} \end{bmatrix} = \begin{bmatrix} \frac{1}{4} - \frac{3}{4} \\ \frac{\sqrt{3}}{4} + \frac{\sqrt{3}}{4} \end{bmatrix} = \begin{bmatrix} -\frac{1}{2} \\ \frac{\sqrt{3}}{2} \end{bmatrix}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec18-IntroLinearTransformations-60-4-5-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#sec18-IntroLinearTransformations-60-4-5-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec18-IntroLinearTransformations-60-4-5-3">
+<div class="para" id="sec18-IntroLinearTransformations-60-4-5-3-1">
+<span class="process-math">\(\displaystyle \v{v}_3 = R_{60^\circ}\v{v}_2 = \begin{bmatrix} \frac{1}{2} \amp -\frac{\sqrt{3}}{2} \\ \frac{\sqrt{3}}{2} \amp \frac{1}{2} \end{bmatrix} \begin{bmatrix} -\frac{1}{2} \\ \frac{\sqrt{3}}{2} \end{bmatrix} = \begin{bmatrix} -\frac{1}{4} - \frac{3}{4} \\ -\frac{\sqrt{3}}{4} + \frac{\sqrt{3}}{4} \end{bmatrix} = \begin{bmatrix} -1 \\ 0 \end{bmatrix}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec18-IntroLinearTransformations-60-4-5-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#sec18-IntroLinearTransformations-60-4-5-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec18-IntroLinearTransformations-60-4-5-4">
+<div class="para" id="sec18-IntroLinearTransformations-60-4-5-4-1">
+<span class="process-math">\(\displaystyle \v{v}_4 = R_{60^\circ}\v{v}_3 = \begin{bmatrix} \frac{1}{2} \amp -\frac{\sqrt{3}}{2} \\ \frac{\sqrt{3}}{2} \amp \frac{1}{2} \end{bmatrix} \begin{bmatrix} -1 \\ 0 \end{bmatrix} = \begin{bmatrix} -\frac{1}{2} \\ -\frac{\sqrt{3}}{2} \end{bmatrix}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec18-IntroLinearTransformations-60-4-5-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#sec18-IntroLinearTransformations-60-4-5-4" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec18-IntroLinearTransformations-60-4-5-5">
+<div class="para" id="sec18-IntroLinearTransformations-60-4-5-5-1">
+<span class="process-math">\(\displaystyle \v{v}_5 = R_{60^\circ}\v{v}_4 = \begin{bmatrix} \frac{1}{2} \amp -\frac{\sqrt{3}}{2} \\ \frac{\sqrt{3}}{2} \amp \frac{1}{2} \end{bmatrix} \begin{bmatrix} -\frac{1}{2} \\ -\frac{\sqrt{3}}{2} \end{bmatrix} = \begin{bmatrix} -\frac{1}{4} + \frac{3}{4} \\ -\frac{\sqrt{3}}{4} - \frac{\sqrt{3}}{4} \end{bmatrix} = \begin{bmatrix} \frac{1}{2} \\ -\frac{\sqrt{3}}{2} \end{bmatrix}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec18-IntroLinearTransformations-60-4-5-5-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#sec18-IntroLinearTransformations-60-4-5-5" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para" id="sec18-IntroLinearTransformations-60-4-6">Translating these column vectors back into coordinate points yields the same five remaining vertices!<div class="autopermalink" data-description="Paragraph"><a href="#sec18-IntroLinearTransformations-60-4-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 1.7.16.1"><a href="#sec18-IntroLinearTransformations-60-4" title="Copy heading and permalink for Solution 1.7.16.1" aria-label="Copy heading and permalink for Solution 1.7.16.1">🔗</a></div>
+</div></details><div class="autopermalink" data-description="Checkpoint 1.7.16"><a href="#sec18-IntroLinearTransformations-60" title="Copy heading and permalink for Checkpoint 1.7.16" aria-label="Copy heading and permalink for Checkpoint 1.7.16">🔗</a></div></article><div class="para" id="sec18-IntroLinearTransformations-61">
+<em class="alert">TO BE CONTINUED!</em><div class="autopermalink" data-description="Paragraph"><a href="#sec18-IntroLinearTransformations-61" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <section class="worksheet" id="ws-sec18" data-margins="0.75in 0.75in 0.75in 0.75in"><h3 class="heading hide-type">
 <span class="type">Worksheet</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Some Exercises for This Section</span><div class="print-links"><a href="?printpreview=ws-sec18" class="print-link" title="Print preview"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8ad;</span></a></div>

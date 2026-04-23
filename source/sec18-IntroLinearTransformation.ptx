@@ -823,7 +823,7 @@
 
     <solution>
       <p>
-        Another fantastic way to find these coordinates is by using a linear transformation! Since the hexagon is regular, each vertex is a <m>60^\circ</m> counterclockwise rotation from the previous one around the origin.
+        A way to find these coordinates is by using a linear transformation! Since the hexagon is regular, each vertex is a <m>60^\circ</m> counterclockwise rotation from the previous one around the origin.
       </p>
 
       <p>

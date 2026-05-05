@@ -38,6 +38,8 @@
     \newcommand{\proj}{\text{proj}}
     \newcommand{\comp}{\text{comp}}
     \newcommand{\span}{\text{span}}
+    \newcommand{\adj}{\text{adj}}
+    \newcommand{\rank}{\text{rank}}
   </macros>
 
   <!-- If you put any latex-image elements you can include preambles -->

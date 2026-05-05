@@ -5,7 +5,13 @@
 
   <introduction>
     <p>
-      Stuff
+      Up to this point, we have largely viewed matrix equations and matrix-vector multiplication through an algebraic and numerical lens. 
+      In this section, we shift our perspective to explore the graphical and geometric representations of these operations. 
+    </p>
+
+    <p>
+      We will introduce the concept of a linear transformation, which allows us to think of matrices as dynamic functions that map vectors from one space to another. 
+      By building this concept from the ground up, we will connect our prior knowledge of functions to the new framework of vector spaces, ultimately giving us the tools to analyze rotations, reflections, and other geometric mappings.
     </p>
 
     <objectives>
@@ -17,7 +23,22 @@
       <ul>
         <li>
           <p>
-            Do stuff
+            verify whether a given mapping satisfies the properties of a linear transformation.
+          </p>
+        </li>
+        <li>
+          <p>
+            evaluate linear transformations using the principles of linearity and linear combinations.
+          </p>
+        </li>
+        <li>
+          <p>
+            construct the standard matrix for a linear transformation given its action on the standard basis vectors.
+          </p>
+        </li>
+        <li>
+          <p>
+            determine if a linear transformation is injective (one-to-one) or surjective (onto) by analyzing the pivot positions of its standard matrix.
           </p>
         </li>
       </ul>
@@ -823,7 +844,7 @@
 
     <solution>
       <p>
-        A way to find these coordinates is by using a linear transformation! Since the hexagon is regular, each vertex is a <m>60^\circ</m> counterclockwise rotation from the previous one around the origin.
+        Another fantastic way to find these coordinates is by using a linear transformation! Since the hexagon is regular, each vertex is a <m>60^\circ</m> counterclockwise rotation from the previous one around the origin.
       </p>
 
       <p>
@@ -881,8 +902,232 @@
   </exercise>
 
   <p>
-    <alert>TO BE CONTINUED!</alert>
+    There are some special linear transformations, and we will focus on <alert>surjection</alert> and <alert>injection</alert>: 
   </p>
+
+  <definition xml:id="def-SurjectiveTransformation">
+    <statement>
+      <p>
+        A mapping <m>T: \R^n \to \R^m</m> is a <alert>surjection</alert> (or <alert>onto</alert> <m>\R^m</m>) if each <m>\v{b}\in \R^m</m> is the image of at least one <m>\v{x} \in \R^n</m>. 
+      </p>
+
+      <p>
+        That is, <em>every</em> element in the codomain of <m>T</m> is an image of the mapping. 
+      </p>
+    </statement>
+  </definition>
+
+  <definition xml:id="def-InjectiveTransformation">
+    <statement>
+      <p>
+        A mapping <m>T: \R^n \to \R^m</m> is an <alert>injection</alert> (or <term>one-to-one</term>) if each <m>\v{b}\in \R^m</m> is the image of at most one <m>\v{x}\in \R^n</m>. 
+      </p>
+
+      <p>
+        That is, a mapping <m>T</m> is injective if <m>T(\v{x}_1) = T(\v{x}_2)</m> implies <m>\v{x}_1 = \v{x}_2</m>. 
+      </p>
+    </statement>
+  </definition>
+
+  <p>
+    Notice how parallel each of these definitions is. 
+    Moreover, these definitions have everything to do with the existence and uniqueness of pre-images: 
+    <ul marker="">
+      <li>
+        <p>
+          <em>Existence: </em> Does each <m>\v{b}\in \R^m</m> have a pre-image? 
+          If <m>T</m> is surjective, then Yes. 
+        </p>
+      </li>
+      <li>
+        <p>
+          <em>Uniqueness: </em> Is each solution to <m>T(\v{x}) = \v{b}</m> unique? 
+          If <m>T</m> is injective, then Yes!
+        </p>
+      </li>
+    </ul>
+  </p>
+
+  <p>
+    An immediate (and famous) result about injection is the following theorem: 
+  </p>
+
+  <theorem xml:id="thm-Injection-TrivialKernel">
+    <statement>
+      <p>
+        Let <m>T: \R^n \to \R^n</m> be a linear transformation. 
+        Then <m>T</m> is injective if and only if <m>T(\v{x}) = \v{0}</m> has only the trivial solution. 
+      </p>
+    </statement>
+  </theorem>
+
+  <proof>
+    <p>
+      This is a biconditional statement. 
+      Proving this statement comes in to parts: 
+    </p>
+
+    <p>
+      <em>Forward direction (<m>\Rightarrow</m>):</em> 
+      Assume that <m>T</m> is injective. 
+      We want to show that the equation <m>T(\v{x}) = \v{0}</m> has only the trivial solution. 
+    </p>
+
+    <p>
+      Because <m>T</m> is a linear transformation, we know that it maps the zero vector to the zero vector, meaning <m>T(\v{0}) = \v{0}</m>. 
+      Suppose there is some vector <m>\v{x}</m> in <m>\R^n</m> such that <m>T(\v{x}) = \v{0}</m>. 
+      Then we have:
+      <md>T(\v{x}) = T(\v{0})</md>
+      Since we assumed <m>T</m> is injective, the outputs being equal guarantees that the inputs must also be equal. 
+      Therefore, <m>\v{x} = \v{0}</m>. 
+      This shows that the trivial solution is the only solution.
+    </p>
+
+    <p>
+      <em>Backward direction (<m>\Leftarrow</m>):</em> 
+      Assume that <m>T(\v{x}) = \v{0}</m> has only the trivial solution. 
+      We want to show that <m>T</m> is injective. 
+    </p>
+
+    <p>
+      Suppose there are vectors <m>\v{u}</m> and <m>\v{v}</m> in <m>\R^n</m> such that <m>T(\v{u}) = T(\v{v})</m>. 
+      Subtracting <m>T(\v{v})</m> from both sides, we have
+      <md>
+        T(\v{u}) - T(\v{v}) = \v{0}
+      </md>
+      By the linearity properties, this implies that
+      <md>
+        T(\v{u} - \v{v}) = \v{0}
+      </md>
+      By our initial assumption, the only vector that maps to the zero vector is the zero vector itself.
+      This forces the input to be zero.
+      That is, 
+      <md>
+        \v{u} - \v{v} = \v{0}
+      </md>
+      This shows that <m>\v{u} = \v{v}</m>, and hence <m>T</m> is injective.
+    </p>
+
+    <p>
+      What we have established that these two claims are either both true or both false (we assume one of them is true, and show the other one is also true). 
+      Another way of calling biconditional statements are <em>equivalence</em> statement. 
+    </p>
+  </proof>
+  
+  <p>
+    Last but not least, let's make a connection between these two types of the special transformations and what we have learned in the past through the following two statements!
+  </p>
+
+  <theorem xml:id="thm-Surjection-SpanCodomain">
+    <statement>
+      <p>
+        Let <m>T: \R^n \to \R^m</m> be a linear transformation with standard matrix <m>A</m>. 
+        Then <m>T</m> is surjective if and only if the columns of <m>A</m> span the codomain, <m>\R^m</m>. 
+      </p>
+    </statement>
+  </theorem>
+
+  <proof>
+    <p>
+      Observe that the theorem is a biconditional statement. 
+      But instead of proving both directions, let's do a slick trick! 
+    </p>
+
+    <p>
+      Notation clarification! 
+      The symbol <m>\implies</m> means implication!
+    </p>
+
+    <p>
+      Let's consider the forward direction. 
+      The chain of implication looks like this: 
+      <md>
+        <mrow> \amp T \text{ is surjective} </mrow>
+        <mrow> \implies \qquad \amp \forall \v{b}\in \R^m, T(\v{x}) = \v{b} \text{ has at least one solution} </mrow>
+        <mrow> \implies \qquad \amp \forall \v{b}\in \R^m, A\v{x} = \v{b} \text{ is consistent} </mrow>
+        <mrow> \implies \qquad \amp \text{The columns of } A \text{ span } \R^m </mrow>
+      </md>
+      Okay. 
+      And this is supposed to be impressive how? 
+    </p>
+
+    <p>
+      Observe that the statements here are all equivalent! 
+      That is, to prove the other direction, we can just reverse all the implication arrows and the argument stays true! 
+      So the proof of this theorem is to change all the implication arrow to a biconditional arrow! 
+      <md>
+        <mrow> \amp T \text{ is surjective} </mrow>
+        <mrow> \iff \qquad \amp \forall \v{b}\in \R^m, T(\v{x}) = \v{b} \text{ has at least one solution} </mrow>
+        <mrow> \iff \qquad \amp \forall \v{b}\in \R^m, A\v{x} = \v{b} \text{ is consistent} </mrow>
+        <mrow> \iff \qquad \amp \text{The columns of } A \text{ span } \R^m </mrow>
+      </md>
+    </p>
+  </proof>
+  
+  <theorem xml:id="thm-Injection-LinearIndependence">
+    <statement>
+      <p>
+        Let <m>T: \R^n \to \R^m</m> be a linear transformation with standard matrix <m>A</m>. 
+        Then <m>T</m> is injective if and only if the columns of <m>A</m> are linearly independent. 
+      </p>
+    </statement>
+  </theorem>
+  
+  <proof>
+    <p>
+      We can prove this theorem using the same slick trick! 
+      <md>
+        <mrow> \amp T \text{ is injective} </mrow>
+        <mrow> \iff \qquad \amp T(\v{x}) = \v{0} \text{ has has only the trivial solution} </mrow>
+        <mrow> \iff \qquad \amp A\v{x} = \v{0} \text{ has only the trivial solution} </mrow>
+        <mrow> \iff \qquad \amp \text{The columns of } A \text{ are linearly independent }</mrow>
+      </md>
+    </p>
+  </proof>
+
+  <example>
+    <p>
+      Let <m>T: \R^2 \to \R^3</m> defined by 
+      <md>
+        T\lp \begin{bmatrix} x_1 \\ x_2 \end{bmatrix} \rp = \begin{bmatrix} 3x_1 + x_2 \\ 5x_1 + 7x_2 \\ x_1 + 3x_2 \end{bmatrix}
+      </md>
+      Is <m>T</m> a linear transformation? 
+      Is it injective? 
+      Is it surjective? 
+    </p>
+
+    <p>
+      First, we determine if <m>T</m> is a linear transformation. 
+      We can "factor out" the variables to rewrite the transformation as a matrix-vector product:
+      <md>
+        T(\v{x}) = \begin{bmatrix} 3 \amp 1 \\ 5 \amp 7 \\ 1 \amp 3 \end{bmatrix} \begin{bmatrix} x_1 \\ x_2 \end{bmatrix}
+      </md>
+      Let <m>A</m> be this <m>3 \times 2</m> matrix. 
+      Because <m>T(\v{x}) = A\v{x}</m>, it is a matrix transformation. 
+      Every matrix transformation is a linear transformation, so yes, <m>T</m> is a linear transformation.
+    </p>
+
+    <p>
+      Next, we check if <m>T</m> is injective. 
+      By our previous theorem, <m>T</m> is injective if and only if the homogeneous equation <m>T(\v{x}) = \v{0}</m> has only the trivial solution. 
+      To determine this, we find the reduced row echelon form of the standard matrix <m>A</m>:
+      <md>
+        \begin{bmatrix} 3 \amp 1 \\ 5 \amp 7 \\ 1 \amp 3 \end{bmatrix} \sim \begin{bmatrix} 1 \amp 3 \\ 5 \amp 7 \\ 3 \amp 1 \end{bmatrix} \sim \begin{bmatrix} 1 \amp 3 \\ 0 \amp -8 \\ 0 \amp -8 \end{bmatrix} \sim \begin{bmatrix} 1 \amp 0 \\ 0 \amp 1 \\ 0 \amp 0 \end{bmatrix}
+      </md>
+      Because there is a pivot in every column, there are no free variables. 
+      The equation <m>A\v{x} = \v{0}</m> has only the trivial solution, <m>\v{x} = \v{0}</m>. 
+      Therefore, <m>T</m> is injective.
+    </p>
+
+    <p>
+      Finally, we determine if <m>T</m> is surjective. 
+      The transformation <m>T</m> is surjective if and only if its columns span the codomain, <m>\R^3</m>. 
+      This occurs if and only if there is a pivot position in every row of <m>A</m>. 
+      Looking at the reduced row echelon form of <m>A</m>, the third row does not contain a pivot. 
+      Consequently, the columns of <m>A</m> do not span <m>\R^3</m>, meaning there are vectors in the codomain that cannot be reached. 
+      Thus, <m>T</m> is not surjective. 
+    </p>
+  </example>
 
   <worksheet xml:id="ws-sec18">
     <title>Some Exercises for This Section</title>

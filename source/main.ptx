@@ -14,6 +14,7 @@
     <!-- Include chapters -->
     <xi:include href="./ch1-LinearEquations.ptx" />
     <xi:include href="./ch2-MatrixAlgebra.ptx" />
+    <xi:include href="./appendixA-ExamReviews.ptx" />
 
     <!--
     

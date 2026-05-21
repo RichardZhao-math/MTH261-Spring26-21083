@@ -40,6 +40,11 @@
     \newcommand{\span}{\text{span}}
     \newcommand{\adj}{\text{adj}}
     \newcommand{\rank}{\text{rank}}
+
+    \newcommand{\Nul}{\text{Nul}}
+    \newcommand{\Col}{\text{Col}}
+    \newcommand{\Rank}{\text{Rank}}
+    \newcommand{\Nullity}{\text{Nullity}}
   </macros>
 
   <!-- If you put any latex-image elements you can include preambles -->

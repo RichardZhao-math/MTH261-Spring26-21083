@@ -3,6 +3,94 @@
 <section xml:id="sec32-PropertiesDeterminants" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Properties of Determinants</title>
 
-  <p> Text of section. </p>
+  <introduction>
+    <p>
+      In this section, we will see how to compute the determinant of a matrix inverse, which also tells us about the invertibility of a matrix. 
+    </p>
+
+    <objectives>
+      <introduction>
+        <p>
+          After this section, students will be able to:
+        </p>
+      </introduction>
+      <ul>
+        <li>
+          <p>
+            Apply the multiplicative property of determinants
+          </p>
+        </li>
+        <li>
+          <p>
+            determine whether a matrix is invertible by computing its determinant
+          </p>
+        </li>
+      </ul>
+    </objectives>
+  </introduction>
+
+  <p>
+    The most important theorem about determinants is this one: 
+  </p>
+
+  <theorem xml:id="thm-DeterminantsProducts">
+    <title>Determinants and Products</title>
+    <statement>
+        <p>
+            Suppose <m>A</m> and <m>B</m> are <m>n \times n</m> matrices. 
+            Then
+            <md>
+                \det (AB) = \det A \det B
+            </md>
+            That is, the determinant of the product is the product of the determinants. 
+        </p>
+    </statement>
+  </theorem>
+  
+  <p>
+    And one consequence of this is the following Lemma: 
+  </p>
+
+  <lemma xml:id="lem-DeterminantsInverses">
+    <statement>
+        <p>
+            Let <m>A</m> be an <m>n \times n</m> matrix, then <m>\det A = 0</m> if and only if <m>A</m> has <alert>no</alert> inverse (hence <m>A</m> is not invertible). 
+        </p>
+    </statement>
+  </lemma>
+
+  <example>
+    <p>
+        We know that
+        <md>
+            \begin{bmatrix} 5 \amp -2 \\ -9 \amp 5 \end{bmatrix} = \begin{bmatrix} 5 \amp 0 \\ -9 \amp 1 \end{bmatrix} \begin{bmatrix} 1 \amp \frac{-2}{5} \\ 0 \amp \frac{7}{5} \end{bmatrix}
+        </md>
+        We can calculate the determinant of all three matrices and quickly verify that
+        <md>
+            \begin{vmatrix} 5 \amp -2 \\ -9 \amp 5 \end{vmatrix} = \begin{vmatrix} 5 \amp 0 \\ -9 \amp 1 \end{vmatrix} \begin{vmatrix} 1 \amp \frac{-2}{5} \\ 0 \amp \frac{7}{5} \end{vmatrix}
+        </md>
+    </p>
+  </example>
+
+  <p>
+    If we know that <m>A</m> is invertible, then we can use the above theorem to compute the determinant of the inverse of <m>A</m>. 
+    Since <m>AA^{-1} = I</m>, we have
+    <md>
+    <mrow> \det (AA^{-1}) \amp= \det I </mrow>
+      <mrow> \implies \qquad \det A \det A^{-1} \amp= 1 </mrow>
+        <mrow>\implies \qquad  \det A^{-1} \amp= \frac{1}{\det A} </mrow>
+    </md>
+    Hence, <m>\det\lp A^{-1} \rp = \dfrac{1}{\det A}</m>
+  </p>
+
+  <p>
+    The last theorem in this section is about the determinant of a transpose. 
+    Long story short, the determinant of a matrix is the same as the determinant of its transpose. 
+    That is, 
+    <md>
+      \det \lp A^T \rp = \det A
+    </md>
+  </p>
+
 
 </section>

@@ -572,5 +572,122 @@
     We will continue our investigation of determinants more about the properties and applications of determinants in the next section!
   </p>
 
+  <worksheet xml:id="ws-sec31">
+    <title>Some Exercises for This Section</title>
+    
+    <introduction>
+      <p>
+        Richard included some practice problems that cover some main concepts in this section. 
+        You don't need to turn it in, but you are highly encouraged to work on this with your classmates. 
+        The problems here may end up being in-class practice problems, homework problems, and/or exam problems. 
+        Reach out to Richard for help if you get stuck or have any questions. 
+      </p>
+
+      <p>
+        Only the final answers are included to some of the problems for you to check your result. 
+        If you want to check your work, talk to Richard and he is happy to discuss the process with you. 
+      </p>
+    </introduction>
+
+    <exercisegroup>
+        <introduction>
+            <p>
+                Compute the determinants in the following exercises using a cofactor expansion across the first row.
+            </p>
+        </introduction>
+        
+        <exercise number="3.1.5">
+            <statement>
+                <me>\begin{vmatrix} 2 \amp 3 \amp -3 \\ 4 \amp 0 \amp 3 \\ 6 \amp 1 \amp 5 \end{vmatrix}</me>
+            </statement>
+        </exercise>
+
+        <exercise number="3.1.7">
+            <statement>
+                <me>\begin{vmatrix} 4 \amp 3 \amp 0 \\ 6 \amp 5 \amp 2 \\ 9 \amp 7 \amp 3 \end{vmatrix}</me>
+            </statement>
+        </exercise>
+    </exercisegroup>
+
+    <exercisegroup>
+        <introduction>
+            <p>
+                Compute the determinants in the following exercises by cofactor expansions. 
+                At each step, choose a row or column that involves the least amount of computation.
+            </p>
+        </introduction>
+
+        <exercise number="3.1.9">
+            <statement>
+                <me>\begin{vmatrix} 4 \amp 0 \amp 0 \amp 5 \\ 1 \amp 7 \amp 2 \amp -5 \\ 3 \amp 0 \amp 0 \amp 0 \\ 8 \amp 3 \amp 1 \amp 7 \end{vmatrix}</me>
+            </statement>
+        </exercise>
+
+        <exercise number="3.1.11">
+            <statement>
+                <me>\begin{vmatrix} 3 \amp 5 \amp -6 \amp 4 \\ 0 \amp -2 \amp 3 \amp -3 \\ 0 \amp 0 \amp 1 \amp 5 \\ 0 \amp 0 \amp 0 \amp 3 \end{vmatrix}</me>
+            </statement>
+        </exercise>
+    </exercisegroup>
+
+
+        <exercise number="3.1.21">
+            <statement>
+                <p>
+                    Explore the effect of an elementary row operation on the determinant of a matrix. 
+                    State the row operation and describe how it affects the determinant.
+                    <me>\begin{bmatrix} 3 \amp 2 \\ 5 \amp 4 \end{bmatrix}, \begin{bmatrix} 3 \amp 2 \\ 5+3k \amp 4+2k \end{bmatrix}</me>
+                </p>
+            </statement>
+        </exercise>
+
+    <exercise number="3.1.37">
+        <statement>
+            <p>
+                Let <m>A = \begin{bmatrix} 3 \amp 1 \\ 4 \amp 2 \end{bmatrix}</m>. 
+                Write <m>5A</m>. 
+                Is <m>\det(5A) = 5\det(A)</m>?
+            </p>
+        </statement>
+    </exercise>
+
+    <exercisegroup>
+        <introduction>
+            <p>
+                In the following exercises, <m>A</m> is an <m>n \times n</m> matrix. 
+                Mark each statement True or False (T/F). 
+                Justify each answer.
+            </p>
+        </introduction>
+
+        <exercise number="3.1.39">
+            <statement>
+                <p>
+                    (T/F) An <m>n \times n</m> determinant is defined by determinants of <m>(n-1) \times (n-1)</m> submatrices.
+                </p>
+            </statement>
+        </exercise>
+
+        <exercise number="3.1.41">
+            <statement>
+                <p>
+                    (T/F) The cofactor expansion of <m>\det A</m> down a column is equal to the cofactor expansion along a row.
+                </p>
+            </statement>
+        </exercise>
+    </exercisegroup>
+
+    <exercise number="3.1.43">
+        <statement>
+            <p>
+                Let <m>\v{u} = \begin{bmatrix} 3 \\ 0 \end{bmatrix}</m> and <m>\v{v} = \begin{bmatrix} 1 \\ 2 \end{bmatrix}</m>. 
+                Compute the area of the parallelogram determined by <m>\v{u}</m>, <m>\v{v}</m>, <m>\v{u}+\v{v}</m>, and <m>\v{0}</m>, and compute the determinant of <m>\begin{bmatrix} \v{u} \amp \v{v} \end{bmatrix}</m>. 
+                How do they compare? 
+                Draw a picture and explain what you find.
+            </p>
+        </statement>
+    </exercise>
+
+</worksheet>
 
 </section>

@@ -3256,7 +3256,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "2.4",
   "title": "Subspaces of <span class=\"process-math\">\\(\\R^n\\)<\/span>",
-  "body": " Subspaces of   Near the beginning of the course we learned how to write the solution to a homogeneous system of equations as a linear combination of\"basic vectors\". This was possible because the set of solutions to a homogenous system is a special kind of set of vectors called a subspace .  In this section, we will be focusing on learning about subspaces and related concepts!     After this section, students will be able to:     determine if a set of vectors is a subspace.    define the null space and the column space of a matrix.    define the concept of span and spanning sets.      What is a Subspace?  Subspace, is a subset of a vector space that is also a vector space (under the same operations). Yet we have not formally defined what a vector space is. So let's define what a subspace is without relying on the definition of a vector space!   Subspace of    A set of vectors in is called a subspace if it satisfies the following properties:    S1: The zero vector (note: the notation means \"is an element of\" or \"is in\").     S2: If , then .     S3: If , then for every real number .       Some authors will give a slightly different (but equivalent) definition that replaces S1 with \" is non-empty\". Regardless of what specific definition and author gives, it will always be the case that the subspace is non-empty and includes the zero vector.  Terminology: S2 and S3 are symbolic ways of saying must be closed under (vector) addition and closed under scalar multiplication . So we can define a subspace in words to be a non-empty subset of that is closed under vector addition and scalar multiplication.  If you really want to only use words you can replace with \"a vector space\".   The set consisting of only the zero vector of is always a subspace of .  We can verify that this set satisfies the three properties of a subspace:   Clearly this set satisfies S1 !    Since , this set satisfies S2 !    We learned previously that for any scalar , , so this set satisfies S3 !   This subspace is called the trivial subspace because the only thing in it is the one vector that must be in any vector space.    We have seen that the scalar equation of a plane looks like for some number where is a normal vector for the plane. If the plane goes through the origin , then we have to be able to plug in zero for all of the variables and get equality. That means if the plane goes through the origin. So we know that the equation of a plane through the origin looks like   Claim: This plane is a subspace of !  Let's verify the three properties listed in the definition to prove such a plane is a subspace!    S1: This one is given in the description! Or we can just plug in to check that . Checked!     S2: Suppose and are on the plane. Then Using the distributive property along with some commutativity, we can show that So is also on the plane.     S3: Suppose and suppose is on the plane. Then . Then this implies that Using the distributive, associative, and commutative properties for real numbers, we get which means is also on the plane.       Some non-examples of subspaces    The set of vectors is NOT a subspace of .  This subset fails every requirements:    S1:  is not included.     S2:  is not included in the set.     S3:  is not included in the set.       The set of solutions to the system is NEVER a subspace unless .  Proof: The zero vector is excluded because it can't be a solution to if .       Fundamental Subspaces  In matrix algebra, there are four fundamental subspaces associated to a matrix . We will be focusing on two of these subspaces in this section: the null space and the column space .   Null Space of a Matrix   Let be an matrix. The null space of , denoted , is the set of vectors such that . Symbolically speaking,     Claim: The null space of an matrix is a subspace of .      S1:  , so .     S2: Suppose . Then and . This implies that So .    Suppose and . Then , and so Therefore .      Column Space of a Matrix   Let be an matrix. The column space of , denoted , is the set of all linear combinations of the columns of .     But some textbooks call it the image space...  Some textbooks uses a slightly different terminology and calls the column space the \" image space \". But they are pretty much the same thing!  Here is the definition of the image space from our textbook:   Image Space   Let be an matrix. The image space of , denoted , is the set of all of the possible products of and a vector in . Symbolically speaking,     The word \"image\" actually comes from the linear transformation perspective. The image of is the set of outputs of the linear transformation given by . While \"image\" is the more common term in advanced mathematics, this set is also called the range of the linear transformation.   But why is it the same thing as the column space?   That is because the matrix-vector product can also be expressed as a linear combination of the columns of , where the coefficients come from entries of .  Let's look at the case! Suppose we have a generic matrix and a generic vector . Any vector in the image space of will, by definition, be of the form .  Let . Then This means that the image of consists of all of the linear combinations of the columns of . That is why the image space and the column space are the same thing!   Claim: The column space of an matrix is a subspace of .      S1:  , so there exists a vector in that maps to . Therefore, .     S2: Suppose . By definition, there exist vectors such that and . This implies that Since , we have .     S3: Suppose and . By definition, there exists a vector such that . This implies that Since , we have .     But what about the other two fundamental subspaces? They are actually the null space and column space of the transpose of the matrix!   The row space of a matrix is the column space of the transpose of , denoted .    The left null space of a matrix is the null space of the transpose of , denoted .   As you can imagine, if we master the null space and column space of a matrix, then we can easily understand the row space and left null space by just looking at the transpose of the matrix! Hence, we will be focusing on the null space and column space in this section (and the next section).    Span and Spanning Sets  Recall we learned about spans in the past. This is actually really related to the idea of subspaces!   Span and Spanning Sets   Let be a set of vectors in . The span of , denoted is the set of all linear combinations of the vectors in . Symbolically speaking,   Let . Then is called the spanning set (or generating set) of .     Fun Grammar Warning! \"Span\" is used both as a noun and a verb! The definition here defines the meaning of span as a noun. When it is used as a verb, it means something a bit different. For example, we can say \"the vectors and span \". As a verb, span means \"is\/are a spanning set for\".  This brings us to the big theorem of this section!    The span of a set of vectors is the smallest subspace containing those vectors.    We can look at this theorem in two parts:   The span of a set of vectors is a subspace.    Any subspace containing those vectors must also contain the span of those vectors.     To justify the first part, we can verify the three properties for the span:    S1: The zero vector is just so it is in the span.     S2: If and are both in the span, then there exist real numbers and such that Then So is also in the span.     S3: Suppose and is in the span. Then there exist real numbers such that So, Therefore, is also in the span.   Hence, the span is a subspace!  For the second part, notice that if you look at the definition of subspaces, the conditions are basically designed so that a subspace consists of all of the linear combination of some non-empty set of vectors. In fact we can formalize this observation: Any subspace containing the vectors must also contain all of the linear combinations of those vectors. So it must contain all of the vectors in . Hence, the span is the smallest subspace containing those vectors!  Sometimes we have nice geometric ways to describe subspaces (e.g. a plane containing the origin), but in general the best way (especially in higher dimensions!) is often to give a spanning set. This is nice because non-trivial subspaces of contain infinitely many things, but we only need finitely many vectors to describe a spanning set of a subspace of .   Recall that the null space and column space of a matrix are subspaces! So let's describe them using spanning sets!  Let's say we have a matrix . We want to find its null space and column space.  Let's start by finding the null space! Recall that the null space of is the set of solutions to the homogeneous equation . So let's solve the homogeneous equation first!  Using Gaussian elimination algorithm, the reduced row echelon form of the augmented matrix is Observe that and are free variables (by the lack of a pivot position in the second and fourth columns).  So the solution to the homogeneous equation looks like this, in parametric form: where   Observe that the solutions are some linear combinations of the two vectors and . Hence, the null space of is the span of those two vectors:    NOTE: recall we always write the solution to a homogeneous system in parametric form. Now you know why!  In the next section, we will learn that this spanning set of the null space is actually a basis !  Now let's find the column space of ! By definition, the column space of is the span of the columns of . So we can just write down the columns of and say that   In the next section, we will learn that this spanning set of the column space is NOT a basis , in the sense that some of the column vectors in the spanning set are \"redundant\".    "
+  "body": " Subspaces of   Near the beginning of the course we learned how to write the solution to a homogeneous system of equations as a linear combination of\"basic vectors\". This was possible because the set of solutions to a homogenous system is a special kind of set of vectors called a subspace .  In this section, we will be focusing on learning about subspaces and related concepts!     After this section, students will be able to:     determine if a set of vectors is a subspace.    define the null space and the column space of a matrix.    define the concept of span and spanning sets.      What is a Subspace?  Subspace, is a subset of a vector space that is also a vector space (under the same operations). Yet we have not formally defined what a vector space is. So let's define what a subspace is without relying on the definition of a vector space!   Subspace of    A set of vectors in is called a subspace if it satisfies the following properties:    S1: The zero vector (note: the notation means \"is an element of\" or \"is in\").     S2: If , then .     S3: If , then for every real number .       Some authors will give a slightly different (but equivalent) definition that replaces S1 with \" is non-empty\". Regardless of what specific definition and author gives, it will always be the case that the subspace is non-empty and includes the zero vector.  Terminology: S2 and S3 are symbolic ways of saying must be closed under (vector) addition and closed under scalar multiplication . So we can define a subspace in words to be a non-empty subset of that is closed under vector addition and scalar multiplication.  If you really want to only use words you can replace with \"a vector space\".   The set consisting of only the zero vector of is always a subspace of .  We can verify that this set satisfies the three properties of a subspace:   Clearly this set satisfies S1 !    Since , this set satisfies S2 !    We learned previously that for any scalar , , so this set satisfies S3 !   This subspace is called the trivial subspace because the only thing in it is the one vector that must be in any vector space.    We have seen that the scalar equation of a plane looks like for some number where is a normal vector for the plane. If the plane goes through the origin , then we have to be able to plug in zero for all of the variables and get equality. That means if the plane goes through the origin. So we know that the equation of a plane through the origin looks like   Claim: This plane is a subspace of !  Let's verify the three properties listed in the definition to prove such a plane is a subspace!    S1: This one is given in the description! Or we can just plug in to check that . Checked!     S2: Suppose and are on the plane. Then Using the distributive property along with some commutativity, we can show that So is also on the plane.     S3: Suppose and suppose is on the plane. Then . Then this implies that Using the distributive, associative, and commutative properties for real numbers, we get which means is also on the plane.       Some non-examples of subspaces    The set of vectors is NOT a subspace of .  This subset fails every requirements:    S1:  is not included.     S2:  is not included in the set.     S3:  is not included in the set.       The set of solutions to the system is NEVER a subspace unless .  Proof: The zero vector is excluded because it can't be a solution to if .       Fundamental Subspaces  In matrix algebra, there are four fundamental subspaces associated to a matrix . We will be focusing on two of these subspaces in this section: the null space and the column space .   Null Space of a Matrix   Let be an matrix. The null space of , denoted , is the set of vectors such that . Symbolically speaking,     Claim: The null space of an matrix is a subspace of .      S1:  , so .     S2: Suppose . Then and . This implies that So .    Suppose and . Then , and so Therefore .      Column Space of a Matrix   Let be an matrix. The column space of , denoted , is the set of all linear combinations of the columns of .     But some textbooks call it the image space...  Some textbooks uses a slightly different terminology and calls the column space the \" image space \". But they are pretty much the same thing!  Here is the definition of the image space from our textbook:   Image Space   Let be an matrix. The image space of , denoted , is the set of all of the possible products of and a vector in . Symbolically speaking,     The word \"image\" actually comes from the linear transformation perspective. The image of is the set of outputs of the linear transformation given by . While \"image\" is the more common term in advanced mathematics, this set is also called the range of the linear transformation.   But why is it the same thing as the column space?   That is because the matrix-vector product can also be expressed as a linear combination of the columns of , where the coefficients come from entries of .  Let's look at the case! Suppose we have a generic matrix and a generic vector . Any vector in the image space of will, by definition, be of the form .  Let . Then This means that the image of consists of all of the linear combinations of the columns of . That is why the image space and the column space are the same thing!   Claim: The column space of an matrix is a subspace of .      S1:  , so there exists a vector in that maps to . Therefore, .     S2: Suppose . By definition, there exist vectors such that and . This implies that Since , we have .     S3: Suppose and . By definition, there exists a vector such that . This implies that Since , we have .     But what about the other two fundamental subspaces? They are actually the null space and column space of the transpose of the matrix!   The row space of a matrix is the column space of the transpose of , denoted .    The left null space of a matrix is the null space of the transpose of , denoted .   As you can imagine, if we master the null space and column space of a matrix, then we can easily understand the row space and left null space by just looking at the transpose of the matrix! Hence, we will be focusing on the null space and column space in this section (and the next section).    Span and Spanning Sets  Recall we learned about spans in the past. This is actually really related to the idea of subspaces!   Span and Spanning Sets   Let be a set of vectors in . The span of , denoted is the set of all linear combinations of the vectors in . Symbolically speaking,   Let . Then is called the spanning set (or generating set) of .     Fun Grammar Warning! \"Span\" is used both as a noun and a verb! The definition here defines the meaning of span as a noun. When it is used as a verb, it means something a bit different. For example, we can say \"the vectors and span \". As a verb, span means \"is\/are a spanning set for\".  This brings us to the big theorem of this section!    The span of a set of vectors is the smallest subspace containing those vectors.    We can look at this theorem in two parts:   The span of a set of vectors is a subspace.    Any subspace containing those vectors must also contain the span of those vectors.     To justify the first part, we can verify the three properties for the span:    S1: The zero vector is just so it is in the span.     S2: If and are both in the span, then there exist real numbers and such that Then So is also in the span.     S3: Suppose and is in the span. Then there exist real numbers such that So, Therefore, is also in the span.   Hence, the span is a subspace!  For the second part, notice that if you look at the definition of subspaces, the conditions are basically designed so that a subspace consists of all of the linear combination of some non-empty set of vectors. In fact we can formalize this observation: Any subspace containing the vectors must also contain all of the linear combinations of those vectors. So it must contain all of the vectors in . Hence, the span is the smallest subspace containing those vectors!  Sometimes we have nice geometric ways to describe subspaces (e.g. a plane containing the origin), but in general the best way (especially in higher dimensions!) is often to give a spanning set. This is nice because non-trivial subspaces of contain infinitely many things, but we only need finitely many vectors to describe a spanning set of a subspace of .   Recall that the null space and column space of a matrix are subspaces! So let's describe them using spanning sets!  Let's say we have a matrix . We want to find its null space and column space.  Let's start by finding the null space! Recall that the null space of is the set of solutions to the homogeneous equation . So let's solve the homogeneous equation first!  Using Gaussian elimination algorithm, the reduced row echelon form of the augmented matrix is Observe that and are free variables (by the lack of a pivot position in the second and fourth columns).  So the solution to the homogeneous equation looks like this, in parametric form: where   Observe that the solutions are some linear combinations of the two vectors and . Hence, the null space of is the span of those two vectors:    NOTE: recall we always write the solution to a homogeneous system in parametric form. Now you know why!  In the next section, we will learn that this spanning set of the null space is actually a basis !  Now let's find the column space of ! By definition, the column space of is the span of the columns of . So we can just write down the columns of and say that   In the next section, we will learn that this spanning set of the column space is NOT a basis , in the sense that some of the column vectors in the spanning set are \"redundant\".     Some Exercises for This Section   Richard included some practice problems that cover some main concepts in this section. You don't need to turn it in, but you are highly encouraged to work on this with your classmates. The problems here may end up being in-class practice problems, homework problems, and\/or exam problems. Reach out to Richard for help if you get stuck or have any questions.  Only the final answers are included to some of the problems for you to check your result. If you want to check your work, talk to Richard and he is happy to discuss the process with you.     The figure below display a set in . Assume the sets include the bounding lines.  Give a specific reason why the set is not a subspace of . (For instance, find two vectors in whose sum is not in , or find a vector in with a scalar multiple that is not in . Draw a picture.)      Let , , and . Determine if is in the subspace of generated by and .      Let , , , , and .   How many vectors are in ?    How many vectors are in ?    Is in ? Why or why not?         With and as in Exercise 7, determine if is in .      Give integers and such that is a subspace of and is a subspace of        For as in Exercise 11, find a nonzero vector in and a nonzero vector in .      Determine which sets in the following exercises are bases for or . Justify each answer.                In the following exercises, mark each statement True or False (T\/F). Justify each answer.     (T\/F) A subspace of is any set such that (i) the zero vector is in , (ii) , , and are in , and (iii) is a scalar and is in .      (T\/F) If are in , then Span is the same as the column space of the matrix .      (T\/F) The set of all solutions of a system of homogeneous equations in unknowns is a subspace of .      (T\/F) The columns of an invertible matrix form a basis for .      (T\/F) Row operations do not affect linear dependence relations among the columns of a matrix.       The following exercises display a matrix and an echelon form of . Find a basis for and a basis for .               "
 },
 {
   "id": "sec28-Subspaces-2-1",
@@ -3403,13 +3403,148 @@ var ptx_lunr_docs = [
   "body": " Recall that the null space and column space of a matrix are subspaces! So let's describe them using spanning sets!  Let's say we have a matrix . We want to find its null space and column space.  Let's start by finding the null space! Recall that the null space of is the set of solutions to the homogeneous equation . So let's solve the homogeneous equation first!  Using Gaussian elimination algorithm, the reduced row echelon form of the augmented matrix is Observe that and are free variables (by the lack of a pivot position in the second and fourth columns).  So the solution to the homogeneous equation looks like this, in parametric form: where   Observe that the solutions are some linear combinations of the two vectors and . Hence, the null space of is the span of those two vectors:    NOTE: recall we always write the solution to a homogeneous system in parametric form. Now you know why!  In the next section, we will learn that this spanning set of the null space is actually a basis !  Now let's find the column space of ! By definition, the column space of is the span of the columns of . So we can just write down the columns of and say that   In the next section, we will learn that this spanning set of the column space is NOT a basis , in the sense that some of the column vectors in the spanning set are \"redundant\".  "
 },
 {
+  "id": "ws-sec28-3",
+  "level": "2",
+  "url": "sec28-Subspaces.html#ws-sec28-3",
+  "type": "Worksheet Exercise",
+  "number": "2.8.1",
+  "title": "",
+  "body": "  The figure below display a set in . Assume the sets include the bounding lines.  Give a specific reason why the set is not a subspace of . (For instance, find two vectors in whose sum is not in , or find a vector in with a scalar multiple that is not in . Draw a picture.)   "
+},
+{
+  "id": "ws-sec28-4",
+  "level": "2",
+  "url": "sec28-Subspaces.html#ws-sec28-4",
+  "type": "Worksheet Exercise",
+  "number": "2.8.5",
+  "title": "",
+  "body": "  Let , , and . Determine if is in the subspace of generated by and .   "
+},
+{
+  "id": "ws-sec28-5",
+  "level": "2",
+  "url": "sec28-Subspaces.html#ws-sec28-5",
+  "type": "Worksheet Exercise",
+  "number": "2.8.7",
+  "title": "",
+  "body": "  Let , , , , and .   How many vectors are in ?    How many vectors are in ?    Is in ? Why or why not?      "
+},
+{
+  "id": "ws-sec28-6",
+  "level": "2",
+  "url": "sec28-Subspaces.html#ws-sec28-6",
+  "type": "Worksheet Exercise",
+  "number": "2.8.9",
+  "title": "",
+  "body": "  With and as in Exercise 7, determine if is in .   "
+},
+{
+  "id": "ws-sec28-7",
+  "level": "2",
+  "url": "sec28-Subspaces.html#ws-sec28-7",
+  "type": "Worksheet Exercise",
+  "number": "2.8.11",
+  "title": "",
+  "body": "  Give integers and such that is a subspace of and is a subspace of     "
+},
+{
+  "id": "ws-sec28-8",
+  "level": "2",
+  "url": "sec28-Subspaces.html#ws-sec28-8",
+  "type": "Worksheet Exercise",
+  "number": "2.8.13",
+  "title": "",
+  "body": "  For as in Exercise 11, find a nonzero vector in and a nonzero vector in .   "
+},
+{
+  "id": "ws-sec28-9-2",
+  "level": "2",
+  "url": "sec28-Subspaces.html#ws-sec28-9-2",
+  "type": "Worksheet Exercise",
+  "number": "2.8.15",
+  "title": "",
+  "body": "    "
+},
+{
+  "id": "ws-sec28-9-3",
+  "level": "2",
+  "url": "sec28-Subspaces.html#ws-sec28-9-3",
+  "type": "Worksheet Exercise",
+  "number": "2.8.19",
+  "title": "",
+  "body": "    "
+},
+{
+  "id": "ws-sec28-10-2",
+  "level": "2",
+  "url": "sec28-Subspaces.html#ws-sec28-10-2",
+  "type": "Worksheet Exercise",
+  "number": "2.8.21",
+  "title": "",
+  "body": "  (T\/F) A subspace of is any set such that (i) the zero vector is in , (ii) , , and are in , and (iii) is a scalar and is in .   "
+},
+{
+  "id": "ws-sec28-10-3",
+  "level": "2",
+  "url": "sec28-Subspaces.html#ws-sec28-10-3",
+  "type": "Worksheet Exercise",
+  "number": "2.8.23",
+  "title": "",
+  "body": "  (T\/F) If are in , then Span is the same as the column space of the matrix .   "
+},
+{
+  "id": "ws-sec28-10-4",
+  "level": "2",
+  "url": "sec28-Subspaces.html#ws-sec28-10-4",
+  "type": "Worksheet Exercise",
+  "number": "2.8.25",
+  "title": "",
+  "body": "  (T\/F) The set of all solutions of a system of homogeneous equations in unknowns is a subspace of .   "
+},
+{
+  "id": "ws-sec28-10-5",
+  "level": "2",
+  "url": "sec28-Subspaces.html#ws-sec28-10-5",
+  "type": "Worksheet Exercise",
+  "number": "2.8.27",
+  "title": "",
+  "body": "  (T\/F) The columns of an invertible matrix form a basis for .   "
+},
+{
+  "id": "ws-sec28-10-6",
+  "level": "2",
+  "url": "sec28-Subspaces.html#ws-sec28-10-6",
+  "type": "Worksheet Exercise",
+  "number": "2.8.29",
+  "title": "",
+  "body": "  (T\/F) Row operations do not affect linear dependence relations among the columns of a matrix.   "
+},
+{
+  "id": "ws-sec28-11-2",
+  "level": "2",
+  "url": "sec28-Subspaces.html#ws-sec28-11-2",
+  "type": "Worksheet Exercise",
+  "number": "2.8.31",
+  "title": "",
+  "body": "    "
+},
+{
+  "id": "ws-sec28-11-3",
+  "level": "2",
+  "url": "sec28-Subspaces.html#ws-sec28-11-3",
+  "type": "Worksheet Exercise",
+  "number": "2.8.33",
+  "title": "",
+  "body": "    "
+},
+{
   "id": "sec29-DimensionRank",
   "level": "1",
   "url": "sec29-DimensionRank.html",
   "type": "Section",
   "number": "2.5",
   "title": "Dimension and Rank",
-  "body": " Dimension and Rank   In the previous section, we explored how to build a subspace using a spanning set. But this raises an important question for us to investigate: are all the vectors in a spanning set actually necessary? Sometimes, a set contains \"redundant\" vectors that don't add any new direction to the space.  In this section, we are going to explore the concepts of linear independence and dimension.     After this section, students will be able to:     construct a basis for a subspace.    determine the dimension of a subspace.      Basis  Recall that a span of a set of vectors is the smallest subspace containing those vectors, and the span of those vectors contains all possible linear combinations of those vectors. If the spanning set is linearly dependent, then it contains redundant vectors that don't contribute to the span. We can remove those redundant vectors and still have the same span. For briefness, we only want to keep the necessary vectors that contribute to the span. That is, we want our spanning set to be linearly independent.  This is essentially the basis of a subspace: a linearly independent spanning set that spans the subspace .  That is, the two criteria for a basis are: (1) the set must span the subspace of interest, and (2) the set must be linearly independent. In a more math-y way, we can define a basis as follows:   Basis of a Subspace of   Let be a subspace of . A set of vectors is called a basis of if         is linearly independent.       A basis should only include the necessary vectors that contribute to the span.   Claim: The set is a basis for .  This claim is true because (1) any vector in can be written as a linear combination of these two vectors (so it spans ) and (2) these two vectors are linearly independent.  Alternatively, is also a basis for . But why... Well this set of vectors also satisfies the two criteria for a basis.  (1) Any vector in can be written as a linear combination of these two vectors. Let be an arbitrary vector in . We want to find scalars and such that Solving this system, we obtain: Therefore, any vector in can be written as a linear combination of these two vectors, so they span .  (2) These two vectors are linearly independent. The set only contains two vectors and they are not scalar multiples of each other, so they are linearly independent.   Amazing Fact about bases! If and are both bases of a subspace , then . In other words, every basis of a given subspace contains exactly the same number of vectors.  So for example, there is no such thing as a basis for that contains one or three vectors. They all must contain exactly two vectors!   But Richard... Why is it true?  Well here is a very interesting approach to prove this fact (and this is also usually the approach to prove two quantities are equal in advanced mathematics!).  Let's assume that and are both bases of a subspace . Then has vectors in it and has vectors in it.  The approach goes like this: we want to show that cannot contain more vectors than (so ), and also that cannot contain more vectors than (so ). Then this will force to be true!  Since is a basis of and spans , then .  And since is a basis of and spans , then .  Together, that means .      Dimensions  Recall that the number of vectors in a basis is a fixed number for a given subspace, and we can generate the whole subspace by taking linear combinations of the vectors in the basis. Then we define the dimension of a subspace as the number of vectors in a basis for that subspace.   Dimension of a Subspace of   Let be a subspace and be a basis of . Then the dimension of , denoted , is the number of vectors in the basis, which is . That is, .     It makes sense to say that the dimension of is and the dimension of is . But how does it match with our definition of dimension?  We can verify this by finding a basis for and easily. Earlier, we saw that is a basis for , so . The basis is called the standard basis for .  Similarly, is a basis for , so . This basis is called the standard basis for .  More generally, the dimension of is since the standard basis for is and there are exactly vectors in this basis.   Recall we talked about two fundamental subspaces associated with a matrix in the last section: the null space and the column space. What about their basis and dimension?  Good news! The technique we use to find a spanning set for the null space of a matrix will automatically give us a basis! So we can find a basis of a null space by just doing what we have been doing: solving the homogeneous equation and writing the solution in parametric form. The vectors corresponding to the free variables will form a basis for the null space.   NOTE: The reason why the vectors corresponding to the free variables will automatically form a basis for the null space is because of the nature of the free variables (talk to Richard if you are super interested in it!). So the only way to end up with the wrong number of vectors in the basis is to have the wrong number of free variables.  Yet the basis for the column space is a bit more tricky to find, as there is no guarantee that the columns of a matrix will be linearly independent. However, we can find a basis for the column space by only including the pivot columns , as these column vectors are guaranteed to be linearly independent (so we essentially take out the free variables to make sure only has the trivial solution).   Let's say we have the matrix and this time we want to find a basis for the null space and the column space.  In the last section, we solved the homogeneous equation . For our convenience, let's copy down the reduced row echelon form of the augmented matrix:  P.S.: Row echelon form is enough as well since all we need to identify are the pivot columns (or not the pivot columns).  Lets' start with the null space first! The solution to the homogeneous equation , in parametric form, looks like this: where . Hence, the null space of is Since these vectors are linearly independent, then a basis for the null space is and hence the null space has dimension .  What about a basis for the column space? Let's stare at the reduced row echelon form of the coefficient matrix part again!  Notice that a pivot position appears in the first, third, and fifth columns. So they do NOT correspond to free variables. Imagine if we remove column 2 and column 4 from the coefficient matrix in the beginning, then we will end up with a homogeneous equation that has no free variable, and hence the columns are linearly independent. Therefore, we can span the column space by just including the first, third, and fifth columns. That is, A basis for the column space is and hence the column space has dimension .   Spoiler: You may have noticed that the dimension of the null space and the dimension of the column space add up to the number of columns in the matrix. This is a BIG theorem in linear algebra! We can sense that this is true because we take the columns with pivot positions to form a basis for the column space and use the columns without pivot positions to figure out a basis for the null space. We will focus on this theorem in section 5.4 (and this theorem is a fundamental theorem of linear algebra!) .    Let .  Find a basis and the dimension for and .     A Fundamental Theorem of Linear Algebra: Rank-Nullity Theorem  You may have noticed a pattern between the dimension of the null space and the dimension of a column space through the problems: we form a basis of the column space by taking the pivot columns and can construct a basis of the null space by focusing on the non-pivot columns. That is, we used every single columns when constructing the basis of the column space and the dimension of the null space. Their dimensions should add back up to the number of columns!   Terminology! There are special terms to describe the dimensions here:   The dimension of the null space is called the nullity .    The dimension of the column space is called the rank .   A big theorem to connect the dimension of these two fundamental subspaces is called the Rank-Nullity Theorem ! This is considered a fundamental theorem of linear algebra as it connects two fundamental subspaces in linear algebra together!   Rank-Nullity Theorem   Let be a matrix, then     Feel free to explore the other fundamental theorems of linear algebra as there are two more fundamental subspaces we did not discussed in class! A huge spoiler to explore the other fundamental theorem of linear algebra relies on the fact that the dimension of the row space is also called the rank!    Extending Our Invertible Matrix Theorem!  Back in we saw our first version of the .  Now that we learn more fancy things in linear algebra, we can add a couple more conditions that are equivalent to invertibility:   13. The columns of form a basis of .    14.     15. .    16. .    17. .   They should be immediate results from the Invertible Matrix Theorem, but rephrasing it using all the fancy concepts we learned in this chapter.   "
+  "body": " Dimension and Rank   In the previous section, we explored how to build a subspace using a spanning set. But this raises an important question for us to investigate: are all the vectors in a spanning set actually necessary? Sometimes, a set contains \"redundant\" vectors that don't add any new direction to the space.  In this section, we are going to explore the concepts of linear independence and dimension.     After this section, students will be able to:     construct a basis for a subspace.    determine the dimension of a subspace.      Basis  Recall that a span of a set of vectors is the smallest subspace containing those vectors, and the span of those vectors contains all possible linear combinations of those vectors. If the spanning set is linearly dependent, then it contains redundant vectors that don't contribute to the span. We can remove those redundant vectors and still have the same span. For briefness, we only want to keep the necessary vectors that contribute to the span. That is, we want our spanning set to be linearly independent.  This is essentially the basis of a subspace: a linearly independent spanning set that spans the subspace .  That is, the two criteria for a basis are: (1) the set must span the subspace of interest, and (2) the set must be linearly independent. In a more math-y way, we can define a basis as follows:   Basis of a Subspace of   Let be a subspace of . A set of vectors is called a basis of if         is linearly independent.       A basis should only include the necessary vectors that contribute to the span.   Claim: The set is a basis for .  This claim is true because (1) any vector in can be written as a linear combination of these two vectors (so it spans ) and (2) these two vectors are linearly independent.  Alternatively, is also a basis for . But why... Well this set of vectors also satisfies the two criteria for a basis.  (1) Any vector in can be written as a linear combination of these two vectors. Let be an arbitrary vector in . We want to find scalars and such that Solving this system, we obtain: Therefore, any vector in can be written as a linear combination of these two vectors, so they span .  (2) These two vectors are linearly independent. The set only contains two vectors and they are not scalar multiples of each other, so they are linearly independent.   Amazing Fact about bases! If and are both bases of a subspace , then . In other words, every basis of a given subspace contains exactly the same number of vectors.  So for example, there is no such thing as a basis for that contains one or three vectors. They all must contain exactly two vectors!   But Richard... Why is it true?  Well here is a very interesting approach to prove this fact (and this is also usually the approach to prove two quantities are equal in advanced mathematics!).  Let's assume that and are both bases of a subspace . Then has vectors in it and has vectors in it.  The approach goes like this: we want to show that cannot contain more vectors than (so ), and also that cannot contain more vectors than (so ). Then this will force to be true!  Since is a basis of and spans , then .  And since is a basis of and spans , then .  Together, that means .      Dimensions  Recall that the number of vectors in a basis is a fixed number for a given subspace, and we can generate the whole subspace by taking linear combinations of the vectors in the basis. Then we define the dimension of a subspace as the number of vectors in a basis for that subspace.   Dimension of a Subspace of   Let be a subspace and be a basis of . Then the dimension of , denoted , is the number of vectors in the basis, which is . That is, .     It makes sense to say that the dimension of is and the dimension of is . But how does it match with our definition of dimension?  We can verify this by finding a basis for and easily. Earlier, we saw that is a basis for , so . The basis is called the standard basis for .  Similarly, is a basis for , so . This basis is called the standard basis for .  More generally, the dimension of is since the standard basis for is and there are exactly vectors in this basis.   Recall we talked about two fundamental subspaces associated with a matrix in the last section: the null space and the column space. What about their basis and dimension?  Good news! The technique we use to find a spanning set for the null space of a matrix will automatically give us a basis! So we can find a basis of a null space by just doing what we have been doing: solving the homogeneous equation and writing the solution in parametric form. The vectors corresponding to the free variables will form a basis for the null space.   NOTE: The reason why the vectors corresponding to the free variables will automatically form a basis for the null space is because of the nature of the free variables (talk to Richard if you are super interested in it!). So the only way to end up with the wrong number of vectors in the basis is to have the wrong number of free variables.  Yet the basis for the column space is a bit more tricky to find, as there is no guarantee that the columns of a matrix will be linearly independent. However, we can find a basis for the column space by only including the pivot columns , as these column vectors are guaranteed to be linearly independent (so we essentially take out the free variables to make sure only has the trivial solution).   Let's say we have the matrix and this time we want to find a basis for the null space and the column space.  In the last section, we solved the homogeneous equation . For our convenience, let's copy down the reduced row echelon form of the augmented matrix:  P.S.: Row echelon form is enough as well since all we need to identify are the pivot columns (or not the pivot columns).  Lets' start with the null space first! The solution to the homogeneous equation , in parametric form, looks like this: where . Hence, the null space of is Since these vectors are linearly independent, then a basis for the null space is and hence the null space has dimension .  What about a basis for the column space? Let's stare at the reduced row echelon form of the coefficient matrix part again!  Notice that a pivot position appears in the first, third, and fifth columns. So they do NOT correspond to free variables. Imagine if we remove column 2 and column 4 from the coefficient matrix in the beginning, then we will end up with a homogeneous equation that has no free variable, and hence the columns are linearly independent. Therefore, we can span the column space by just including the first, third, and fifth columns. That is, A basis for the column space is and hence the column space has dimension .   Spoiler: You may have noticed that the dimension of the null space and the dimension of the column space add up to the number of columns in the matrix. This is a BIG theorem in linear algebra! We can sense that this is true because we take the columns with pivot positions to form a basis for the column space and use the columns without pivot positions to figure out a basis for the null space. We will focus on this theorem in section 5.4 (and this theorem is a fundamental theorem of linear algebra!) .    Let .  Find a basis and the dimension for and .     A Fundamental Theorem of Linear Algebra: Rank-Nullity Theorem  You may have noticed a pattern between the dimension of the null space and the dimension of a column space through the problems: we form a basis of the column space by taking the pivot columns and can construct a basis of the null space by focusing on the non-pivot columns. That is, we used every single columns when constructing the basis of the column space and the dimension of the null space. Their dimensions should add back up to the number of columns!   Terminology! There are special terms to describe the dimensions here:   The dimension of the null space is called the nullity .    The dimension of the column space is called the rank .   A big theorem to connect the dimension of these two fundamental subspaces is called the Rank-Nullity Theorem ! This is considered a fundamental theorem of linear algebra as it connects two fundamental subspaces in linear algebra together!   Rank-Nullity Theorem   Let be a matrix, then     Feel free to explore the other fundamental theorems of linear algebra as there are two more fundamental subspaces we did not discussed in class! A huge spoiler to explore the other fundamental theorem of linear algebra relies on the fact that the dimension of the row space is also called the rank!    Extending Our Invertible Matrix Theorem!  Back in we saw our first version of the .  Now that we learn more fancy things in linear algebra, we can add a couple more conditions that are equivalent to invertibility:   13. The columns of form a basis of .    14.     15. .    16. .    17. .   They should be immediate results from the Invertible Matrix Theorem, but rephrasing it using all the fancy concepts we learned in this chapter.    Some Exercises for This Section   Richard included some practice problems that cover some main concepts in this section. You don't need to turn it in, but you are highly encouraged to work on this with your classmates. The problems here may end up being in-class practice problems, homework problems, and\/or exam problems. Reach out to Richard for help if you get stuck or have any questions.  Only the final answers are included to some of the problems for you to check your result. If you want to check your work, talk to Richard and he is happy to discuss the process with you.     The following exercises display a matrix and an echelon form of . Find bases for and , and then state the dimensions of these subspaces.                Find a basis for the subspace spanned by the following vectors. What is the dimension of the subspace?       In the following exercise, mark each statement True or False (T\/F). Justify each answer. Here is an matrix.     (T\/F) Each line in is a one-dimensional subspace of .      (T\/F) The dimension of is the number of pivot columns of .      (T\/F) The dimensions of and add up to the number of columns of .      (T\/F) If a set of vectors spans a -dimensional subspace of , then these vectors form a basis for .       If the subspace of all solutions of has a basis consisting of three vectors and if is a matrix, what is the rank of ?     "
 },
 {
   "id": "sec29-DimensionRank-3",
@@ -3511,13 +3646,85 @@ var ptx_lunr_docs = [
   "body": " Rank-Nullity Theorem   Let be a matrix, then    "
 },
 {
+  "id": "ws-sec29-3-2",
+  "level": "2",
+  "url": "sec29-DimensionRank.html#ws-sec29-3-2",
+  "type": "Worksheet Exercise",
+  "number": "2.9.9",
+  "title": "",
+  "body": "    "
+},
+{
+  "id": "ws-sec29-3-3",
+  "level": "2",
+  "url": "sec29-DimensionRank.html#ws-sec29-3-3",
+  "type": "Worksheet Exercise",
+  "number": "2.9.11",
+  "title": "",
+  "body": "    "
+},
+{
+  "id": "ws-sec29-4",
+  "level": "2",
+  "url": "sec29-DimensionRank.html#ws-sec29-4",
+  "type": "Worksheet Exercise",
+  "number": "2.9.13",
+  "title": "",
+  "body": "  Find a basis for the subspace spanned by the following vectors. What is the dimension of the subspace?    "
+},
+{
+  "id": "ws-sec29-5-2",
+  "level": "2",
+  "url": "sec29-DimensionRank.html#ws-sec29-5-2",
+  "type": "Worksheet Exercise",
+  "number": "2.9.19",
+  "title": "",
+  "body": "  (T\/F) Each line in is a one-dimensional subspace of .   "
+},
+{
+  "id": "ws-sec29-5-3",
+  "level": "2",
+  "url": "sec29-DimensionRank.html#ws-sec29-5-3",
+  "type": "Worksheet Exercise",
+  "number": "2.9.21",
+  "title": "",
+  "body": "  (T\/F) The dimension of is the number of pivot columns of .   "
+},
+{
+  "id": "ws-sec29-5-4",
+  "level": "2",
+  "url": "sec29-DimensionRank.html#ws-sec29-5-4",
+  "type": "Worksheet Exercise",
+  "number": "2.9.23",
+  "title": "",
+  "body": "  (T\/F) The dimensions of and add up to the number of columns of .   "
+},
+{
+  "id": "ws-sec29-5-5",
+  "level": "2",
+  "url": "sec29-DimensionRank.html#ws-sec29-5-5",
+  "type": "Worksheet Exercise",
+  "number": "2.9.25",
+  "title": "",
+  "body": "  (T\/F) If a set of vectors spans a -dimensional subspace of , then these vectors form a basis for .   "
+},
+{
+  "id": "ws-sec29-6",
+  "level": "2",
+  "url": "sec29-DimensionRank.html#ws-sec29-6",
+  "type": "Worksheet Exercise",
+  "number": "2.9.27",
+  "title": "",
+  "body": "  If the subspace of all solutions of has a basis consisting of three vectors and if is a matrix, what is the rank of ?   "
+},
+{
   "id": "sec31-IntroDeterminants",
   "level": "1",
   "url": "sec31-IntroDeterminants.html",
   "type": "Section",
   "number": "3.1",
   "title": "Introduction to Determinants",
-  "body": " Introduction to Determinants   You may recall we learned a special formula back in that computes the determinant of a matrix. But what does it mean?  Determinant is really a special linear operator with special properties that we won't be able to make sense of fully in this class. Instead, we will focus on how to compute the determinant in this section.    After this section, students will be able to:     Compute the determinant of an matrix in various methods.    Determine the cofactors, including the signs.      The cofactor expansion is a method to compute the determinant of a matrix.  But what's the determinant of a matrix? We won't be able to answer this question now since we haven't gotten into vector geometry yet. Right now, you can think of the determinant of a matrix a special number associated with the matrix that tells us many things about the matrix (e.g., its invertibility).  Notation-wise, the determinant of the matrix is denoted by . When we are working with a specific matrix, we replace the brackets with absolute values and then it stands for the determinant (which is a number) rather than a matrix.  For example, the determinant of the matrix is denoted by   If you are super interested in knowing what the determinant represents, check out the following video:   The Determinant    In this section, we will focus on how to compute the determinant than what the number tells us.   Let's find the determinant of the matrix using the method of cofactor expansion!  The way to do so is to pick one row or column to expand on. We can pick any of them:  Let's pick Row 1: So the determinant of this matrix is .  Alternatively, we can pick Column 2 to expand on: See the determinant is the same!   So how does it work?   Pick a row or a column.    For each entry, multiply it by the determinant of the matrix you get by eliminating the row and the column that the entry is in .    If the row number plus the column number is odd, multiply the little determinant by .    Add up all the products.   Here is a strategy to help us pick a row or a column to expand on: If possible, pick the row\/column that has the most zeros in it, since we don't have to compute any of the little determinants of those (as they will be multiplied by zero!).   Use the cofactor expansion method to compute the determinant of the matrix in the following two ways:   Expand on Row 2.    Expand on Column 3.      The answer!    The main idea of the cofactor expansion is that it allows us to build up the determinant of a matrix using the determinants of smaller matrices . So once we know how to compute the determinant of matrices, we can use that to figure out the determinant of a matrix. And then we could use that to figure out how to compute the determinant of a matrix (and etc...)  The products we add up ( or times the little determinant) during the cofactor expansion procedures are called the cofactors .   Formal Definition of Cofactors   Given an matrix , let be the matrix obtained by deleting the th row and the th column of . Then the cofactor is     The is the part of the formula that does the multiplication by or :   If the sum of the row number and the column number is odd, we get the ;    If the sum of the row number and the column number is even, we get the .   So to get a cofactor, we will find out little determinant and then either change its sign or leave it alone.  We can anticipate when we need to change the sign when computing a cofactor by imagining a checkerboard pattern of or overlaying the matrix. For example, for a matrix, we would have the pattern We canmake the right pattern for any matrix by making this checkerboard pattern starting with a in the -entry.  Then the determinant of a matrix can be calculated by multiplying each entry of a row (or column) of the matrix by its cofactor and then summing the results.   Let's compute the determinant of a matrix   We will need to pick a row\/column to begin. Observe that Column 2 has the most zeros in it, so let's pick that one! So we need to compute these two determinants: by picking Row 3 to expand on, and by picking Row 1 to expand on.  So    If you are asked to compute the matrix of a large matrix, you are REALLY hoping it has a row or column with a bunch of zeros otherwise you will be computing a bunch of determinants each of which requires you to compute a bunch of other determinants.   Compute the determinant of    The answer!    You may get the sense that the cofactor method can require a lot of calculation and it is MUCH easier when there are a lot of zeros in the matrix. Recall elementary row operations can create zeros in a matrix. A natural question to ask is whether it is possible to use elementary row operations to make a determinant easier to calculate without changing the result.  The answer is yes! And the following theorem tells us how:   Row Operations and Determinants   Let be an matrix. Then   If the matrix has a row or column of zeros its determinant is zero.    If two rows of a matrix are swapped, the sign of the determinant is changed.    If a row (or column) of a matrix is multiplied by a constant, the resulting matrix will have a determinant that is a product of the original determinant and that same constant.    If two rows (or columns) of a matrix are identical, then the determinant of the matrix is zero.    If a multiple of one row of a matrix is added to another row, the determinant of the matrix is unchanged!        But Richard... Why is this true?     If you used the cofactor method and expanded along the row or column that is all zero, then every cofactor would be multiplied by zero giving you the answer of zero.    I'll consider rows only (the argument is similar for columns).  In the case, we can see that while so the answers have opposite signs.  Now if the matrix is bigger than you can calculate the determinant of both of them using the cofactor method and expanding on a row OTHER than the two that are swapped.  In both calculations, the number each cofactor is multiplied by is unchanged (you are using the same row in each case).  But for each cofactor calculation you are computing a determinants and when you compute the ones for the matrix with the swapped rows, you get opposite signs because the rows of each matrix have been swapped.  This is what it would look like when the 1st and 3rd rows are swapped. Check it out!   and   Notice that all of the determinants in the second version will have opposite signs of the ones in the first version.  For a matrix, you use the same trick. Again all of your cofactors will change sign (because of what I just showed about the case). And so on....  This idea can be turned into a formal proof using the Principal of Mathematical Induction    This is straightforward. If you expand on the row\/column that has been multiplied by the constant, none of the cofactors will change but in the calculation you will get an extra factor in each term since each entry of the row\/column is multiplied by the constant. You can just factor out that constant to see that the determinant has been multiplied by that constant. Here is what it looks like in the case if you multiply the middle row by :   and      This is a fun one! Imagine swapping the two rows (or columns) that are identical. By Rule 2 the determinant of the matrix will change signs if you do this.  BUT since the two rows (or columns) were identical switching the rows (or columns) won't change it at all. So the determinant can't change!  What's the only number that you can multiply by without changing it? ZERO!    This is the trickiest AND the most important as we shall soon see. Let's look at the general case and try to figure out why doing this operation does not change the determinant.  Here is the calculation of the \"before\" matrix expanding on Row 2:   Now let's see what happens if we multiply Row 1 by and add that to Row 2 (we'll expand using Row 2 again):      But is EXACTLY what we would get if we calculated a matrix that was just like our original matrix EXCEPT that Row 2 has been replaced with Row 1.  So it is a determinant of a matrix with two identical rows (Row 1 and Row 2), which means it is ZERO.       So what is this new method for computing determinants?  First, we know that if a matrix has a whole row (or column) of zeros or if it has two identical rows (or columns) the determinant is zero. Second, we know that if we can maximize the number of zeros we get in a row, we can minimize the number of cofactors we actually have to compute.  Actually there is one more even awesome-er fact that we can use to make determinant calculations fairly easy using row operations. We will do an example first and that will show us what that awesome-er fact is.   Let's compute   Step 1: We can add times Row 1 to Row 2 (and replace Row 2). This will not change the determinant.   Step 2: We can add times Row 1 to Row 3 (and replace Row 3). And this again will not change the determinant.   Step 3: We can add Row 2 to Row 4 (and replace Row 4), and the determinant is still unchanged.   Step 4: We can add times Row 3 to Row 4 without changing the determinant!   Notice that we now have all zeros below the main diagonal. At this point, Richard instantly knows that the determinant is going to be . How does he know that?  Watch what happens when we expand along the last row to compute the determinant: Now we need to figure out the determinant of one matrix that also has all zeros below the main diagonal. So... And now we need to figure out the determinant of one matrix that also has all zeros below the main diagonal (well there is only one spot there, but still!). Continuing then, we get...   So it turned out that the answer was just the product of the entries on the diagonal !   If you think about how cofactor expansion works, the determinant of a matrix that has all zeros below the main diagonal should always be the product of the entries on the main diagonal! That means our new method (using row operations) is   Use row operations to put the matrix in a form where it all of the entries below the main diagonal are zeros (this is called upper triangular form).   P.S.: NEVER use the operation where you just multiply a row by a constant and keep track of how many times you swap rows.    Multiply all the entries on the diagonal.   If the number of row swaps you did is even, then this is the answer;    If the number of row swaps you did is odd, multiply it by to get the determinant.        A matrix that only has zeros below the main diagonal is called an upper triangle matrix, and a matrix that only has zeros above the main diagonal is called a lower triangular matrix. We can compute the determinant of these matrices by multiplying all of the entries on the diagonal together .   What is the determinant of the identity matrix (of any size)?   We will continue our investigation of determinants more about the properties and applications of determinants in the next section!  "
+  "body": " Introduction to Determinants   You may recall we learned a special formula back in that computes the determinant of a matrix. But what does it mean?  Determinant is really a special linear operator with special properties that we won't be able to make sense of fully in this class. Instead, we will focus on how to compute the determinant in this section.    After this section, students will be able to:     Compute the determinant of an matrix in various methods.    Determine the cofactors, including the signs.      The cofactor expansion is a method to compute the determinant of a matrix.  But what's the determinant of a matrix? We won't be able to answer this question now since we haven't gotten into vector geometry yet. Right now, you can think of the determinant of a matrix a special number associated with the matrix that tells us many things about the matrix (e.g., its invertibility).  Notation-wise, the determinant of the matrix is denoted by . When we are working with a specific matrix, we replace the brackets with absolute values and then it stands for the determinant (which is a number) rather than a matrix.  For example, the determinant of the matrix is denoted by   If you are super interested in knowing what the determinant represents, check out the following video:   The Determinant    In this section, we will focus on how to compute the determinant than what the number tells us.   Let's find the determinant of the matrix using the method of cofactor expansion!  The way to do so is to pick one row or column to expand on. We can pick any of them:  Let's pick Row 1: So the determinant of this matrix is .  Alternatively, we can pick Column 2 to expand on: See the determinant is the same!   So how does it work?   Pick a row or a column.    For each entry, multiply it by the determinant of the matrix you get by eliminating the row and the column that the entry is in .    If the row number plus the column number is odd, multiply the little determinant by .    Add up all the products.   Here is a strategy to help us pick a row or a column to expand on: If possible, pick the row\/column that has the most zeros in it, since we don't have to compute any of the little determinants of those (as they will be multiplied by zero!).   Use the cofactor expansion method to compute the determinant of the matrix in the following two ways:   Expand on Row 2.    Expand on Column 3.      The answer!    The main idea of the cofactor expansion is that it allows us to build up the determinant of a matrix using the determinants of smaller matrices . So once we know how to compute the determinant of matrices, we can use that to figure out the determinant of a matrix. And then we could use that to figure out how to compute the determinant of a matrix (and etc...)  The products we add up ( or times the little determinant) during the cofactor expansion procedures are called the cofactors .   Formal Definition of Cofactors   Given an matrix , let be the matrix obtained by deleting the th row and the th column of . Then the cofactor is     The is the part of the formula that does the multiplication by or :   If the sum of the row number and the column number is odd, we get the ;    If the sum of the row number and the column number is even, we get the .   So to get a cofactor, we will find out little determinant and then either change its sign or leave it alone.  We can anticipate when we need to change the sign when computing a cofactor by imagining a checkerboard pattern of or overlaying the matrix. For example, for a matrix, we would have the pattern We canmake the right pattern for any matrix by making this checkerboard pattern starting with a in the -entry.  Then the determinant of a matrix can be calculated by multiplying each entry of a row (or column) of the matrix by its cofactor and then summing the results.   Let's compute the determinant of a matrix   We will need to pick a row\/column to begin. Observe that Column 2 has the most zeros in it, so let's pick that one! So we need to compute these two determinants: by picking Row 3 to expand on, and by picking Row 1 to expand on.  So    If you are asked to compute the matrix of a large matrix, you are REALLY hoping it has a row or column with a bunch of zeros otherwise you will be computing a bunch of determinants each of which requires you to compute a bunch of other determinants.   Compute the determinant of    The answer!    You may get the sense that the cofactor method can require a lot of calculation and it is MUCH easier when there are a lot of zeros in the matrix. Recall elementary row operations can create zeros in a matrix. A natural question to ask is whether it is possible to use elementary row operations to make a determinant easier to calculate without changing the result.  The answer is yes! And the following theorem tells us how:   Row Operations and Determinants   Let be an matrix. Then   If the matrix has a row or column of zeros its determinant is zero.    If two rows of a matrix are swapped, the sign of the determinant is changed.    If a row (or column) of a matrix is multiplied by a constant, the resulting matrix will have a determinant that is a product of the original determinant and that same constant.    If two rows (or columns) of a matrix are identical, then the determinant of the matrix is zero.    If a multiple of one row of a matrix is added to another row, the determinant of the matrix is unchanged!        But Richard... Why is this true?     If you used the cofactor method and expanded along the row or column that is all zero, then every cofactor would be multiplied by zero giving you the answer of zero.    I'll consider rows only (the argument is similar for columns).  In the case, we can see that while so the answers have opposite signs.  Now if the matrix is bigger than you can calculate the determinant of both of them using the cofactor method and expanding on a row OTHER than the two that are swapped.  In both calculations, the number each cofactor is multiplied by is unchanged (you are using the same row in each case).  But for each cofactor calculation you are computing a determinants and when you compute the ones for the matrix with the swapped rows, you get opposite signs because the rows of each matrix have been swapped.  This is what it would look like when the 1st and 3rd rows are swapped. Check it out!   and   Notice that all of the determinants in the second version will have opposite signs of the ones in the first version.  For a matrix, you use the same trick. Again all of your cofactors will change sign (because of what I just showed about the case). And so on....  This idea can be turned into a formal proof using the Principal of Mathematical Induction    This is straightforward. If you expand on the row\/column that has been multiplied by the constant, none of the cofactors will change but in the calculation you will get an extra factor in each term since each entry of the row\/column is multiplied by the constant. You can just factor out that constant to see that the determinant has been multiplied by that constant. Here is what it looks like in the case if you multiply the middle row by :   and      This is a fun one! Imagine swapping the two rows (or columns) that are identical. By Rule 2 the determinant of the matrix will change signs if you do this.  BUT since the two rows (or columns) were identical switching the rows (or columns) won't change it at all. So the determinant can't change!  What's the only number that you can multiply by without changing it? ZERO!    This is the trickiest AND the most important as we shall soon see. Let's look at the general case and try to figure out why doing this operation does not change the determinant.  Here is the calculation of the \"before\" matrix expanding on Row 2:   Now let's see what happens if we multiply Row 1 by and add that to Row 2 (we'll expand using Row 2 again):      But is EXACTLY what we would get if we calculated a matrix that was just like our original matrix EXCEPT that Row 2 has been replaced with Row 1.  So it is a determinant of a matrix with two identical rows (Row 1 and Row 2), which means it is ZERO.       So what is this new method for computing determinants?  First, we know that if a matrix has a whole row (or column) of zeros or if it has two identical rows (or columns) the determinant is zero. Second, we know that if we can maximize the number of zeros we get in a row, we can minimize the number of cofactors we actually have to compute.  Actually there is one more even awesome-er fact that we can use to make determinant calculations fairly easy using row operations. We will do an example first and that will show us what that awesome-er fact is.   Let's compute   Step 1: We can add times Row 1 to Row 2 (and replace Row 2). This will not change the determinant.   Step 2: We can add times Row 1 to Row 3 (and replace Row 3). And this again will not change the determinant.   Step 3: We can add Row 2 to Row 4 (and replace Row 4), and the determinant is still unchanged.   Step 4: We can add times Row 3 to Row 4 without changing the determinant!   Notice that we now have all zeros below the main diagonal. At this point, Richard instantly knows that the determinant is going to be . How does he know that?  Watch what happens when we expand along the last row to compute the determinant: Now we need to figure out the determinant of one matrix that also has all zeros below the main diagonal. So... And now we need to figure out the determinant of one matrix that also has all zeros below the main diagonal (well there is only one spot there, but still!). Continuing then, we get...   So it turned out that the answer was just the product of the entries on the diagonal !   If you think about how cofactor expansion works, the determinant of a matrix that has all zeros below the main diagonal should always be the product of the entries on the main diagonal! That means our new method (using row operations) is   Use row operations to put the matrix in a form where it all of the entries below the main diagonal are zeros (this is called upper triangular form).   P.S.: NEVER use the operation where you just multiply a row by a constant and keep track of how many times you swap rows.    Multiply all the entries on the diagonal.   If the number of row swaps you did is even, then this is the answer;    If the number of row swaps you did is odd, multiply it by to get the determinant.        A matrix that only has zeros below the main diagonal is called an upper triangle matrix, and a matrix that only has zeros above the main diagonal is called a lower triangular matrix. We can compute the determinant of these matrices by multiplying all of the entries on the diagonal together .   What is the determinant of the identity matrix (of any size)?   We will continue our investigation of determinants more about the properties and applications of determinants in the next section!   Some Exercises for This Section   Richard included some practice problems that cover some main concepts in this section. You don't need to turn it in, but you are highly encouraged to work on this with your classmates. The problems here may end up being in-class practice problems, homework problems, and\/or exam problems. Reach out to Richard for help if you get stuck or have any questions.  Only the final answers are included to some of the problems for you to check your result. If you want to check your work, talk to Richard and he is happy to discuss the process with you.     Compute the determinants in the following exercises using a cofactor expansion across the first row.                Compute the determinants in the following exercises by cofactor expansions. At each step, choose a row or column that involves the least amount of computation.                Explore the effect of an elementary row operation on the determinant of a matrix. State the row operation and describe how it affects the determinant.       Let . Write . Is ?      In the following exercises, is an matrix. Mark each statement True or False (T\/F). Justify each answer.     (T\/F) An determinant is defined by determinants of submatrices.      (T\/F) The cofactor expansion of down a column is equal to the cofactor expansion along a row.       Let and . Compute the area of the parallelogram determined by , , , and , and compute the determinant of . How do they compare? Draw a picture and explain what you find.     "
 },
 {
   "id": "sec31-IntroDeterminants-2-3",
@@ -3646,13 +3853,94 @@ var ptx_lunr_docs = [
   "body": " What is the determinant of the identity matrix (of any size)?  "
 },
 {
+  "id": "ws-sec31-3-2",
+  "level": "2",
+  "url": "sec31-IntroDeterminants.html#ws-sec31-3-2",
+  "type": "Worksheet Exercise",
+  "number": "3.1.3.1.5",
+  "title": "",
+  "body": "    "
+},
+{
+  "id": "ws-sec31-3-3",
+  "level": "2",
+  "url": "sec31-IntroDeterminants.html#ws-sec31-3-3",
+  "type": "Worksheet Exercise",
+  "number": "3.1.3.1.7",
+  "title": "",
+  "body": "    "
+},
+{
+  "id": "ws-sec31-4-2",
+  "level": "2",
+  "url": "sec31-IntroDeterminants.html#ws-sec31-4-2",
+  "type": "Worksheet Exercise",
+  "number": "3.1.3.1.9",
+  "title": "",
+  "body": "    "
+},
+{
+  "id": "ws-sec31-4-3",
+  "level": "2",
+  "url": "sec31-IntroDeterminants.html#ws-sec31-4-3",
+  "type": "Worksheet Exercise",
+  "number": "3.1.3.1.11",
+  "title": "",
+  "body": "    "
+},
+{
+  "id": "ws-sec31-5",
+  "level": "2",
+  "url": "sec31-IntroDeterminants.html#ws-sec31-5",
+  "type": "Worksheet Exercise",
+  "number": "3.1.3.1.21",
+  "title": "",
+  "body": "  Explore the effect of an elementary row operation on the determinant of a matrix. State the row operation and describe how it affects the determinant.    "
+},
+{
+  "id": "ws-sec31-6",
+  "level": "2",
+  "url": "sec31-IntroDeterminants.html#ws-sec31-6",
+  "type": "Worksheet Exercise",
+  "number": "3.1.3.1.37",
+  "title": "",
+  "body": "  Let . Write . Is ?   "
+},
+{
+  "id": "ws-sec31-7-2",
+  "level": "2",
+  "url": "sec31-IntroDeterminants.html#ws-sec31-7-2",
+  "type": "Worksheet Exercise",
+  "number": "3.1.3.1.39",
+  "title": "",
+  "body": "  (T\/F) An determinant is defined by determinants of submatrices.   "
+},
+{
+  "id": "ws-sec31-7-3",
+  "level": "2",
+  "url": "sec31-IntroDeterminants.html#ws-sec31-7-3",
+  "type": "Worksheet Exercise",
+  "number": "3.1.3.1.41",
+  "title": "",
+  "body": "  (T\/F) The cofactor expansion of down a column is equal to the cofactor expansion along a row.   "
+},
+{
+  "id": "ws-sec31-8",
+  "level": "2",
+  "url": "sec31-IntroDeterminants.html#ws-sec31-8",
+  "type": "Worksheet Exercise",
+  "number": "3.1.3.1.43",
+  "title": "",
+  "body": "  Let and . Compute the area of the parallelogram determined by , , , and , and compute the determinant of . How do they compare? Draw a picture and explain what you find.   "
+},
+{
   "id": "sec32-PropertiesDeterminants",
   "level": "1",
   "url": "sec32-PropertiesDeterminants.html",
   "type": "Section",
   "number": "3.2",
   "title": "Properties of Determinants",
-  "body": " Properties of Determinants   In this section, we will see how to compute the determinant of a matrix inverse, which also tells us about the invertibility of a matrix.    After this section, students will be able to:     Apply the multiplicative property of determinants    determine whether a matrix is invertible by computing its determinant      The most important theorem about determinants is this one:   Determinants and Products   Suppose and are matrices. Then That is, the determinant of the product is the product of the determinants.    And one consequence of this is the following Lemma:    Let be an matrix, then if and only if has no inverse (hence is not invertible).     We know that We can calculate the determinant of all three matrices and quickly verify that    If we know that is invertible, then we can use the above theorem to compute the determinant of the inverse of . Since , we have Hence,   The last theorem in this section is about the determinant of a transpose. Long story short, the determinant of a matrix is the same as the determinant of its transpose. That is,   "
+  "body": " Properties of Determinants   In this section, we will see how to compute the determinant of a matrix inverse, which also tells us about the invertibility of a matrix.    After this section, students will be able to:     Apply the multiplicative property of determinants    determine whether a matrix is invertible by computing its determinant      The most important theorem about determinants is this one:   Determinants and Products   Suppose and are matrices. Then That is, the determinant of the product is the product of the determinants.    And one consequence of this is the following Lemma:    Let be an matrix, then if and only if has no inverse (hence is not invertible).     We know that We can calculate the determinant of all three matrices and quickly verify that    If we know that is invertible, then we can use the above theorem to compute the determinant of the inverse of . Since , we have Hence,   The last theorem in this section is about the determinant of a transpose. Long story short, the determinant of a matrix is the same as the determinant of its transpose. That is,    Some Exercises for This Section   Richard included some practice problems that cover some main concepts in this section. You don't need to turn it in, but you are highly encouraged to work on this with your classmates. The problems here may end up being in-class practice problems, homework problems, and\/or exam problems. Reach out to Richard for help if you get stuck or have any questions.  Only the final answers are included to some of the problems for you to check your result. If you want to check your work, talk to Richard and he is happy to discuss the process with you.     Find the determinants in the following exercises by row reduction to echelon form.                Combine the methods of row reduction and cofactor expansion to compute the following determinant:       Find the determinant of the following matrix, where        In the following exercises, use determinants to find out if the matrix is invertible.                Use determinants to decide if the following set of vectors is linearly independent.       In the following exercises, and are matrices. Mark each statement True or False (T\/F). Justify each answer.     (T\/F) A row replacement operation does not affect the determinant of a matrix.      (T\/F) If the columns of are linearly dependent, then .      (T\/F) If three row interchanges are made in succession, then the new determinant equals the old determinant.      (T\/F)       "
 },
 {
   "id": "sec32-PropertiesDeterminants-2-2",
@@ -3689,6 +3977,105 @@ var ptx_lunr_docs = [
   "number": "3.2.3",
   "title": "",
   "body": " We know that We can calculate the determinant of all three matrices and quickly verify that   "
+},
+{
+  "id": "ws-sec32-3-2",
+  "level": "2",
+  "url": "sec32-PropertiesDeterminants.html#ws-sec32-3-2",
+  "type": "Worksheet Exercise",
+  "number": "3.2.3.2.5",
+  "title": "",
+  "body": "    "
+},
+{
+  "id": "ws-sec32-3-3",
+  "level": "2",
+  "url": "sec32-PropertiesDeterminants.html#ws-sec32-3-3",
+  "type": "Worksheet Exercise",
+  "number": "3.2.3.2.9",
+  "title": "",
+  "body": "    "
+},
+{
+  "id": "ws-sec32-4",
+  "level": "2",
+  "url": "sec32-PropertiesDeterminants.html#ws-sec32-4",
+  "type": "Worksheet Exercise",
+  "number": "3.2.3.2.13",
+  "title": "",
+  "body": "  Combine the methods of row reduction and cofactor expansion to compute the following determinant:    "
+},
+{
+  "id": "ws-sec32-5",
+  "level": "2",
+  "url": "sec32-PropertiesDeterminants.html#ws-sec32-5",
+  "type": "Worksheet Exercise",
+  "number": "3.2.3.2.17",
+  "title": "",
+  "body": "  Find the determinant of the following matrix, where     "
+},
+{
+  "id": "ws-sec32-6-2",
+  "level": "2",
+  "url": "sec32-PropertiesDeterminants.html#ws-sec32-6-2",
+  "type": "Worksheet Exercise",
+  "number": "3.2.3.2.21",
+  "title": "",
+  "body": "    "
+},
+{
+  "id": "ws-sec32-6-3",
+  "level": "2",
+  "url": "sec32-PropertiesDeterminants.html#ws-sec32-6-3",
+  "type": "Worksheet Exercise",
+  "number": "3.2.3.2.23",
+  "title": "",
+  "body": "    "
+},
+{
+  "id": "ws-sec32-7",
+  "level": "2",
+  "url": "sec32-PropertiesDeterminants.html#ws-sec32-7",
+  "type": "Worksheet Exercise",
+  "number": "3.2.3.2.25",
+  "title": "",
+  "body": "  Use determinants to decide if the following set of vectors is linearly independent.    "
+},
+{
+  "id": "ws-sec32-8-2",
+  "level": "2",
+  "url": "sec32-PropertiesDeterminants.html#ws-sec32-8-2",
+  "type": "Worksheet Exercise",
+  "number": "3.2.3.2.27",
+  "title": "",
+  "body": "  (T\/F) A row replacement operation does not affect the determinant of a matrix.   "
+},
+{
+  "id": "ws-sec32-8-3",
+  "level": "2",
+  "url": "sec32-PropertiesDeterminants.html#ws-sec32-8-3",
+  "type": "Worksheet Exercise",
+  "number": "3.2.3.2.29",
+  "title": "",
+  "body": "  (T\/F) If the columns of are linearly dependent, then .   "
+},
+{
+  "id": "ws-sec32-8-4",
+  "level": "2",
+  "url": "sec32-PropertiesDeterminants.html#ws-sec32-8-4",
+  "type": "Worksheet Exercise",
+  "number": "3.2.3.2.31",
+  "title": "",
+  "body": "  (T\/F) If three row interchanges are made in succession, then the new determinant equals the old determinant.   "
+},
+{
+  "id": "ws-sec32-8-5",
+  "level": "2",
+  "url": "sec32-PropertiesDeterminants.html#ws-sec32-8-5",
+  "type": "Worksheet Exercise",
+  "number": "3.2.3.2.33",
+  "title": "",
+  "body": "  (T\/F)    "
 },
 {
   "id": "appendixA-ExamReviews",

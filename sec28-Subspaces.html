@@ -260,6 +260,7 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec28-Subspaces.html#subsec-SubspaceIntro" class="internal"><span class="title">What is a Subspace?</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec28-Subspaces.html#subsec-FundamentalSubspaces" class="internal"><span class="title">Fundamental Subspaces</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec28-Subspaces.html#subsec-Span" class="internal"><span class="title">Span and Spanning Sets</span></a></div></li>
+<li class="toc-item toc-worksheet"><div class="toc-title-box"><a href="sec28-Subspaces.html#ws-sec28" class="internal"><span class="title">Some Exercises for This Section</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
@@ -269,6 +270,7 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec29-DimensionRank.html#subsec-Dimensions" class="internal"><span class="title">Dimensions</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec29-DimensionRank.html#subsec-Rank-NullityTheorem" class="internal"><span class="title">A Fundamental Theorem of Linear Algebra: Rank-Nullity Theorem</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec29-DimensionRank.html#subsec-ExtendedInvertibleMatrixTheorem" class="internal"><span class="title">Extending Our Invertible Matrix Theorem!</span></a></div></li>
+<li class="toc-item toc-worksheet"><div class="toc-title-box"><a href="sec29-DimensionRank.html#ws-sec29" class="internal"><span class="title">Some Exercises for This Section</span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -276,14 +278,45 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="ch3-Determinants.html" class="internal"><span class="codenumber">3</span> <span class="title">Determinants</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec31-IntroDeterminants.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Introduction to Determinants</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec32-PropertiesDeterminants.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Properties of Determinants</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec31-IntroDeterminants.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Introduction to Determinants</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-worksheet"><div class="toc-title-box"><a href="sec31-IntroDeterminants.html#ws-sec31" class="internal"><span class="codenumber">3.1</span> <span class="title">Some Exercises for This Section</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec32-PropertiesDeterminants.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Properties of Determinants</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-worksheet"><div class="toc-title-box"><a href="sec32-PropertiesDeterminants.html#ws-sec32" class="internal"><span class="codenumber">3.2</span> <span class="title">Some Exercises for This Section</span></a></div></li></ul>
+</li>
 </ul>
 </li>
 <li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendixA-ExamReviews.html" class="internal"><span class="codenumber">A</span> <span class="title">Exam Reviews Page</span></a></div></li>
 <li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
 </ul></nav></div>
-<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec28-Subspaces"><h2 class="heading hide-type">
+<main class="ptx-main"><div id="ptx-content" class="ptx-content">
+<div class="print-preview-header">
+<h2 class="print-preview">Print preview</h2>
+<div class="print-controls">
+<div class="print-controls-toggles">
+<form class="papersize-select" id="papersize-select">
+<span class="name">Paper size</span><label><input type="radio" name="papersize" value="a4">A4
+        </label><label><input type="radio" name="papersize" value="letter">Letter
+        </label>
+</form>
+<details class="print-options"><summary>Additional printing options</summary><div class="header-footer-options">
+<div class="header-option">
+<span class="title">Print headers</span><label>First page<input type="checkbox" id="print-first-page-header-checkbox" checked></label><label>Running<input type="checkbox" id="print-running-header-checkbox" checked></label>
+</div>
+<div class="footer-option">
+<span class="title">Print footers</span><label>First page<input type="checkbox" id="print-first-page-footer-checkbox" checked></label><label>Running<input type="checkbox" id="print-running-footer-checkbox" checked></label>
+</div>
+</div>
+<div class="highlight-workspace-option">
+<label for="highlight-workspace-checkbox">Highlight workspace</label><input type="checkbox" id="highlight-workspace-checkbox">
+</div></details>
+</div>
+<button class="print-button" title="Print" onClick="window.print()"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8ad;</span><span class="name">Print</span></button>
+</div>
+</div>
+<section class="section" id="sec28-Subspaces"><h2 class="heading hide-type">
 <span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.4</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Subspaces of <span class="process-math">\(\R^n\)</span></span>
 </h2>
 <section class="introduction" id="sec28-Subspaces-2"><div class="para" id="sec28-Subspaces-2-1">Near the beginning of the course we learned how to write the solution to a homogeneous system of equations <span class="process-math">\(A\v{x} = \v{0}\)</span> as a linear combination of"basic vectors". This was possible because the set of solutions to a homogenous system is a special kind of set of vectors called a <dfn class="terminology">subspace</dfn>.<div class="autopermalink" data-description="Paragraph"><a href="#sec28-Subspaces-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -812,7 +845,127 @@ c\v{x} \amp= c(a_1\v{v}_1 + a_2\v{v}_2 + \cdots + a_p\v{v}_p) \\
 </div>
 <div class="para" id="subsec-Span-11-10">In the next section, we will learn that this spanning set of the column space is NOT a <em class="emphasis">basis</em>, in the sense that some of the column vectors in the spanning set are "redundant".<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Span-11-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Example 2.4.11"><a href="#subsec-Span-11" title="Copy heading and permalink for Example 2.4.11" aria-label="Copy heading and permalink for Example 2.4.11">🔗</a></div></article><div class="autopermalink" data-description="Subsection: Span and Spanning Sets"><a href="#subsec-Span" title="Copy heading and permalink for Subsection: Span and Spanning Sets" aria-label="Copy heading and permalink for Subsection: Span and Spanning Sets">🔗</a></div></section><div class="autopermalink" data-description="Section 2.4: Subspaces of \R^n"><a href="#sec28-Subspaces" title="Copy heading and permalink for Section 2.4: Subspaces of \R^n" aria-label="Copy heading and permalink for Section 2.4: Subspaces of \R^n">🔗</a></div></section></div>
+<div class="autopermalink" data-description="Example 2.4.11"><a href="#subsec-Span-11" title="Copy heading and permalink for Example 2.4.11" aria-label="Copy heading and permalink for Example 2.4.11">🔗</a></div></article><div class="autopermalink" data-description="Subsection: Span and Spanning Sets"><a href="#subsec-Span" title="Copy heading and permalink for Subsection: Span and Spanning Sets" aria-label="Copy heading and permalink for Subsection: Span and Spanning Sets">🔗</a></div></section><section class="worksheet" id="ws-sec28" data-margins="0.75in 0.75in 0.75in 0.75in"><h3 class="heading hide-type">
+<span class="type">Worksheet</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Some Exercises for This Section</span><div class="print-links"><a href="?printpreview=ws-sec28" class="print-link" title="Print preview"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8ad;</span></a></div>
+</h3>
+<section class="introduction" id="ws-sec28-2"><div class="para" id="ws-sec28-2-1">Richard included some practice problems that cover some main concepts in this section. You don’t need to turn it in, but you are highly encouraged to work on this with your classmates. The problems here may end up being in-class practice problems, homework problems, and/or exam problems. Reach out to Richard for help if you get stuck or have any questions.<div class="autopermalink" data-description="Paragraph"><a href="#ws-sec28-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ws-sec28-2-2">Only the final answers are included to some of the problems for you to check your result. If you want to check your work, talk to Richard and he is happy to discuss the process with you.<div class="autopermalink" data-description="Paragraph"><a href="#ws-sec28-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></section><article class="exercise exercise-like" id="ws-sec28-3"><h4 class="heading"><span class="codenumber">2.8.1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para" id="ws-sec28-3-1-1">The figure below display a set in <span class="process-math">\(\mathbb{R}^{2}\text{.}\)</span> Assume the sets include the bounding lines.<div class="autopermalink" data-description="Paragraph"><a href="#ws-sec28-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="ws-sec28-3-1-2">Give a specific reason why the set <span class="process-math">\(H\)</span> is not a subspace of <span class="process-math">\(\mathbb{R}^{2}\text{.}\)</span> (For instance, find two vectors in <span class="process-math">\(H\)</span> whose sum is not in <span class="process-math">\(H\text{,}\)</span> or find a vector in <span class="process-math">\(H\)</span> with a scalar multiple that is not in <span class="process-math">\(H\text{.}\)</span> Draw a picture.)<div class="autopermalink" data-description="Paragraph"><a href="#ws-sec28-3-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Worksheet Exercise 2.8.1"><a href="#ws-sec28-3" title="Copy heading and permalink for Worksheet Exercise 2.8.1" aria-label="Copy heading and permalink for Worksheet Exercise 2.8.1">🔗</a></div></article><article class="exercise exercise-like" id="ws-sec28-4"><h4 class="heading"><span class="codenumber">2.8.5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para" id="ws-sec28-4-1-1">Let <span class="process-math">\(\v{v}_{1}=\begin{bmatrix}2\\ 3\\ -5\end{bmatrix}\text{,}\)</span> <span class="process-math">\(\v{v}_{2}=\begin{bmatrix}-4\\ -5\\ 8\end{bmatrix}\text{,}\)</span> and <span class="process-math">\(\v{w}=\begin{bmatrix}8\\ 2\\ -9\end{bmatrix}\text{.}\)</span> Determine if <span class="process-math">\(\v{w}\)</span> is in the subspace of <span class="process-math">\(\mathbb{R}^{3}\)</span> generated by <span class="process-math">\(\v{v}_{1}\)</span> and <span class="process-math">\(\v{v}_{2}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ws-sec28-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Worksheet Exercise 2.8.5"><a href="#ws-sec28-4" title="Copy heading and permalink for Worksheet Exercise 2.8.5" aria-label="Copy heading and permalink for Worksheet Exercise 2.8.5">🔗</a></div></article><article class="exercise exercise-like" id="ws-sec28-5"><h4 class="heading"><span class="codenumber">2.8.7<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para logical" id="ws-sec28-5-1-1">
+<div class="para">Let <span class="process-math">\(\v{v}_{1}=\begin{bmatrix}2\\ -8\\ 6\end{bmatrix}\text{,}\)</span> <span class="process-math">\(\v{v}_{2}=\begin{bmatrix}-3\\ 8\\ -7\end{bmatrix}\text{,}\)</span> <span class="process-math">\(v_{3}=\begin{bmatrix}-4\\ 6\\ -7\end{bmatrix}\text{,}\)</span> <span class="process-math">\(\v{p}=\begin{bmatrix}6\\ -10\\ 11\end{bmatrix}\text{,}\)</span> and  <span class="process-math">\(A=\begin{bmatrix} \v{v}_{1}\amp \v{v}_{2}\amp \v{v}_{3}\end{bmatrix}\text{.}\)</span>
+</div>
+<ol class="lower-alpha ol-marker-3" id="ws-sec28-5-1-1-6">
+<li id="ws-sec28-5-1-1-6-1">
+<div class="para" id="ws-sec28-5-1-1-6-1-1">How many vectors are in <span class="process-math">\(\set{\v{v}_{1},\v{v}_{2},\v{v}_{3}}\text{?}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ws-sec28-5-1-1-6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2.8.7.a"><a href="#ws-sec28-5-1-1-6-1" title="Copy heading and permalink for Item 2.8.7.a" aria-label="Copy heading and permalink for Item 2.8.7.a">🔗</a></div>
+</li>
+<li id="ws-sec28-5-1-1-6-2">
+<div class="para" id="ws-sec28-5-1-1-6-2-1">How many vectors are in <span class="process-math">\(\Col A\text{?}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ws-sec28-5-1-1-6-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2.8.7.b"><a href="#ws-sec28-5-1-1-6-2" title="Copy heading and permalink for Item 2.8.7.b" aria-label="Copy heading and permalink for Item 2.8.7.b">🔗</a></div>
+</li>
+<li id="ws-sec28-5-1-1-6-3">
+<div class="para" id="ws-sec28-5-1-1-6-3-1">Is <span class="process-math">\(\v{p}\)</span> in <span class="process-math">\(\Col A\text{?}\)</span> Why or why not?<div class="autopermalink" data-description="Paragraph"><a href="#ws-sec28-5-1-1-6-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2.8.7.c"><a href="#ws-sec28-5-1-1-6-3" title="Copy heading and permalink for Item 2.8.7.c" aria-label="Copy heading and permalink for Item 2.8.7.c">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#ws-sec28-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Worksheet Exercise 2.8.7"><a href="#ws-sec28-5" title="Copy heading and permalink for Worksheet Exercise 2.8.7" aria-label="Copy heading and permalink for Worksheet Exercise 2.8.7">🔗</a></div></article><article class="exercise exercise-like" id="ws-sec28-6"><h4 class="heading"><span class="codenumber">2.8.9<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para" id="ws-sec28-6-1-1">With <span class="process-math">\(A\)</span> and <span class="process-math">\(\v{p}\)</span> as in Exercise 7, determine if <span class="process-math">\(\v{p}\)</span> is in <span class="process-math">\(\Nul A\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ws-sec28-6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Worksheet Exercise 2.8.9"><a href="#ws-sec28-6" title="Copy heading and permalink for Worksheet Exercise 2.8.9" aria-label="Copy heading and permalink for Worksheet Exercise 2.8.9">🔗</a></div></article><article class="exercise exercise-like" id="ws-sec28-7"><h4 class="heading"><span class="codenumber">2.8.11<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para logical" id="ws-sec28-7-1-1">
+<div class="para">Give integers <span class="process-math">\(p\)</span> and <span class="process-math">\(q\)</span> such that <span class="process-math">\(\Nul A\)</span> is a subspace of <span class="process-math">\(\mathbb{R}^{p}\)</span> and <span class="process-math">\(\Col A\)</span> is a subspace of <span class="process-math">\(\mathbb{R}^{q}\)</span>
+</div>
+<div class="displaymath process-math" id="ws-sec28-7-1-1-7">
+\begin{equation*}
+A=\begin{bmatrix}3\amp 2\amp 1\amp -5\\ -9\amp -4\amp 1\amp 7\\ 9\amp 2\amp -5\amp 1\end{bmatrix}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ws-sec28-7-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Worksheet Exercise 2.8.11"><a href="#ws-sec28-7" title="Copy heading and permalink for Worksheet Exercise 2.8.11" aria-label="Copy heading and permalink for Worksheet Exercise 2.8.11">🔗</a></div></article><article class="exercise exercise-like" id="ws-sec28-8"><h4 class="heading"><span class="codenumber">2.8.13<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para" id="ws-sec28-8-1-1">For <span class="process-math">\(A\)</span> as in Exercise 11, find a nonzero vector in <span class="process-math">\(\Nul A\)</span> and a nonzero vector in <span class="process-math">\(\Col A\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ws-sec28-8-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Worksheet Exercise 2.8.13"><a href="#ws-sec28-8" title="Copy heading and permalink for Worksheet Exercise 2.8.13" aria-label="Copy heading and permalink for Worksheet Exercise 2.8.13">🔗</a></div></article><div class="exercisegroup" id="ws-sec28-9">
+<h4 class="heading"><span class="title">Exercise Group.</span></h4>
+<div class="introduction" id="ws-sec28-9-1"><div class="para" id="ws-sec28-9-1-1">Determine which sets in the following exercises are bases for <span class="process-math">\(\mathbb{R}^{2}\)</span> or <span class="process-math">\(\mathbb{R}^{3}\text{.}\)</span> Justify each answer.<div class="autopermalink" data-description="Paragraph"><a href="#ws-sec28-9-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></div>
+<div class="exercisegroup-exercises">
+<article class="exercise exercise-like" id="ws-sec28-9-2"><h5 class="heading"><span class="codenumber">2.8.15<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<div class="displaymath process-math" id="ws-sec28-9-2-1-1">
+\begin{equation*}
+\begin{bmatrix}5\\ -2\end{bmatrix}, \begin{bmatrix}10\\ -3\end{bmatrix}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Worksheet Exercise 2.8.15"><a href="#ws-sec28-9-2" title="Copy heading and permalink for Worksheet Exercise 2.8.15" aria-label="Copy heading and permalink for Worksheet Exercise 2.8.15">🔗</a></div></article><article class="exercise exercise-like" id="ws-sec28-9-3"><h5 class="heading"><span class="codenumber">2.8.19<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<div class="displaymath process-math" id="ws-sec28-9-3-1-1">
+\begin{equation*}
+\begin{bmatrix}3\\ -8\\ 1\end{bmatrix}, \begin{bmatrix}6\\ 2\\ -5\end{bmatrix}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Worksheet Exercise 2.8.19"><a href="#ws-sec28-9-3" title="Copy heading and permalink for Worksheet Exercise 2.8.19" aria-label="Copy heading and permalink for Worksheet Exercise 2.8.19">🔗</a></div></article>
+</div>
+<div class="autopermalink" data-description="Exercise Group 2.8.15–2.8.19"><a href="#ws-sec28-9" title="Copy heading and permalink for Exercise Group 2.8.15–2.8.19" aria-label="Copy heading and permalink for Exercise Group 2.8.15–2.8.19">🔗</a></div>
+</div>
+<div class="exercisegroup" id="ws-sec28-10">
+<h4 class="heading"><span class="title">Exercise Group.</span></h4>
+<div class="introduction" id="ws-sec28-10-1"><div class="para" id="ws-sec28-10-1-1">In the following exercises, mark each statement True or False (T/F). Justify each answer.<div class="autopermalink" data-description="Paragraph"><a href="#ws-sec28-10-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></div>
+<div class="exercisegroup-exercises">
+<article class="exercise exercise-like" id="ws-sec28-10-2"><h5 class="heading"><span class="codenumber">2.8.21<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<div class="para" id="ws-sec28-10-2-1-1">(T/F) A subspace of <span class="process-math">\(\mathbb{R}^{n}\)</span> is any set <span class="process-math">\(H\)</span> such that (i) the zero vector is in <span class="process-math">\(H\text{,}\)</span> (ii) <span class="process-math">\(\v{u}\text{,}\)</span> <span class="process-math">\(\v{v}\text{,}\)</span> and <span class="process-math">\(\v{u}+\v{v}\)</span> are in <span class="process-math">\(H\text{,}\)</span> and (iii) <span class="process-math">\(c\)</span> is a scalar and <span class="process-math">\(c\v{u}\)</span> is in <span class="process-math">\(H\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ws-sec28-10-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Worksheet Exercise 2.8.21"><a href="#ws-sec28-10-2" title="Copy heading and permalink for Worksheet Exercise 2.8.21" aria-label="Copy heading and permalink for Worksheet Exercise 2.8.21">🔗</a></div></article><article class="exercise exercise-like" id="ws-sec28-10-3"><h5 class="heading"><span class="codenumber">2.8.23<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<div class="para" id="ws-sec28-10-3-1-1">(T/F) If <span class="process-math">\(\v{v}_{1},...,\v{v}_{p}\)</span> are in <span class="process-math">\(\mathbb{R}^{n}\text{,}\)</span> then Span <span class="process-math">\(\{\v{v}_{1},...,\v{v}_{p}\}\)</span> is the same as the column space of the matrix <span class="process-math">\(\begin{bmatrix}\v{v}_{1}\amp ...\amp \v{v}_{p}\end{bmatrix}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ws-sec28-10-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Worksheet Exercise 2.8.23"><a href="#ws-sec28-10-3" title="Copy heading and permalink for Worksheet Exercise 2.8.23" aria-label="Copy heading and permalink for Worksheet Exercise 2.8.23">🔗</a></div></article><article class="exercise exercise-like" id="ws-sec28-10-4"><h5 class="heading"><span class="codenumber">2.8.25<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<div class="para" id="ws-sec28-10-4-1-1">(T/F) The set of all solutions of a system of <span class="process-math">\(m\)</span> homogeneous equations in <span class="process-math">\(n\)</span> unknowns is a subspace of <span class="process-math">\(\mathbb{R}^{m}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ws-sec28-10-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Worksheet Exercise 2.8.25"><a href="#ws-sec28-10-4" title="Copy heading and permalink for Worksheet Exercise 2.8.25" aria-label="Copy heading and permalink for Worksheet Exercise 2.8.25">🔗</a></div></article><article class="exercise exercise-like" id="ws-sec28-10-5"><h5 class="heading"><span class="codenumber">2.8.27<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<div class="para" id="ws-sec28-10-5-1-1">(T/F) The columns of an invertible <span class="process-math">\(n \times n\)</span> matrix form a basis for <span class="process-math">\(\mathbb{R}^{n}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ws-sec28-10-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Worksheet Exercise 2.8.27"><a href="#ws-sec28-10-5" title="Copy heading and permalink for Worksheet Exercise 2.8.27" aria-label="Copy heading and permalink for Worksheet Exercise 2.8.27">🔗</a></div></article><article class="exercise exercise-like" id="ws-sec28-10-6"><h5 class="heading"><span class="codenumber">2.8.29<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<div class="para" id="ws-sec28-10-6-1-1">(T/F) Row operations do not affect linear dependence relations among the columns of a matrix.<div class="autopermalink" data-description="Paragraph"><a href="#ws-sec28-10-6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Worksheet Exercise 2.8.29"><a href="#ws-sec28-10-6" title="Copy heading and permalink for Worksheet Exercise 2.8.29" aria-label="Copy heading and permalink for Worksheet Exercise 2.8.29">🔗</a></div></article>
+</div>
+<div class="autopermalink" data-description="Exercise Group 2.8.21–2.8.29"><a href="#ws-sec28-10" title="Copy heading and permalink for Exercise Group 2.8.21–2.8.29" aria-label="Copy heading and permalink for Exercise Group 2.8.21–2.8.29">🔗</a></div>
+</div>
+<div class="exercisegroup" id="ws-sec28-11">
+<h4 class="heading"><span class="title">Exercise Group.</span></h4>
+<div class="introduction" id="ws-sec28-11-1"><div class="para" id="ws-sec28-11-1-1">The following exercises display a matrix <span class="process-math">\(A\)</span> and an echelon form of <span class="process-math">\(A\text{.}\)</span> Find a basis for <span class="process-math">\(\Col A\)</span> and a basis for <span class="process-math">\(\Nul A\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ws-sec28-11-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></div>
+<div class="exercisegroup-exercises">
+<article class="exercise exercise-like" id="ws-sec28-11-2"><h5 class="heading"><span class="codenumber">2.8.31<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<div class="displaymath process-math" id="ws-sec28-11-2-1-1">
+\begin{equation*}
+A=\begin{bmatrix}4\amp 5\amp 9\amp -2\\ 6\amp 5\amp 1\amp 12\\ 3\amp 4\amp 8\amp -3\end{bmatrix} \sim \begin{bmatrix}1\amp 2\amp 6\amp -5\\ 0\amp 1\amp 5\amp -6\\ 0\amp 0\amp 0\amp 0\end{bmatrix}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Worksheet Exercise 2.8.31"><a href="#ws-sec28-11-2" title="Copy heading and permalink for Worksheet Exercise 2.8.31" aria-label="Copy heading and permalink for Worksheet Exercise 2.8.31">🔗</a></div></article><article class="exercise exercise-like" id="ws-sec28-11-3"><h5 class="heading"><span class="codenumber">2.8.33<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<div class="displaymath process-math" id="ws-sec28-11-3-1-1">
+\begin{equation*}
+A=\begin{bmatrix}1\amp 4\amp 8\amp -3\amp -7\\ -1\amp 2\amp 7\amp 3\amp 4\\ -2\amp 2\amp 9\amp 5\amp 5\\ 3\amp 6\amp 9\amp -5\amp -2\end{bmatrix} \sim \begin{bmatrix}1\amp 4\amp 8\amp 0\amp 5\\ 0\amp 2\amp 5\amp 0\amp -1\\ 0\amp 0\amp 0\amp 1\amp 4\\ 0\amp 0\amp 0\amp 0\amp 0\end{bmatrix}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Worksheet Exercise 2.8.33"><a href="#ws-sec28-11-3" title="Copy heading and permalink for Worksheet Exercise 2.8.33" aria-label="Copy heading and permalink for Worksheet Exercise 2.8.33">🔗</a></div></article>
+</div>
+<div class="autopermalink" data-description="Exercise Group 2.8.31–2.8.33"><a href="#ws-sec28-11" title="Copy heading and permalink for Exercise Group 2.8.31–2.8.33" aria-label="Copy heading and permalink for Exercise Group 2.8.31–2.8.33">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Worksheet: Some Exercises for This Section"><a href="#ws-sec28" title="Copy heading and permalink for Worksheet: Some Exercises for This Section" aria-label="Copy heading and permalink for Worksheet: Some Exercises for This Section">🔗</a></div></section><div class="autopermalink" data-description="Section 2.4: Subspaces of \R^n"><a href="#sec28-Subspaces" title="Copy heading and permalink for Section 2.4: Subspaces of \R^n" aria-label="Copy heading and permalink for Section 2.4: Subspaces of \R^n">🔗</a></div></section>
+</div>
 <div id="ptx-content-footer" class="ptx-content-footer">
 <a class="previous-button button" href="sec23-InvertibleMatrix.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec29-DimensionRank.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>

@@ -212,9 +212,14 @@
         <alert>Caution!</alert> Richard's MTH 261 at PSU does not go through the material in the same order, so it is totally normal that you may run into problems you don't know how to solve yet, and the actual exam may include questions not on the following exams. 
     </p>
 
-    <figure xml:id="Construction_RiemannSum">
+    <figure>
       <caption>Richard's PSU MTH 261 Midterm Exam #1 [<url href="https://drive.google.com/file/d/1Mg2CXFI1N6u1Esfb1OX48Wt98FdAF_jS/view?usp=sharing">Click me</url> to see the solution!]</caption>
       <interactive iframe="MTH261_Spring26_Midterm1.pdf" width="100%" aspect="8.5:11" />
+    </figure>
+
+    <figure>
+      <caption>Richard's PSU MTH 261 Midterm Exam #2 [<url href="https://drive.google.com/file/d/1wZO-bIZAVI3iUV_a2zLHVzxDubcK8pkB/view?usp=sharing">Click me</url> to see the solution!]</caption>
+      <interactive iframe="MTH261_Spring26_Midterm2.pdf" width="100%" aspect="8.5:11" />
     </figure>
   </introduction>
 

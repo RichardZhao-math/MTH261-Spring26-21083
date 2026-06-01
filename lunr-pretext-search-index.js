@@ -4078,20 +4078,515 @@ var ptx_lunr_docs = [
   "body": "  (T\/F)    "
 },
 {
+  "id": "sec51-EigenvectorsEigenvalues",
+  "level": "1",
+  "url": "sec51-EigenvectorsEigenvalues.html",
+  "type": "Section",
+  "number": "4.1",
+  "title": "Eigenvectors and Eigenvalues",
+  "body": " Eigenvectors and Eigenvalues    Suppose and be a linear transformation defined by .    Let . Compute , and then sketch the vectors and . What is their relationship?    Let . Compute , and then sketch the vectors and . What is their relationship?    In the previous investigation, we found that and are parallel, which allows us to express as a scalar multiple of the preimage . Observe that matrix-vector multiplication is hard. But scalar multiplication of a vector is much easier. This is the idea behind eigenvalues and eigenvectors , which allows us to turn a matrix-vector multiplication to a scalar multiplication!   Eigenvalues and Eigenvectors   Let be an matrix. An eigenvector of is a nonzero vector such that for some scalar . Such a scalar is called an eigenvalue of .  We call here an eigenvector corresponding to the eigenvalue .     But Richard... Why can't we allow the zero vector to be an eigenvector?  Great question! Let's do a quick experiment by allowing the zero vector to be an eigenvector.  If is an eigenvector of some square matrix , then we have for some scalar .   Then what are the eigenvalues of this matrix ?   The answer is every scalar ! This is because the equation is always true regardless of the value of (we ended up getting ). Then why bother defining the concept of eigenvalues of a matrix if every scalar is an eigenvalue?  Observe that allowing the zero vector to be an eigenvector will trivialize the concept of eigenvalues. So we exclude the zero vector from being an eigenvector.   The goal of this section is to be able to find the eigenvalues and its corresponding eigenvectors of a matrix. Let's do some verification, and then we will summarize the process that can be applied to any square matrix.   Let . Is an eigenvector of ?  Based on the definition, an eigenvector can turn a matrix-vector multiplication into a scalar multiplication. So let's compute and see if we can express it as a scalar multiple of .  Observe that So we can express this matrix-vector multiplication as scaling the vector by a factor of . Hence, is an eigenvector of , and the corresponding eigenvalue is .  What about ? Is also an eigenvector of ?  Let's do the same thing as before by computing and see if we can express it as a scalar multiple of : Since is not a scalar multiple of , the vector is not an eigenvector of .  Richard claims that an eigenvalue of is . How can we verify this claim?  If , then we can plug this value into the equation and be able to find the corresponding eigenvectors. So let's first plug in into the equation : We can assume and rewrite the equation as This is equivalent to the system of equations Now we can solve this system of equations using augmented matrices: Converting this matrix to row echelon form, we have This implies that and is a free variable. Hence, the corresponding eigenvectors are of the form for any real number of .   Suppose is an eigenvector of . Then must be a solution to the equation for some scalar . If we do some quick algebraic manipulation, we can obtain the following equation Observe that is a common factor of the left-hand side, so we can factor it out and rewrite the equation as Hmm... But this equation doesn't quick make sense... What is \" \"? That is, how can we subtract a scalar from a matrix?  From the previous example, we saw that is an eigenvalue of , and we ended up subtracting from the diagonal entries of . So instead of writing , which makes no sense, we can rewrite it as , where is the identity matrix. Hence, we can rewrite the equation as Now the equation makes sense! This is just a homogeneous equation so the solution (aka the eigenvectors) is captured by the null space of the matrix . Finding the eigenvectors of a matrix corresponding to a matrix is equivalent to finding the null space of the matrix .    Be careful! Recall that we don't allow the zero vector to be an eigenvector. Hence, we want to find the non-trivial solutions to the equation .   Let . An eigenvalue of this matrix is . Let's find the corresponding eigenvectors!  Essentially we want to find the non-trivial solutions to the equation . So let's find the matrix first: Now we can find the null space of the matrix by solving the homogeneous equation using the augmented matrix: Observe that and are free variables, and . Then we can express the solution, in parametric form, as Then the corresponding eigenvectors are of the form for any real numbers of and , except for the case when both and are zero.   Observe that all the eigenvectors corresponding to a specific eigenvalue of a matrix will live in , which is a subspace. Then we can define eigenspace as the null space of the matrix .   Eigenspace   Let be an matrix, and let be an eigenvalue of . The eigenspace of corresponding to the eigenvalue , denoted by , is the null space of the matrix . Symbolically speaking,     It is correct to say that the eigenspace includes all the eigenvectors corresponding to the eigenvalue of a matrix, but it is incorrect to say that everything in the eigenspace is an eigenvector. Remember that the zero vector is always in the subspace, but it is not an eigenvector. So eigenspace is essentially the set of all eigenvectors corresponding to a specific eigenvalue of a matrix, together with the zero vector.   Back to our previous example of with an eigenvalue of , we can find its eigenspace .  We did all the heavy-lifting work in the previous example by solving the homogeneous equation , with the solution, in parametric form, as Then the eigenspace , aka , is the span of those two basis vectors. That is,     Some Exercises for This Section   Richard included some practice problems that cover some main concepts in this section. You don't need to turn it in, but you are highly encouraged to work on this with your classmates. The problems here may end up being in-class practice problems, homework problems, and\/or exam problems. Reach out to Richard for help if you get stuck or have any questions.  Only the final answers are included to some of the problems for you to check your result. If you want to check your work, talk to Richard and he is happy to discuss the process with you.     Is an eigenvector of ? If so, find the eigenvalue.      Is an eigenvalue of ? If so, find one corresponding eigenvector.      In the following exercises, find a basis for the eigenspace corresponding to each listed eigenvalue.                Find the eigenvalues of the matrix       In the following exercises, is an matrix. Mark each statement True or False (T\/F). Justify each answer.     (T\/F) If for some vector , then is an eigenvalue of .      (T\/F) A matrix is invertible if and only if \\v{0} is an eigenvalue of .      (T\/F) Finding an eigenvector of may be difficult, but checking whether a given vector is in fact an eigenvector is easy.      (T\/F) If and are linearly independent eigenvectors, then they correspond to distinct eigenvalues.      (T\/F) If is an eigenvector with eigenvalue 2, then is an eigenvector with eigenvalue 4.      "
+},
+{
+  "id": "sec51-EigenvectorsEigenvalues-2",
+  "level": "2",
+  "url": "sec51-EigenvectorsEigenvalues.html#sec51-EigenvectorsEigenvalues-2",
+  "type": "Investigation",
+  "number": "4.1.1",
+  "title": "",
+  "body": "  Suppose and be a linear transformation defined by .    Let . Compute , and then sketch the vectors and . What is their relationship?    Let . Compute , and then sketch the vectors and . What is their relationship?   "
+},
+{
+  "id": "sec51-EigenvectorsEigenvalues-3",
+  "level": "2",
+  "url": "sec51-EigenvectorsEigenvalues.html#sec51-EigenvectorsEigenvalues-3",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "eigenvalues eigenvectors "
+},
+{
+  "id": "def-EigenvaluesEigenvectors",
+  "level": "2",
+  "url": "sec51-EigenvectorsEigenvalues.html#def-EigenvaluesEigenvectors",
+  "type": "Definition",
+  "number": "4.1.1",
+  "title": "Eigenvalues and Eigenvectors.",
+  "body": " Eigenvalues and Eigenvectors   Let be an matrix. An eigenvector of is a nonzero vector such that for some scalar . Such a scalar is called an eigenvalue of .  We call here an eigenvector corresponding to the eigenvalue .   "
+},
+{
+  "id": "sec51-EigenvectorsEigenvalues-5",
+  "level": "2",
+  "url": "sec51-EigenvectorsEigenvalues.html#sec51-EigenvectorsEigenvalues-5",
+  "type": "Note",
+  "number": "4.1.2",
+  "title": "But Richard... Why can’t we allow the zero vector to be an eigenvector?",
+  "body": " But Richard... Why can't we allow the zero vector to be an eigenvector?  Great question! Let's do a quick experiment by allowing the zero vector to be an eigenvector.  If is an eigenvector of some square matrix , then we have for some scalar .   Then what are the eigenvalues of this matrix ?   The answer is every scalar ! This is because the equation is always true regardless of the value of (we ended up getting ). Then why bother defining the concept of eigenvalues of a matrix if every scalar is an eigenvalue?  Observe that allowing the zero vector to be an eigenvector will trivialize the concept of eigenvalues. So we exclude the zero vector from being an eigenvector.  "
+},
+{
+  "id": "sec51-EigenvectorsEigenvalues-7",
+  "level": "2",
+  "url": "sec51-EigenvectorsEigenvalues.html#sec51-EigenvectorsEigenvalues-7",
+  "type": "Example",
+  "number": "4.1.3",
+  "title": "",
+  "body": " Let . Is an eigenvector of ?  Based on the definition, an eigenvector can turn a matrix-vector multiplication into a scalar multiplication. So let's compute and see if we can express it as a scalar multiple of .  Observe that So we can express this matrix-vector multiplication as scaling the vector by a factor of . Hence, is an eigenvector of , and the corresponding eigenvalue is .  What about ? Is also an eigenvector of ?  Let's do the same thing as before by computing and see if we can express it as a scalar multiple of : Since is not a scalar multiple of , the vector is not an eigenvector of .  Richard claims that an eigenvalue of is . How can we verify this claim?  If , then we can plug this value into the equation and be able to find the corresponding eigenvectors. So let's first plug in into the equation : We can assume and rewrite the equation as This is equivalent to the system of equations Now we can solve this system of equations using augmented matrices: Converting this matrix to row echelon form, we have This implies that and is a free variable. Hence, the corresponding eigenvectors are of the form for any real number of .  "
+},
+{
+  "id": "sec51-EigenvectorsEigenvalues-11",
+  "level": "2",
+  "url": "sec51-EigenvectorsEigenvalues.html#sec51-EigenvectorsEigenvalues-11",
+  "type": "Example",
+  "number": "4.1.4",
+  "title": "",
+  "body": " Let . An eigenvalue of this matrix is . Let's find the corresponding eigenvectors!  Essentially we want to find the non-trivial solutions to the equation . So let's find the matrix first: Now we can find the null space of the matrix by solving the homogeneous equation using the augmented matrix: Observe that and are free variables, and . Then we can express the solution, in parametric form, as Then the corresponding eigenvectors are of the form for any real numbers of and , except for the case when both and are zero.  "
+},
+{
+  "id": "sec51-EigenvectorsEigenvalues-12",
+  "level": "2",
+  "url": "sec51-EigenvectorsEigenvalues.html#sec51-EigenvectorsEigenvalues-12",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "eigenspace "
+},
+{
+  "id": "def-Eigenspace",
+  "level": "2",
+  "url": "sec51-EigenvectorsEigenvalues.html#def-Eigenspace",
+  "type": "Definition",
+  "number": "4.1.5",
+  "title": "Eigenspace.",
+  "body": " Eigenspace   Let be an matrix, and let be an eigenvalue of . The eigenspace of corresponding to the eigenvalue , denoted by , is the null space of the matrix . Symbolically speaking,    "
+},
+{
+  "id": "sec51-EigenvectorsEigenvalues-15",
+  "level": "2",
+  "url": "sec51-EigenvectorsEigenvalues.html#sec51-EigenvectorsEigenvalues-15",
+  "type": "Example",
+  "number": "4.1.6",
+  "title": "",
+  "body": " Back to our previous example of with an eigenvalue of , we can find its eigenspace .  We did all the heavy-lifting work in the previous example by solving the homogeneous equation , with the solution, in parametric form, as Then the eigenspace , aka , is the span of those two basis vectors. That is,   "
+},
+{
+  "id": "ws-sec51-3",
+  "level": "2",
+  "url": "sec51-EigenvectorsEigenvalues.html#ws-sec51-3",
+  "type": "Worksheet Exercise",
+  "number": "4.1.5.1.5",
+  "title": "",
+  "body": "  Is an eigenvector of ? If so, find the eigenvalue.   "
+},
+{
+  "id": "ws-sec51-4",
+  "level": "2",
+  "url": "sec51-EigenvectorsEigenvalues.html#ws-sec51-4",
+  "type": "Worksheet Exercise",
+  "number": "4.1.5.1.7",
+  "title": "",
+  "body": "  Is an eigenvalue of ? If so, find one corresponding eigenvector.   "
+},
+{
+  "id": "ws-sec51-5-2",
+  "level": "2",
+  "url": "sec51-EigenvectorsEigenvalues.html#ws-sec51-5-2",
+  "type": "Worksheet Exercise",
+  "number": "4.1.5.1.9",
+  "title": "",
+  "body": "    "
+},
+{
+  "id": "ws-sec51-5-3",
+  "level": "2",
+  "url": "sec51-EigenvectorsEigenvalues.html#ws-sec51-5-3",
+  "type": "Worksheet Exercise",
+  "number": "4.1.5.1.13",
+  "title": "",
+  "body": "    "
+},
+{
+  "id": "ws-sec51-6",
+  "level": "2",
+  "url": "sec51-EigenvectorsEigenvalues.html#ws-sec51-6",
+  "type": "Worksheet Exercise",
+  "number": "4.1.5.1.17",
+  "title": "",
+  "body": "  Find the eigenvalues of the matrix    "
+},
+{
+  "id": "ws-sec51-7-2",
+  "level": "2",
+  "url": "sec51-EigenvectorsEigenvalues.html#ws-sec51-7-2",
+  "type": "Worksheet Exercise",
+  "number": "4.1.5.1.21",
+  "title": "",
+  "body": "  (T\/F) If for some vector , then is an eigenvalue of .   "
+},
+{
+  "id": "ws-sec51-7-3",
+  "level": "2",
+  "url": "sec51-EigenvectorsEigenvalues.html#ws-sec51-7-3",
+  "type": "Worksheet Exercise",
+  "number": "4.1.5.1.23",
+  "title": "",
+  "body": "  (T\/F) A matrix is invertible if and only if \\v{0} is an eigenvalue of .   "
+},
+{
+  "id": "ws-sec51-7-4",
+  "level": "2",
+  "url": "sec51-EigenvectorsEigenvalues.html#ws-sec51-7-4",
+  "type": "Worksheet Exercise",
+  "number": "4.1.5.1.25",
+  "title": "",
+  "body": "  (T\/F) Finding an eigenvector of may be difficult, but checking whether a given vector is in fact an eigenvector is easy.   "
+},
+{
+  "id": "ws-sec51-7-5",
+  "level": "2",
+  "url": "sec51-EigenvectorsEigenvalues.html#ws-sec51-7-5",
+  "type": "Worksheet Exercise",
+  "number": "4.1.5.1.27",
+  "title": "",
+  "body": "  (T\/F) If and are linearly independent eigenvectors, then they correspond to distinct eigenvalues.   "
+},
+{
+  "id": "ws-sec51-7-6",
+  "level": "2",
+  "url": "sec51-EigenvectorsEigenvalues.html#ws-sec51-7-6",
+  "type": "Worksheet Exercise",
+  "number": "4.1.5.1.29",
+  "title": "",
+  "body": "  (T\/F) If is an eigenvector with eigenvalue 2, then is an eigenvector with eigenvalue 4.   "
+},
+{
+  "id": "sec52-CharacteristicEquation",
+  "level": "1",
+  "url": "sec52-CharacteristicEquation.html",
+  "type": "Section",
+  "number": "4.2",
+  "title": "The Characteristic Equation",
+  "body": " The Characteristic Equation  Now that we know how to find the eigenvectors corresponding to a specific eigenvalue, the next question is: How do we find the eigenvalues of a matrix?   We can find the eigenvalues of a matrix by, again, observing this equation Recall that eigenvectors are non-trivial solutions to this homogeneous equation, so this equation must have infinitely many solutions. That is, the matrix must be singular (not invertible).  We can say a lot about a non-invertible matrix. The fact that will be super useful to us is that a matrix is non-invertible if and only if its determinant is zero. So we can find all eigenvalues of a matrix by solving the equation .    Let and we want to find all the eigenvalues of this matrix.  Let be an eigenvalue of . Then we want the matrix be non-invertible to guarantee non-trivial solutions to the equation . That is, we want the values such that .  Let's start by computing the determinant of the matrix : This is essentially a quadratic equation in terms of and we can totally solve it! Factoring the quadratic, we have Hence, the eigenvalues of the matrix are and .    Find the eigenvalues of the matrix .   Since the equation captures the characteristics of the matrix that this matrix must be non-invertible, we call this equation the characteristic equation of the matrix .   Characteristic Equations   Let be an matrix. The equation is called the characteristic equation of the matrix . A scalar is an eigenvalue of if and only if it is a solution to the characteristic equation of .  The characteristic equation will always be a polynomial equation, so is called the characteristic polynomial of the matrix .    In practice, finding the eigenvalues of an matrix results in solving a polynomial equation of degree . This is almost always difficult as gets larger. So we will leave this to computers, except in the case and some easy cases.   Let . What are the eigenvalues of this matrix?  We can find the eigenvalues by solving the characteristic equation , so let's start by computing the determinant of the matrix : Since is already factored, we can easily solve the characteristic equation and find the eigenvalues: Hence, the eigenvalues of the matrix are and .    Some Exercises for This Section   Richard included some practice problems that cover some main concepts in this section. You don't need to turn it in, but you are highly encouraged to work on this with your classmates. The problems here may end up being in-class practice problems, homework problems, and\/or exam problems. Reach out to Richard for help if you get stuck or have any questions.  Only the final answers are included to some of the problems for you to check your result. If you want to check your work, talk to Richard and he is happy to discuss the process with you.     Find the characteristic polynomial and the eigenvalues of the matrices in the following exercises.                In the following exercises, find the characteristic polynomial of each matrix                For the matrix in Exercise 17, list the eigenvalues, repeated according to their multiplicities.     List the eigenvalues, repeated according to their multiplicities, of the matrix        In the following exercises, and are matrices. Mark each statement True or False (T\/F). Justify each answer.     (T\/F) If is an eigenvalue of , then is invertible.      (T\/F) The matrix and its transpose, , have different sets of eigenvalues.      (T\/F) If is an eigenvalue of , then is not invertible.      (T\/F) If is a factor of the characteristic polynomial of , then is an eigenvalue of .      (T\/F) The eigenvalue of the identity matrix is with algebraic multiplicity .      "
+},
+{
+  "id": "sec52-CharacteristicEquation-5",
+  "level": "2",
+  "url": "sec52-CharacteristicEquation.html#sec52-CharacteristicEquation-5",
+  "type": "Example",
+  "number": "4.2.1",
+  "title": "",
+  "body": " Let and we want to find all the eigenvalues of this matrix.  Let be an eigenvalue of . Then we want the matrix be non-invertible to guarantee non-trivial solutions to the equation . That is, we want the values such that .  Let's start by computing the determinant of the matrix : This is essentially a quadratic equation in terms of and we can totally solve it! Factoring the quadratic, we have Hence, the eigenvalues of the matrix are and .  "
+},
+{
+  "id": "sec52-CharacteristicEquation-6",
+  "level": "2",
+  "url": "sec52-CharacteristicEquation.html#sec52-CharacteristicEquation-6",
+  "type": "Checkpoint",
+  "number": "4.2.2",
+  "title": "",
+  "body": " Find the eigenvalues of the matrix .  "
+},
+{
+  "id": "sec52-CharacteristicEquation-7",
+  "level": "2",
+  "url": "sec52-CharacteristicEquation.html#sec52-CharacteristicEquation-7",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "characteristic equation "
+},
+{
+  "id": "def-CharacteristicEquation",
+  "level": "2",
+  "url": "sec52-CharacteristicEquation.html#def-CharacteristicEquation",
+  "type": "Definition",
+  "number": "4.2.3",
+  "title": "Characteristic Equations.",
+  "body": " Characteristic Equations   Let be an matrix. The equation is called the characteristic equation of the matrix . A scalar is an eigenvalue of if and only if it is a solution to the characteristic equation of .  The characteristic equation will always be a polynomial equation, so is called the characteristic polynomial of the matrix .   "
+},
+{
+  "id": "sec52-CharacteristicEquation-10",
+  "level": "2",
+  "url": "sec52-CharacteristicEquation.html#sec52-CharacteristicEquation-10",
+  "type": "Example",
+  "number": "4.2.4",
+  "title": "",
+  "body": " Let . What are the eigenvalues of this matrix?  We can find the eigenvalues by solving the characteristic equation , so let's start by computing the determinant of the matrix : Since is already factored, we can easily solve the characteristic equation and find the eigenvalues: Hence, the eigenvalues of the matrix are and .  "
+},
+{
+  "id": "ws-sec52-3-2",
+  "level": "2",
+  "url": "sec52-CharacteristicEquation.html#ws-sec52-3-2",
+  "type": "Worksheet Exercise",
+  "number": "4.2.5.2.5",
+  "title": "",
+  "body": "    "
+},
+{
+  "id": "ws-sec52-3-3",
+  "level": "2",
+  "url": "sec52-CharacteristicEquation.html#ws-sec52-3-3",
+  "type": "Worksheet Exercise",
+  "number": "4.2.5.2.7",
+  "title": "",
+  "body": "    "
+},
+{
+  "id": "ws-sec52-4-2",
+  "level": "2",
+  "url": "sec52-CharacteristicEquation.html#ws-sec52-4-2",
+  "type": "Worksheet Exercise",
+  "number": "4.2.5.2.9",
+  "title": "",
+  "body": "    "
+},
+{
+  "id": "ws-sec52-4-3",
+  "level": "2",
+  "url": "sec52-CharacteristicEquation.html#ws-sec52-4-3",
+  "type": "Worksheet Exercise",
+  "number": "4.2.5.2.11",
+  "title": "",
+  "body": "    "
+},
+{
+  "id": "ws-sec52-5-2",
+  "level": "2",
+  "url": "sec52-CharacteristicEquation.html#ws-sec52-5-2",
+  "type": "Worksheet Exercise",
+  "number": "4.2.5.2.17",
+  "title": "",
+  "body": "  List the eigenvalues, repeated according to their multiplicities, of the matrix    "
+},
+{
+  "id": "ws-sec52-6-2",
+  "level": "2",
+  "url": "sec52-CharacteristicEquation.html#ws-sec52-6-2",
+  "type": "Worksheet Exercise",
+  "number": "4.2.5.2.21",
+  "title": "",
+  "body": "  (T\/F) If is an eigenvalue of , then is invertible.   "
+},
+{
+  "id": "ws-sec52-6-3",
+  "level": "2",
+  "url": "sec52-CharacteristicEquation.html#ws-sec52-6-3",
+  "type": "Worksheet Exercise",
+  "number": "4.2.5.2.23",
+  "title": "",
+  "body": "  (T\/F) The matrix and its transpose, , have different sets of eigenvalues.   "
+},
+{
+  "id": "ws-sec52-6-4",
+  "level": "2",
+  "url": "sec52-CharacteristicEquation.html#ws-sec52-6-4",
+  "type": "Worksheet Exercise",
+  "number": "4.2.5.2.25",
+  "title": "",
+  "body": "  (T\/F) If is an eigenvalue of , then is not invertible.   "
+},
+{
+  "id": "ws-sec52-6-5",
+  "level": "2",
+  "url": "sec52-CharacteristicEquation.html#ws-sec52-6-5",
+  "type": "Worksheet Exercise",
+  "number": "4.2.5.2.27",
+  "title": "",
+  "body": "  (T\/F) If is a factor of the characteristic polynomial of , then is an eigenvalue of .   "
+},
+{
+  "id": "ws-sec52-6-6",
+  "level": "2",
+  "url": "sec52-CharacteristicEquation.html#ws-sec52-6-6",
+  "type": "Worksheet Exercise",
+  "number": "4.2.5.2.29",
+  "title": "",
+  "body": "  (T\/F) The eigenvalue of the identity matrix is with algebraic multiplicity .   "
+},
+{
+  "id": "sec53-Diagonalization",
+  "level": "1",
+  "url": "sec53-Diagonalization.html",
+  "type": "Section",
+  "number": "4.3",
+  "title": "Diagonalization",
+  "body": " Diagonalization    Let and .    Find if this is easy to compute. If not, explain why not (and then table it).    Find if this is easy to compute. If not, explain why not (and then table it).     Diagonal Matrices   A diagonal matrix is a square matrix in which all elements outside the main diagonal are zero.    Diagonal matrices are super nice to work with because   It is easy to find their determinants (just multiply the diagonal entries).    It is easy to find their inverses (just take the reciprocals of the diagonal entries).    We can see immediately what they do to the standard basis vectors (just scale them by the diagonal entries).    It is easy to compute the powers of them (just take the powers of the diagonal entries).   So the goal of this section is to diagonalize a square matrix (if possible). That is, we want to find a diagonal matrix that is similar to a given matrix.   Similar Matrices   Let and be matrices. Then is similar to if there exists an invertible matrix such that     If you end up studying advanced linear algebra, what is really going on here is that the columns of the matrix represent an alternative basis of . If you use that basis instead of the standard basis, the matrix for the corresponding linear transformation actually would be diagonal. This alternative basis is actually made up of eigenvectors and that is what we are going to learn about how.  As far as what this class (MTH 261) concerns, we will focus on the fact that if a matrix is similar to a diagonal matrix, then it is still easy to compute powers if we can figure out what the , , and are.  But how do similar matrices makes it easier to compute powers? Let's investigate this in the next example.   Recall in the previous example, and . These two matrices are similar because with the matrix .  Let's first verify it! We can first find the inverse of quickly: Then we have So and are indeed similar!  Now let's try to compute by finding first to find any pattern! Observe that If we want to compute , we can do the same thing and find that So we can find as We saw that can be computed easily, so we can compute easily as well by just multiplying three matrices together (as opposed to multiplying by itself 25 times).   Now that we have seen how similar matrices (to diagonal matrices) can help us compute powers of matrices, then the next question is: how can we diagonalize a matrix by finding the similar diagonal matrix and the special matrix ? It turns out that the key is to find the eigenvalues and eigenvectors of the matrix!  The process of diagonalization is listed as follows:  Find the eigenvalues of the matrix.   For each eigenvalue, find the corresponding eigenvectors . A quick way to do so is to grab the basis vectors in the eigenspace.    Construct the special matrix using the eigenvectors as comlumns, so     Construct the diagonal matrix by putting the corresponding eigenvalues of on the diagonal entries, up to its multiplicity.           But Richard... Why on earth do eigenvalues and eigenvectors have to do with diagonalization?  Let's say we have a square matrix . Suppose we let where and are the corresponding eigenvalues and eigenvectors of the matrix . That is, for each . To guarantee that is invertible, the columns of (aka all the eigenvectors) must be linearly independent. That is why we want to just grab the basis vectors of the eigenspace to ensure the invertibility.  Imagine we want to multiply . Then we obtain So we just showed that . Since is invertible, then exists, and we can multiply on the right on both sides of the equation. We obtain So yes! and are similar!    Let . Let's diagonalize this matrix!  We need to find the eigenvalues and its corresponding eigenvectors for the diagonalization. In the last section, we found that the characteristic equation is This implies that the eigenvalues are (with the multiplicity of ) and (with the multiplicity of ). Next, we will find the corresponding eigenvectors of these eigenvalues.  Let's consider the eigenvalue of . Then we want to solve the homogeneous equation . The augmented matrix is Observe that is the free variable, so the solution, in parametric form, is Hence, an eigenvector that spans the eigenspace is .  Next, let's consider the eigenvalue of . Then we want to solve the homogeneous equation . The augmented matrix is Observe that and are the free variables, so the solution, in parametric form, is Hence, the eigenvectors that spans the eigenspace are and .  Now let's put together the diagonal matrix and our special matrix for the diagonalization! Our eigenvalues are and their corresponding basis eigenvectors are Then our diagonal matrix and our special matrix is    This is a good place to call it good for diagonalization since we found and . We can next verify it by making sure is indeed .  We can find by reducing to . Hence, .  Now we can verify that    So to diagonalize a matrix, we just need to find all the eigenvalues and its corresponding basis eigenvectors. Then we put things into the right place in the right order.   Let's diagonalize this matrix .  We want to first find its eigenvalues. That is, we want to solve the characteristic equation . Now we solve the characteristic equation to obtain the eigenvalues of , , and .  Let's consider the eigenvalue of . Then we want to solve the homogeneous equation . The augmented matrix is Observe that is the free variable, so the solution, in parametric form, is To avoid fractions, we can choose . Hence, an eigenvector that spans the eigenspace is .  Next, let's consider the eigenvalue of of . Then we want to solve the homogeneous equation . The augmented matrix is Observe that is the free variable, so the solution, in parametric form, is Hence, an eigenvector that spans the eigenspace is .  Finally, let's consider the eigenvalue of . Then we want to solve the homogeneous equation . The augmented matrix is Observe that is the free variable, so the solution, in parametric form, is Hence, an eigenvector that spans the eigenspace is .  Now we put together the diagonal matrix and our special matrix . Our eigenvalues are and their corresponding basis eigenvectors are Then our diagonal matrix and our special matrix is    Feel free to verify our answer by computing and see if we get out of it.    You may observe that from the previous two examples, the multiplicity of an eigenvalue matches up with the dimension of the eigenspace . This is the condition for a matrix to be diagonalizable. That is, if the multiplicity does not match with the dimension, the matrix is not diagonalizable.   Let's say our matrix and we want to diagonalize it.  We will first find the eigenvalues of . The characteristic polynomial is We can factor the characteristic polynomial as follows: So we can solve the characteristic equation and obtain the eigenvalues of (with the multiplicity of ) and (with the multiplicity of ).   NOTE: Feel free to use technology to help you solve the characteristic equation. Remember that we should obtain the number of solutions matching up with the degree of the equation, including multiplicity, guaranteed by the Fundamental Theorem of Algebra.  Next, let's find the corresponding eigenvectors for these eigenvalues. We will start with . We want to solve the homogeneous equation . The augmented matrix is Observe that is the free variable, so the solution in parametric form is Hence, an eigenvector that spans this eigenspace is .  Now let's consider the eigenvalue . We want to solve the homogeneous equation . The augmented matrix is Observe that is the only free variable. The solution in parametric form is To avoid fractions, we can choose , which gives us the eigenvector that spans the eigenspace.  Wait a minute! We have a problem. For the matrix to be diagonalizable, we need linearly independent eigenvectors to form our invertible matrix . However, the eigenvalue has an algebraic multiplicity of , but its eigenspace is spanned just by one basis vector of ... We don't have enough basis vectors to construct our special matrix ...   Therefore, the matrix is not diagonalizable!     Some Exercises for This Section   Richard included some practice problems that cover some main concepts in this section. You don't need to turn it in, but you are highly encouraged to work on this with your classmates. The problems here may end up being in-class practice problems, homework problems, and\/or exam problems. Reach out to Richard for help if you get stuck or have any questions.  Only the final answers are included to some of the problems for you to check your result. If you want to check your work, talk to Richard and he is happy to discuss the process with you.     Let , where Compute .      The matrix below is factored in the form of : Find the eigenvalues of and a basis for each eigenspace.      Diagonalize the following matrices if possible.                     In Exercises 21-28, , , and are matrices. Mark each statement True or False (T\/F). Justify each answer.     (T\/F) is diagonalizable if for some matrix and some invertible matrix .      (T\/F) is diagonalizable if and only if has eigenvalues, counting multiplicities.      (T\/F) is diagonalizable if has eigenvectors.      (T\/F) If with diagonal, then the nonzero columns of must be eigenvectors of .      "
+},
+{
+  "id": "sec53-Diagonalization-2",
+  "level": "2",
+  "url": "sec53-Diagonalization.html#sec53-Diagonalization-2",
+  "type": "Investigation",
+  "number": "4.3.1",
+  "title": "",
+  "body": "  Let and .    Find if this is easy to compute. If not, explain why not (and then table it).    Find if this is easy to compute. If not, explain why not (and then table it).   "
+},
+{
+  "id": "def-DiagonalMatrices",
+  "level": "2",
+  "url": "sec53-Diagonalization.html#def-DiagonalMatrices",
+  "type": "Definition",
+  "number": "4.3.1",
+  "title": "Diagonal Matrices.",
+  "body": " Diagonal Matrices   A diagonal matrix is a square matrix in which all elements outside the main diagonal are zero.   "
+},
+{
+  "id": "sec53-Diagonalization-4",
+  "level": "2",
+  "url": "sec53-Diagonalization.html#sec53-Diagonalization-4",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "diagonalize "
+},
+{
+  "id": "def-SimilarMatrices",
+  "level": "2",
+  "url": "sec53-Diagonalization.html#def-SimilarMatrices",
+  "type": "Definition",
+  "number": "4.3.2",
+  "title": "Similar Matrices.",
+  "body": " Similar Matrices   Let and be matrices. Then is similar to if there exists an invertible matrix such that    "
+},
+{
+  "id": "sec53-Diagonalization-9",
+  "level": "2",
+  "url": "sec53-Diagonalization.html#sec53-Diagonalization-9",
+  "type": "Example",
+  "number": "4.3.3",
+  "title": "",
+  "body": " Recall in the previous example, and . These two matrices are similar because with the matrix .  Let's first verify it! We can first find the inverse of quickly: Then we have So and are indeed similar!  Now let's try to compute by finding first to find any pattern! Observe that If we want to compute , we can do the same thing and find that So we can find as We saw that can be computed easily, so we can compute easily as well by just multiplying three matrices together (as opposed to multiplying by itself 25 times).  "
+},
+{
+  "id": "sec53-Diagonalization-12",
+  "level": "2",
+  "url": "sec53-Diagonalization.html#sec53-Diagonalization-12",
+  "type": "Note",
+  "number": "4.3.4",
+  "title": "But Richard... Why on earth do eigenvalues and eigenvectors have to do with diagonalization?",
+  "body": " But Richard... Why on earth do eigenvalues and eigenvectors have to do with diagonalization?  Let's say we have a square matrix . Suppose we let where and are the corresponding eigenvalues and eigenvectors of the matrix . That is, for each . To guarantee that is invertible, the columns of (aka all the eigenvectors) must be linearly independent. That is why we want to just grab the basis vectors of the eigenspace to ensure the invertibility.  Imagine we want to multiply . Then we obtain So we just showed that . Since is invertible, then exists, and we can multiply on the right on both sides of the equation. We obtain So yes! and are similar!  "
+},
+{
+  "id": "sec53-Diagonalization-13",
+  "level": "2",
+  "url": "sec53-Diagonalization.html#sec53-Diagonalization-13",
+  "type": "Example",
+  "number": "4.3.5",
+  "title": "",
+  "body": " Let . Let's diagonalize this matrix!  We need to find the eigenvalues and its corresponding eigenvectors for the diagonalization. In the last section, we found that the characteristic equation is This implies that the eigenvalues are (with the multiplicity of ) and (with the multiplicity of ). Next, we will find the corresponding eigenvectors of these eigenvalues.  Let's consider the eigenvalue of . Then we want to solve the homogeneous equation . The augmented matrix is Observe that is the free variable, so the solution, in parametric form, is Hence, an eigenvector that spans the eigenspace is .  Next, let's consider the eigenvalue of . Then we want to solve the homogeneous equation . The augmented matrix is Observe that and are the free variables, so the solution, in parametric form, is Hence, the eigenvectors that spans the eigenspace are and .  Now let's put together the diagonal matrix and our special matrix for the diagonalization! Our eigenvalues are and their corresponding basis eigenvectors are Then our diagonal matrix and our special matrix is    This is a good place to call it good for diagonalization since we found and . We can next verify it by making sure is indeed .  We can find by reducing to . Hence, .  Now we can verify that   "
+},
+{
+  "id": "sec53-Diagonalization-15",
+  "level": "2",
+  "url": "sec53-Diagonalization.html#sec53-Diagonalization-15",
+  "type": "Example",
+  "number": "4.3.6",
+  "title": "",
+  "body": " Let's diagonalize this matrix .  We want to first find its eigenvalues. That is, we want to solve the characteristic equation . Now we solve the characteristic equation to obtain the eigenvalues of , , and .  Let's consider the eigenvalue of . Then we want to solve the homogeneous equation . The augmented matrix is Observe that is the free variable, so the solution, in parametric form, is To avoid fractions, we can choose . Hence, an eigenvector that spans the eigenspace is .  Next, let's consider the eigenvalue of of . Then we want to solve the homogeneous equation . The augmented matrix is Observe that is the free variable, so the solution, in parametric form, is Hence, an eigenvector that spans the eigenspace is .  Finally, let's consider the eigenvalue of . Then we want to solve the homogeneous equation . The augmented matrix is Observe that is the free variable, so the solution, in parametric form, is Hence, an eigenvector that spans the eigenspace is .  Now we put together the diagonal matrix and our special matrix . Our eigenvalues are and their corresponding basis eigenvectors are Then our diagonal matrix and our special matrix is    Feel free to verify our answer by computing and see if we get out of it.   "
+},
+{
+  "id": "sec53-Diagonalization-17",
+  "level": "2",
+  "url": "sec53-Diagonalization.html#sec53-Diagonalization-17",
+  "type": "Example",
+  "number": "4.3.7",
+  "title": "",
+  "body": " Let's say our matrix and we want to diagonalize it.  We will first find the eigenvalues of . The characteristic polynomial is We can factor the characteristic polynomial as follows: So we can solve the characteristic equation and obtain the eigenvalues of (with the multiplicity of ) and (with the multiplicity of ).   NOTE: Feel free to use technology to help you solve the characteristic equation. Remember that we should obtain the number of solutions matching up with the degree of the equation, including multiplicity, guaranteed by the Fundamental Theorem of Algebra.  Next, let's find the corresponding eigenvectors for these eigenvalues. We will start with . We want to solve the homogeneous equation . The augmented matrix is Observe that is the free variable, so the solution in parametric form is Hence, an eigenvector that spans this eigenspace is .  Now let's consider the eigenvalue . We want to solve the homogeneous equation . The augmented matrix is Observe that is the only free variable. The solution in parametric form is To avoid fractions, we can choose , which gives us the eigenvector that spans the eigenspace.  Wait a minute! We have a problem. For the matrix to be diagonalizable, we need linearly independent eigenvectors to form our invertible matrix . However, the eigenvalue has an algebraic multiplicity of , but its eigenspace is spanned just by one basis vector of ... We don't have enough basis vectors to construct our special matrix ...   Therefore, the matrix is not diagonalizable!   "
+},
+{
+  "id": "ws-sec53-3",
+  "level": "2",
+  "url": "sec53-Diagonalization.html#ws-sec53-3",
+  "type": "Worksheet Exercise",
+  "number": "4.3.5.3.1",
+  "title": "",
+  "body": "  Let , where Compute .   "
+},
+{
+  "id": "ws-sec53-4",
+  "level": "2",
+  "url": "sec53-Diagonalization.html#ws-sec53-4",
+  "type": "Worksheet Exercise",
+  "number": "4.3.5.3.5",
+  "title": "",
+  "body": "  The matrix below is factored in the form of : Find the eigenvalues of and a basis for each eigenspace.   "
+},
+{
+  "id": "ws-sec53-5-2",
+  "level": "2",
+  "url": "sec53-Diagonalization.html#ws-sec53-5-2",
+  "type": "Worksheet Exercise",
+  "number": "4.3.5.3.7",
+  "title": "",
+  "body": "    "
+},
+{
+  "id": "ws-sec53-5-3",
+  "level": "2",
+  "url": "sec53-Diagonalization.html#ws-sec53-5-3",
+  "type": "Worksheet Exercise",
+  "number": "4.3.5.3.11",
+  "title": "",
+  "body": "    "
+},
+{
+  "id": "ws-sec53-5-4",
+  "level": "2",
+  "url": "sec53-Diagonalization.html#ws-sec53-5-4",
+  "type": "Worksheet Exercise",
+  "number": "4.3.5.3.15",
+  "title": "",
+  "body": "    "
+},
+{
+  "id": "ws-sec53-6-2",
+  "level": "2",
+  "url": "sec53-Diagonalization.html#ws-sec53-6-2",
+  "type": "Worksheet Exercise",
+  "number": "4.3.5.3.21",
+  "title": "",
+  "body": "  (T\/F) is diagonalizable if for some matrix and some invertible matrix .   "
+},
+{
+  "id": "ws-sec53-6-3",
+  "level": "2",
+  "url": "sec53-Diagonalization.html#ws-sec53-6-3",
+  "type": "Worksheet Exercise",
+  "number": "4.3.5.3.23",
+  "title": "",
+  "body": "  (T\/F) is diagonalizable if and only if has eigenvalues, counting multiplicities.   "
+},
+{
+  "id": "ws-sec53-6-4",
+  "level": "2",
+  "url": "sec53-Diagonalization.html#ws-sec53-6-4",
+  "type": "Worksheet Exercise",
+  "number": "4.3.5.3.25",
+  "title": "",
+  "body": "  (T\/F) is diagonalizable if has eigenvectors.   "
+},
+{
+  "id": "ws-sec53-6-5",
+  "level": "2",
+  "url": "sec53-Diagonalization.html#ws-sec53-6-5",
+  "type": "Worksheet Exercise",
+  "number": "4.3.5.3.27",
+  "title": "",
+  "body": "  (T\/F) If with diagonal, then the nonzero columns of must be eigenvectors of .   "
+},
+{
   "id": "appendixA-ExamReviews",
   "level": "1",
   "url": "appendixA-ExamReviews.html",
   "type": "Appendix",
   "number": "A",
   "title": "Exam Reviews Page",
-  "body": " Exam Reviews Page   This page include exam stuff, like exam information that you need to know and review materials for the exams.   Exam Dates  Midterm Exam will be in class on Tuesday, May 12 , from 9:30am to 11:20am. This will cover Chapter 1, section 2.1, section 2.2, and section 2.3 .  Final Exam will be in class on Tuesday, June 9 , from 9:30am to 11:20am. This exam is cumulative .   P.S.: If you have to miss an exam for some reason, reach out to Richard as soon as possible to discuss options to make up the exam(s).   No notes will be allowed on the exam. A calculator is permitted on the exam.   Remember to show all of your work for full credits. Richard values mathematical reasoning\/justification a lot more than just the correct answers. Correct answers with no or minimal work will not receive full credits. Calculator-generated answers without human support will also not receive full credits!  Here are some study tips:   Remember we have done a lot of problems in class, in your portfolio, and in your homework problems. Make sure you know how to solve the problems we went through in class, in your portfolio, and in your homework problems.    Forming a study group is always a good choice to study for math. Collaborating with your peers and working in a group helps because you can talk through each step together, make sure your solutions are clear to other people, and ask questions when things aren’t perfectly clear.    Asking Richard for help! Remember he has office hours and you are more than welcome to shoot him questions via email as well!    Visiting the tutoring center.      Frequently Asked Questions    What is a good way to study for the exams?  As Richard suggested in the study tips, some of the good ways to study for the exam are to review the homework problems in your portfolio and problems done in class; form a study group with your classmates so you can go over problems with others and bounce of ideas; ask Richard if you have any questions; visit the tutoring center for additional help.  Potentially, there are a lot of external resources that you can look into for review on the internet.  But remember, Richard is the one writing the exam and grading your work! So you probably want to study the material written by Richard primarily to get to know more about what questions he likes to ask and what answers he expects to see (as opposed to going around the internet blindly without a plan).  Also, make sure you WORK on some math problems for review, not just only skimming through stuff. Human learn math through doing, not skimming\/reading. Just because you can understand how things work doesn't mean you can re-invent the solution on the spot, especially when the exam are timed and weights a lot on your grade.    Do I need a (graphing) calculator on the exam?  Likely yes. It really depends on how comfortable you are solving problems without technology. But there are advantages of having a (graphing) calculator on hand during the exams. It will help you with computations and checking your answers quickly. Also, some students believe that having a calculator can also boost up confidence as well.  Yet, you must still show all your work for full credits! Calculators are just a tool to help you do math, not to replace you in the process and your mathematical reasoning\/justification.  Calculator-generated answers will not be accepted. So Richard will not accept answers like \"the calculator showed the answer is such and such...\". He can't see your calculator screen when he grades your work.    Does notation matter? Are notations worth any points?   YES! Well Richard's research is about students interpretation on notations and their understanding on topics in collegiate level math so you tell me if he cares about notation or not.  Proper notation allows Richard to understand your workflow, increasing your chance for full or partial credit (as opposed to having Richard to guess what you mean on your work... he is bad at guessing). Remember that it is not Richard's responsibility to have to guess what you mean if the work is confusing!    Is there any bonus problem on the exam?  Yes. There will be a bonus problem worth 10% of the exam score (usually 10 points out of 100).  Coming from a background of math ed that focuses on conceptual understanding and pure math, Richard tends to make the bonus question to focus on the conceptual side... So it is unlikely that you can just apply a formula or a procedure to get the answer. But it won't be something that is completely out of the blue either.  Please at least attempt the bonus problem! Even if you don't know how to solve it, you can still get some points for showing your thinking and reasoning on the problem (of course, the thinking\/reasoning has to be relevant to the problem and make sense). There is no penalty for wrong answers on the bonus problem. That's why it is a bonus problem!    How many problems can I expect on the exam?  No clue... This is the first time Richard is teaching linear algebra and he hasn't started to think about the exam stuff yet.  For reference, Richard has taught MTH 251, MTH 252(Z), and MTH 253 a lot before, and usually he would put about 7 to 8 problems plus a bonus question on a 1-hour-and-50-minute exam, depending on the level of difficulty of each problem. The questions were all (big) free-response questions, so there wasn't any multiple choices or fill-in-the-blank questions.  Instead of giving you a precise number of questions on the exam, let's do a range! Let's say the number of questions on the exam, , is in the interval .    Will Richard curve exams?  Hmm... not necessarily. While Richard doesn't like to curve the exams, he will do something if the whole class doesn't do well for some reasons beyond their control (some examples include: Richard may accidentally write the exam too hard, a train was going back and forth outside the building that creates waaaaaay too much noise for students to concentrate, a dead squirrel was spotted in the classroom that distracts everyone from taking the exam... well anything is possible!).  If the class average wasn't as high as Richard's expectation, he will do one of the three things and he will poll the class:   administer an optional exam correction, along with a reflection, that allows students to learn from their mistakes and earn some points;    simply curve the grade (but how much should he curve... well no one knows it yet);    replace one of the midterm exams score with the final score if the final score is higher.   But don't rely on these measures to improve your grade! The safest way is to study well and do well on the exams!   To give you an idea of what the exam(s) will be like, you can find the exams Richard gave to his MTH 261 at PSU this term. Feel free to use it as a practice run.   Caution! Richard's MTH 261 at PSU does not go through the material in the same order, so it is totally normal that you may run into problems you don't know how to solve yet, and the actual exam may include questions not on the following exams.   Richard's PSU MTH 261 Midterm Exam #1 [ Click me to see the solution!]     "
+  "body": " Exam Reviews Page   This page include exam stuff, like exam information that you need to know and review materials for the exams.   Exam Dates  Midterm Exam will be in class on Tuesday, May 12 , from 9:30am to 11:20am. This will cover Chapter 1, section 2.1, section 2.2, and section 2.3 .  Final Exam will be in class on Tuesday, June 9 , from 9:30am to 11:20am. This exam is cumulative .   P.S.: If you have to miss an exam for some reason, reach out to Richard as soon as possible to discuss options to make up the exam(s).   No notes will be allowed on the exam. A calculator is permitted on the exam.   Remember to show all of your work for full credits. Richard values mathematical reasoning\/justification a lot more than just the correct answers. Correct answers with no or minimal work will not receive full credits. Calculator-generated answers without human support will also not receive full credits!  Here are some study tips:   Remember we have done a lot of problems in class, in your portfolio, and in your homework problems. Make sure you know how to solve the problems we went through in class, in your portfolio, and in your homework problems.    Forming a study group is always a good choice to study for math. Collaborating with your peers and working in a group helps because you can talk through each step together, make sure your solutions are clear to other people, and ask questions when things aren’t perfectly clear.    Asking Richard for help! Remember he has office hours and you are more than welcome to shoot him questions via email as well!    Visiting the tutoring center.      Frequently Asked Questions    What is a good way to study for the exams?  As Richard suggested in the study tips, some of the good ways to study for the exam are to review the homework problems in your portfolio and problems done in class; form a study group with your classmates so you can go over problems with others and bounce of ideas; ask Richard if you have any questions; visit the tutoring center for additional help.  Potentially, there are a lot of external resources that you can look into for review on the internet.  But remember, Richard is the one writing the exam and grading your work! So you probably want to study the material written by Richard primarily to get to know more about what questions he likes to ask and what answers he expects to see (as opposed to going around the internet blindly without a plan).  Also, make sure you WORK on some math problems for review, not just only skimming through stuff. Human learn math through doing, not skimming\/reading. Just because you can understand how things work doesn't mean you can re-invent the solution on the spot, especially when the exam are timed and weights a lot on your grade.    Do I need a (graphing) calculator on the exam?  Likely yes. It really depends on how comfortable you are solving problems without technology. But there are advantages of having a (graphing) calculator on hand during the exams. It will help you with computations and checking your answers quickly. Also, some students believe that having a calculator can also boost up confidence as well.  Yet, you must still show all your work for full credits! Calculators are just a tool to help you do math, not to replace you in the process and your mathematical reasoning\/justification.  Calculator-generated answers will not be accepted. So Richard will not accept answers like \"the calculator showed the answer is such and such...\". He can't see your calculator screen when he grades your work.    Does notation matter? Are notations worth any points?   YES! Well Richard's research is about students interpretation on notations and their understanding on topics in collegiate level math so you tell me if he cares about notation or not.  Proper notation allows Richard to understand your workflow, increasing your chance for full or partial credit (as opposed to having Richard to guess what you mean on your work... he is bad at guessing). Remember that it is not Richard's responsibility to have to guess what you mean if the work is confusing!    Is there any bonus problem on the exam?  Yes. There will be a bonus problem worth 10% of the exam score (usually 10 points out of 100).  Coming from a background of math ed that focuses on conceptual understanding and pure math, Richard tends to make the bonus question to focus on the conceptual side... So it is unlikely that you can just apply a formula or a procedure to get the answer. But it won't be something that is completely out of the blue either.  Please at least attempt the bonus problem! Even if you don't know how to solve it, you can still get some points for showing your thinking and reasoning on the problem (of course, the thinking\/reasoning has to be relevant to the problem and make sense). There is no penalty for wrong answers on the bonus problem. That's why it is a bonus problem!    How many problems can I expect on the exam?  No clue... This is the first time Richard is teaching linear algebra and he hasn't started to think about the exam stuff yet.  For reference, Richard has taught MTH 251, MTH 252(Z), and MTH 253 a lot before, and usually he would put about 7 to 8 problems plus a bonus question on a 1-hour-and-50-minute exam, depending on the level of difficulty of each problem. The questions were all (big) free-response questions, so there wasn't any multiple choices or fill-in-the-blank questions.  Instead of giving you a precise number of questions on the exam, let's do a range! Let's say the number of questions on the exam, , is in the interval .    Will Richard curve exams?  Hmm... not necessarily. While Richard doesn't like to curve the exams, he will do something if the whole class doesn't do well for some reasons beyond their control (some examples include: Richard may accidentally write the exam too hard, a train was going back and forth outside the building that creates waaaaaay too much noise for students to concentrate, a dead squirrel was spotted in the classroom that distracts everyone from taking the exam... well anything is possible!).  If the class average wasn't as high as Richard's expectation, he will do one of the three things and he will poll the class:   administer an optional exam correction, along with a reflection, that allows students to learn from their mistakes and earn some points;    simply curve the grade (but how much should he curve... well no one knows it yet);    replace one of the midterm exams score with the final score if the final score is higher.   But don't rely on these measures to improve your grade! The safest way is to study well and do well on the exams!   To give you an idea of what the exam(s) will be like, you can find the exams Richard gave to his MTH 261 at PSU this term. Feel free to use it as a practice run.   Caution! Richard's MTH 261 at PSU does not go through the material in the same order, so it is totally normal that you may run into problems you don't know how to solve yet, and the actual exam may include questions not on the following exams.   Richard's PSU MTH 261 Midterm Exam #1 [ Click me to see the solution!]     Richard's PSU MTH 261 Midterm Exam #2 [ Click me to see the solution!]     "
 },
 {
   "id": "appendixA-ExamReviews-2-7",
   "level": "2",
   "url": "appendixA-ExamReviews.html#appendixA-ExamReviews-2-7",
   "type": "Remark",
-  "number": "A.0.14",
+  "number": "A.0.18",
   "title": "What is a good way to study for the exams?",
   "body": " What is a good way to study for the exams?  As Richard suggested in the study tips, some of the good ways to study for the exam are to review the homework problems in your portfolio and problems done in class; form a study group with your classmates so you can go over problems with others and bounce of ideas; ask Richard if you have any questions; visit the tutoring center for additional help.  Potentially, there are a lot of external resources that you can look into for review on the internet.  But remember, Richard is the one writing the exam and grading your work! So you probably want to study the material written by Richard primarily to get to know more about what questions he likes to ask and what answers he expects to see (as opposed to going around the internet blindly without a plan).  Also, make sure you WORK on some math problems for review, not just only skimming through stuff. Human learn math through doing, not skimming\/reading. Just because you can understand how things work doesn't mean you can re-invent the solution on the spot, especially when the exam are timed and weights a lot on your grade.  "
 },
@@ -4100,7 +4595,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "appendixA-ExamReviews.html#appendixA-ExamReviews-2-8",
   "type": "Remark",
-  "number": "A.0.15",
+  "number": "A.0.19",
   "title": "Do I need a (graphing) calculator on the exam?",
   "body": " Do I need a (graphing) calculator on the exam?  Likely yes. It really depends on how comfortable you are solving problems without technology. But there are advantages of having a (graphing) calculator on hand during the exams. It will help you with computations and checking your answers quickly. Also, some students believe that having a calculator can also boost up confidence as well.  Yet, you must still show all your work for full credits! Calculators are just a tool to help you do math, not to replace you in the process and your mathematical reasoning\/justification.  Calculator-generated answers will not be accepted. So Richard will not accept answers like \"the calculator showed the answer is such and such...\". He can't see your calculator screen when he grades your work.  "
 },
@@ -4109,7 +4604,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "appendixA-ExamReviews.html#appendixA-ExamReviews-2-9",
   "type": "Remark",
-  "number": "A.0.16",
+  "number": "A.0.20",
   "title": "Does notation matter? Are notations worth any points?",
   "body": " Does notation matter? Are notations worth any points?   YES! Well Richard's research is about students interpretation on notations and their understanding on topics in collegiate level math so you tell me if he cares about notation or not.  Proper notation allows Richard to understand your workflow, increasing your chance for full or partial credit (as opposed to having Richard to guess what you mean on your work... he is bad at guessing). Remember that it is not Richard's responsibility to have to guess what you mean if the work is confusing!  "
 },
@@ -4118,7 +4613,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "appendixA-ExamReviews.html#appendixA-ExamReviews-2-10",
   "type": "Remark",
-  "number": "A.0.17",
+  "number": "A.0.21",
   "title": "Is there any bonus problem on the exam?",
   "body": " Is there any bonus problem on the exam?  Yes. There will be a bonus problem worth 10% of the exam score (usually 10 points out of 100).  Coming from a background of math ed that focuses on conceptual understanding and pure math, Richard tends to make the bonus question to focus on the conceptual side... So it is unlikely that you can just apply a formula or a procedure to get the answer. But it won't be something that is completely out of the blue either.  Please at least attempt the bonus problem! Even if you don't know how to solve it, you can still get some points for showing your thinking and reasoning on the problem (of course, the thinking\/reasoning has to be relevant to the problem and make sense). There is no penalty for wrong answers on the bonus problem. That's why it is a bonus problem!  "
 },
@@ -4127,7 +4622,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "appendixA-ExamReviews.html#appendixA-ExamReviews-2-11",
   "type": "Remark",
-  "number": "A.0.18",
+  "number": "A.0.22",
   "title": "How many problems can I expect on the exam?",
   "body": " How many problems can I expect on the exam?  No clue... This is the first time Richard is teaching linear algebra and he hasn't started to think about the exam stuff yet.  For reference, Richard has taught MTH 251, MTH 252(Z), and MTH 253 a lot before, and usually he would put about 7 to 8 problems plus a bonus question on a 1-hour-and-50-minute exam, depending on the level of difficulty of each problem. The questions were all (big) free-response questions, so there wasn't any multiple choices or fill-in-the-blank questions.  Instead of giving you a precise number of questions on the exam, let's do a range! Let's say the number of questions on the exam, , is in the interval .  "
 },
@@ -4136,18 +4631,27 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "appendixA-ExamReviews.html#appendixA-ExamReviews-2-12",
   "type": "Remark",
-  "number": "A.0.19",
+  "number": "A.0.23",
   "title": "Will Richard curve exams?",
   "body": " Will Richard curve exams?  Hmm... not necessarily. While Richard doesn't like to curve the exams, he will do something if the whole class doesn't do well for some reasons beyond their control (some examples include: Richard may accidentally write the exam too hard, a train was going back and forth outside the building that creates waaaaaay too much noise for students to concentrate, a dead squirrel was spotted in the classroom that distracts everyone from taking the exam... well anything is possible!).  If the class average wasn't as high as Richard's expectation, he will do one of the three things and he will poll the class:   administer an optional exam correction, along with a reflection, that allows students to learn from their mistakes and earn some points;    simply curve the grade (but how much should he curve... well no one knows it yet);    replace one of the midterm exams score with the final score if the final score is higher.   But don't rely on these measures to improve your grade! The safest way is to study well and do well on the exams!  "
 },
 {
-  "id": "Construction_RiemannSum",
+  "id": "appendixA-ExamReviews-2-15",
   "level": "2",
-  "url": "appendixA-ExamReviews.html#Construction_RiemannSum",
+  "url": "appendixA-ExamReviews.html#appendixA-ExamReviews-2-15",
   "type": "Figure",
-  "number": "A.0.20",
+  "number": "A.0.24",
   "title": "",
   "body": " Richard's PSU MTH 261 Midterm Exam #1 [ Click me to see the solution!]   "
+},
+{
+  "id": "appendixA-ExamReviews-2-16",
+  "level": "2",
+  "url": "appendixA-ExamReviews.html#appendixA-ExamReviews-2-16",
+  "type": "Figure",
+  "number": "A.0.25",
+  "title": "",
+  "body": " Richard's PSU MTH 261 Midterm Exam #2 [ Click me to see the solution!]   "
 },
 {
   "id": "backmatter-2",
